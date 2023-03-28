@@ -1,0 +1,89 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+.ensome__desktopcard {
+  /****************** variant4 **********************/
+  &__variant1,
+  &__variant2,
+  &__variant3,
+  &__variant4 {
+    //initialise card
+    @include mixins.cardInit;
+
+    padding: 2.5rem;
+    gap: 1.5rem;
+    @include mixins.size(25.5rem, 24.8rem);
+
+    p {
+      font-family: "Open Sans 700", sans-serif;
+      font-weight: 300;
+    }
+  }
+
+  /****************** variant3 **********************/
+  &__variant3 {
+    padding: 2rem 3.5rem;
+    gap: 2rem;
+    @include mixins.size(54rem, 31.3rem);
+
+    //mobile versions
+    @media only screen and (width <= 42rem) {
+      padding: 3rem 2.5rem;
+      @include mixins.size(32.8rem, 35.6rem);
+      p {
+        @include mixins.formatText(400, 1.4rem, 2.4rem);
+      }
+      h3 {
+        @include mixins.formatText(700, 2rem, 3rem);
+      }
+    }
+    @media only screen and (width <= 32rem) {
+      align-self: center;
+      padding: 3rem 1.5rem;
+      @include mixins.size(30rem, 33.6rem);
+      p {
+        @include mixins.formatText(400, 1.3rem, 2.4rem);
+      }
+      h3 {
+        @include mixins.formatText(700, 1.7rem, 3rem);
+      }
+    }
+  }
+  /****************** variant2 **********************/
+  &__variant2 {
+    padding: 3.5rem;
+    gap: 3rem;
+    @include mixins.size(35rem, 38.1rem);
+    align-items: center;
+    p {
+      text-align: center;
+    }
+  }
+
+  &__variant2,
+  &__variant1 {
+    span.ensome__icon_data__primary {
+      @include mixins.flex;
+      padding: 1.4rem;
+      border: 1px solid variables.$background;
+      border-radius: 1.2rem;
+    }
+  }
+  /****************** variant1 **********************/
+  &__variant1 {
+    padding: 4.6rem 3.5rem;
+    gap: 3rem;
+    @include mixins.size(35rem, 35.3rem);
+    @media only screen and (width <= 42rem) {
+      @include mixins.size(27.2rem, 30.2rem);
+      span.ensome__icon_data__primary {
+        padding: 1rem;
+      }
+      h3 {
+        @include mixins.formatText(700, 2rem, 3rem);
+      }
+      p {
+        @include mixins.formatText(400, 1.4rem, 2.4rem);
+      }
+    }
+  }
+}

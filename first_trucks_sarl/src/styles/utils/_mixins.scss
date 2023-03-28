@@ -1,0 +1,201 @@
+@use "./variables";
+
+//sets display to grid
+@mixin grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  @content;
+}
+
+@mixin flex($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  @content;
+}
+
+@mixin formatText($fw, $fs, $lh) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  font-style: normal;
+}
+
+//sets width and height
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+/******************************Home mixins******************************/
+@mixin customgrid($r, $c, $rowsize, $columnsize: $rowsize) {
+  @include grid;
+  grid-template-rows: repeat($r, $rowsize);
+  grid-template-columns: repeat($c, $columnsize);
+}
+
+//positions elements in a 2d grid system
+@mixin position($row, $column: $row) {
+  grid-row: #{$row};
+  grid-column: #{$column};
+}
+
+//backdrop
+@mixin blurbackdrop($color: white, $opacity: 0.3, $effect: blur, $intensity: 10px) {
+  // -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: $effect($intensity);
+  backdrop-filter: #{$effect }($intensity);
+  // backdrop-filter: blur(10px);
+  background-color: rgba($color, $opacity);
+}
+
+//positioning absolutely positioned elements
+@mixin positioning($dir_value, $top, $direction: left) {
+  top: $top;
+  #{$direction}: $dir_value;
+}
+
+@mixin colors {
+  &__primary {
+    background-color: variables.$primary;
+  }
+  &__secondary {
+    background-color: variables.$secondary;
+  }
+  &__tertiary {
+    background-color: variables.$tertiary;
+  }
+  &__helperBlue1 {
+    background-color: variables.$helperBlue1;
+  }
+  &__helperBlue2 {
+    background-color: variables.$helperBlue2;
+  }
+  &__helperBlue3 {
+    background-color: variables.$helperBlue3;
+  }
+  &__black {
+    background-color: variables.$black;
+  }
+  &__grey {
+    background-color: variables.$grey;
+  }
+  &__background {
+    background-color: variables.$background;
+  }
+  &__error {
+    background-color: variables.$error;
+  }
+}
+
+@mixin iconsize($size: 2rem, $color: variables.$black) {
+  svg {
+    @include size($size);
+    path,
+    g.path {
+      fill: $color;
+    }
+
+    g[class~="3d"] {
+      mix-blend-mode: multiply;
+    }
+    // g {
+    //   path {
+    //     fill: $color;
+    //   }
+    // }
+  }
+}
+
+@mixin generateSVGColorClasses($size) {
+  &__primary {
+    @include iconsize($size, variables.$primary);
+  }
+  &__secondary {
+    @include iconsize($size, variables.$secondary);
+  }
+  &__tertiary {
+    @include iconsize($size, variables.$tertiary);
+  }
+  &__helperBlue1 {
+    @include iconsize($size, variables.$helperBlue1);
+  }
+  &__helperBlue2 {
+    @include iconsize($size, variables.$helperBlue2);
+  }
+  &__helperBlue3 {
+    @include iconsize($size, variables.$helperBlue3);
+  }
+  &__black {
+    @include iconsize($size, variables.$black);
+  }
+  &__grey {
+    @include iconsize($size, variables.$grey);
+  }
+  &__background {
+    @include iconsize($size, variables.$background);
+  }
+  &__error {
+    @include iconsize($size, variables.$error);
+  }
+  &__white {
+    @include iconsize($size, variables.$white);
+  }
+}
+
+$hover-list: 0 0 19% 28% "topleft" calc(10rem + 2vw), -72.5% -10% -15% 17% "topright" 4.75rem, -10% -43% 15% -30% "bottomleft" calc(10rem + 2vw), -75% -43% -15% -30% "bottomright" 4.75rem;
+$background: rgba(255, 255, 255, 1);
+@function returnCards($list) {
+  $new-list: ();
+  @each $mx, $my, $tx, $ty, $suffix, $ml in $list {
+    $new-list: list.append($new-list, $ml animatemoon-#{$suffix} animatetext-#{$suffix}, $separator: comma);
+  }
+
+  @return $new-list;
+}
+
+@function returnBg($bglist, $bplist) {
+  $bg: ();
+  $bp: ();
+  $br: ();
+  $all: ();
+  @each $b in $bglist {
+    $bg: list.append($bg, url("../../../svg/home/#{$b}.svg"), $separator: comma);
+  }
+  @each $p in $bplist {
+    $bp: list.append($bp, $p, $separator: comma);
+  }
+  @each $r in $bplist {
+    $br: list.append($br, no-repeat, $separator: comma);
+  }
+
+  @each $i in $bg, $bp, $br {
+    $all: list.append($all, $i, $separator: comma);
+  }
+
+  $all: (
+    "background": $bg,
+    "position": $bp,
+    "repeat": $br,
+  );
+
+  @return $all;
+}
+
+/******************************Card mixins******************************/
+@mixin cardInit() {
+  @include flex(column);
+  align-items: flex-start;
+  background: variables.$white;
+  box-shadow: variables.$shadowCard3;
+  border-radius: 6px;
+  p,
+  h6 {
+    letter-spacing: -0.015em;
+  }
+  p {
+    color: variables.$grey;
+  }
+}

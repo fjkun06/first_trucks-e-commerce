@@ -1,6 +1,5 @@
 import useRoute from "@/hooks/useRoute";
 import { useTranslations } from "next-intl";
-import { useRouter } from "next/router";
 import React from "react";
 export async function getStaticProps(context: { locale: any }) {
   return {
@@ -12,12 +11,9 @@ export async function getStaticProps(context: { locale: any }) {
   };
 }
 const test = () => {
-  const router = useRouter();
-  const { pathname, asPath, query } = router;
   const t = useTranslations("default");
   const tester = useRoute();
 
-  const testFunction = () => router.push({ pathname, query }, asPath, { locale: "fr" });
   return (
     <div>
       test oui

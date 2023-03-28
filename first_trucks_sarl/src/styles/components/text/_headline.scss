@@ -1,0 +1,47 @@
+@use "../../utils/mixins";
+
+.ensome__headline {
+  &__h1,
+  &__h2,
+  &__h3,
+  &__h4,
+  &__h5,
+  &__h6,
+  &__h7-b,
+  &__h7-r,
+  &__h8 {
+    font-family: "Manrope", sans-serif;
+  }
+  //headline n
+  &__h1 {
+    @include mixins.formatText(800, 4.6rem, 6rem);
+  }
+  &__h2 {
+    @include mixins.formatText(800, 3.8rem, 5.6rem);
+  }
+  &__h3 {
+    @include mixins.formatText(800, 3rem, 4rem);
+  }
+  &__h4 {
+    @include mixins.formatText(700, 2.2rem, 3.3rem);
+  }
+  &__h5 {
+    @include mixins.formatText(700, 2rem, 3rem);
+  }
+  &__h6 {
+    @include mixins.formatText(700, 1.6rem, 2.4rem);
+  }
+  &__h7 {
+    //bold
+    &-b {
+      @include mixins.formatText(600, 1.4rem, 2.4rem);
+    }
+    //regular
+    &-r {
+      @include mixins.formatText(500, 1.4rem, 2.4rem);
+    }
+  }
+  &__h8 {
+    @include mixins.formatText(500, 1.2rem, 2.4rem);
+  }
+}

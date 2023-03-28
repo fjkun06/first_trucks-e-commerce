@@ -1,0 +1,13 @@
+@use "~@fontsource/nunito/scss/mixins" as Nunito;
+
+$weights: 200, 300, 400, 500, 600, 700, 800, 900;
+
+@each $weight in $weights {
+  $name: "Nunito #{$weight}";
+
+  @if $weight == 400 {
+    $name: "Nunito";
+  }
+
+  @include Nunito.fontFace($fontName: $name, $weight: $weight);
+}

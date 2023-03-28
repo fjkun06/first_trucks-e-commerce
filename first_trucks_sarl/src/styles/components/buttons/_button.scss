@@ -1,0 +1,206 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+
+button {
+  border-radius: 6px;
+  box-shadow: variables.$shadowButton;
+  background: variables.$primary;
+  font-family: "Manrope", sans-serif;
+  @include mixins.formatText(700, 1.6rem, 2.4rem);
+  letter-spacing: 0.055rem;
+  border: none;
+  cursor: pointer;
+  color: variables.$white;
+  @include mixins.flex;
+  transition: all 0.25s ease-in-out;
+
+  /****************** standard buttons **********************/
+  //--small size
+
+  &[data-button*="standard-small"],
+  &[data-button*="standard-big"],
+  &[data-button*="standard-big-rounded"],
+  &[data-button*="standard-big-rounded"] {
+    @include mixins.size(13.7rem, 3.049rem);
+    @include mixins.formatText(500, 1.4rem, 2.4rem);
+
+    &:hover {
+      background: variables.$buttonHovered;
+    }
+
+    &:disabled {
+      background: variables.$grey;
+      box-shadow: none;
+    }
+  }
+
+  //--small size
+  &[data-button*="standard-big"],
+  &[data-button*="standard-big-rounded"] {
+    @include mixins.size(19rem, 5.4rem);
+    @include mixins.formatText(700, 1.6rem, 2.4rem);
+  }
+
+  /****************** rounded buttons **********************/
+  &[data-button*="standard-big-rounded"],
+  &[data-button*="standard-small-rounded"] {
+    @include mixins.formatText(500, 1.3rem, 2.4rem);
+    @include mixins.size(12rem);
+    border-radius: 100%;
+    position: relative;
+    background-color: transparent;
+    z-index: 3;
+
+    &::before {
+      border-radius: 100%;
+      position: absolute;
+      @include mixins.size(12rem);
+      content: "";
+      top: 0%;
+      left: 0%;
+      background-color: variables.$primary;
+      z-index: -1;
+    }
+    &::after {
+      border-radius: 100%;
+      border: 1px solid variables.$white;
+      position: absolute;
+      @include mixins.size(10rem);
+      content: "";
+      top: 7.5%;
+      left: 7.5%;
+      background-color: transparent;
+      z-index: -1;
+    }
+
+    &:hover {
+      background-color: variables.$buttonHovered;
+
+      &::before,
+      &::after {
+        transition: all 0.25s ease-in-out;
+
+        background-color: variables.$buttonHovered;
+      }
+    }
+    &:disabled {
+      &::before,
+      &::after {
+        background-color: variables.$grey;
+      }
+    }
+  }
+
+  //small size rounded
+  &[data-button*="standard-small-rounded"] {
+    @include mixins.formatText(500, 1.2rem, 2.4rem);
+    @include mixins.size(10rem);
+    border-radius: 100%;
+    &::before {
+      @include mixins.size(10rem);
+    }
+    &::after {
+      @include mixins.size(8rem);
+      top: 9.5%;
+      left: 9.5%;
+    }
+  }
+  /****************** watch buttons **********************/
+  //default
+  &[data-button*="watch"] {
+    @include mixins.size(16.8rem, 4.454rem);
+    @include mixins.formatText(500, 1.4rem, 0.4rem);
+
+    column-gap: 1rem;
+
+    &:hover {
+      background: variables.$buttonHovered;
+    }
+
+    &:disabled {
+      background: variables.$grey;
+      box-shadow: none;
+    }
+  }
+
+  //transparent background --small size
+  &[data-button*="watch-transparent-big"],
+  &[data-button*="watch-transparent-small"],
+  &[data-button*="watch-transparent-big-bordered"],
+  &[data-button*="watch-transparent-small-bordered"] {
+    @include mixins.size(16.8rem, 4.454rem);
+    @include mixins.formatText(500, 1.4rem, 0.4rem);
+    background: transparent;
+    box-shadow: none;
+    color: variables.$black;
+    border: none;
+
+    @include mixins.flex;
+    column-gap: 1rem;
+
+    &:hover {
+      color: variables.$primary;
+      background: transparent;
+      path {
+        fill: currentColor;
+      }
+    }
+
+    &:disabled {
+      background: transparent;
+      color: variables.$grey;
+    }
+  }
+
+  //transparent background --big size
+  &[data-button*="watch-transparent-big"] {
+    @include mixins.size(21.62rem, 5.4rem);
+    @include mixins.formatText(700, 1.5rem, 0.4rem);
+  }
+
+  //bordered variants
+  &[data-button*="watch-transparent-big-bordered"],
+  &[data-button*="watch-transparent-small-bordered"] {
+    border: 1px solid variables.$primary;
+    // &:hover {
+    color: variables.$primary;
+    background: transparent;
+    svg g path {
+      fill: currentColor;
+    }
+    // }
+    &:hover {
+      border: 1px solid variables.$buttonHovered;
+      color: variables.$buttonHovered;
+      background: transparent;
+      svg g path {
+        fill: currentColor;
+      }
+    }
+
+    &:disabled {
+      border: 1px solid variables.$grey;
+      &:hover {
+        border: 1px solid variables.$grey;
+        color: variables.$grey;
+        background: transparent;
+        svg g path {
+          fill: currentColor;
+        }
+      }
+    }
+  }
+
+  /****************** Search buttons **********************/
+  &[data-button*="search-button"] {
+    @include mixins.size(8.4rem, 5.4rem);
+    &:hover {
+      background: variables.$buttonHovered;
+    }
+
+    &:disabled {
+      background: variables.$grey;
+      box-shadow: none;
+    }
+  }
+}

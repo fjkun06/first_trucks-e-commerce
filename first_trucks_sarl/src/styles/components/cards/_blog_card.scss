@@ -1,0 +1,236 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+.ensome__blogcard {
+  /****************** variant6 **********************/
+  &__variant1,
+  &__variant2,
+  &__variant3,
+  &__variant4,
+  &__variant5,
+  &__variant6 {
+    @include mixins.cardInit;
+    padding: 3rem 3.5rem 4.5rem;
+    gap: 2rem;
+    @include mixins.size(35rem, 33.1rem);
+    div {
+      @include mixins.flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    section {
+      margin: 0;
+      @include mixins.flex(column);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  &__variant6 {
+    @media only screen and (width <= 42rem) {
+      @include mixins.size(27.2rem, 35.7rem);
+      padding: 3rem 2.5rem;
+      gap: 0rem;
+      section {
+        gap: 1.6rem;
+        @include mixins.size(100%);
+        padding: 0 0.5rem;
+        h6 {
+          @include mixins.formatText(700, 2rem, 3rem);
+        }
+        p {
+          @include mixins.formatText(400, 1.4rem, 2.4rem);
+        }
+     
+      }
+      div{
+        padding-top:2.5rem ;
+      }
+    }
+  }
+
+  /****************** variant5 **********************/
+  &__variant5,
+  &__variant4,
+  &__variant3,
+  &__variant2 {
+    align-items: center;
+    padding: 0px;
+    @include mixins.flex;
+    @include mixins.size(44.5rem, 12.2rem);
+    #card_image {
+      @include mixins.size(19rem, 11.4rem);
+      // background: url(/public/images/v5.png);
+      border-radius: 6px;
+    }
+    section {
+      align-items: flex-start;
+      padding: 0px;
+      gap: 1rem;
+      @include mixins.size(23.5rem, 12.2rem);
+
+      h6 {
+        @include mixins.formatText(700, 1.6rem, 2.4rem);
+      }
+    }
+  }
+  &__variant5 {
+    @media only screen and (width <= 42rem) {
+      @include mixins.size(32.8rem, 10.4rem);
+      gap: 0.8rem;
+      #card_image {
+        // background: url(/public/images/mv4.png);
+        @include mixins.size(16rem, 9.6rem);
+      }
+
+      section {
+        gap: 0.6rem;
+        @include mixins.size(16rem, 10.4rem);
+        padding: 0rem;
+        h6 {
+          @include mixins.formatText(600, 1.4rem, 2.4rem);
+          letter-spacing: -0.01em;
+        }
+      }
+    }
+  }
+  /****************** variant4 **********************/
+  &__variant4 {
+    @include mixins.size(63.5rem, 18.5rem);
+    align-items: center;
+    #card_image {
+      @include mixins.size(21.5rem, 17.1rem);
+      // background: url(/public/images/v4.png);
+    }
+
+    section {
+      @include mixins.size(40rem, 18.5rem);
+
+      p {
+        @include mixins.formatText(400, 1.6rem, 2.8rem);
+      }
+    }
+  }
+  /****************** variant3 **********************/
+  &__variant3,
+  &__variant2 {
+    @include mixins.flex(column);
+    @include mixins.size(35rem, 47.8rem);
+    #card_image {
+      // background: url(/public/images/v3.png);
+      @include mixins.size(35rem, 20rem);
+    }
+
+    section {
+      @include mixins.size(35rem, 25.8rem);
+      padding: 0 0.5rem;
+      h6 {
+        @include mixins.formatText(700, 2.2rem, 3.3rem);
+      }
+    }
+  }
+  &__variant3 {
+    @media only screen and (width <= 42rem) {
+      @include mixins.size(27.2rem, 26.6rem);
+      gap: 2rem;
+      #card_image {
+        // background: url(/public/images/mv3.png);
+        @include mixins.size(27.2rem, 13rem);
+      }
+
+      section {
+        gap: 1.2rem;
+        @include mixins.size(27.2rem, 11.6rem);
+        padding: 0 0.5rem;
+        h6 {
+          @include mixins.formatText(700, 1.6rem, 2.4rem);
+        }
+        p:last-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+  /****************** variant2 **********************/
+  &__variant2,
+  &__variant1 {
+    padding: 0px 0px 3rem;
+    gap: 3rem;
+    @include mixins.size(54rem, 61.5rem);
+    align-items: flex-start;
+    #card_image {
+      // background: url(/public/images/v2.png);
+      @include mixins.size(54rem, 30rem);
+    }
+    section {
+      padding: 0px 3.5rem;
+      gap: 1.7rem;
+      @include mixins.size(54rem, 25.5rem);
+    }
+    div {
+      padding: 0px 3.5rem;
+    }
+  }
+
+  &__variant2 {
+    @media only screen and (width <= 42rem) {
+      @include mixins.size(32.8rem, 29.6rem);
+      gap: 2rem;
+      #card_image {
+        // background: url(/public/images/mv2.png);
+        @include mixins.size(32.8rem, 13rem);
+      }
+
+      section {
+        gap: 1.2rem;
+        @include mixins.size(32.8rem, 12.6rem);
+        align-self: flex-start;
+        padding: 0 2rem;
+        h6 {
+          @include mixins.formatText(700, 1.6rem, 2.4rem);
+        }
+        p:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+
+  /****************** variant1 **********************/
+  &__variant1 {
+    padding: 0rem;
+    gap: 2.5rem;
+    @include mixins.size(63.5rem, 49.8rem);
+    section {
+      padding: 0.5rem;
+      gap: 0.35rem;
+      @include mixins.size(63.5rem, 13.9rem);
+    }
+    #card_image {
+      // background: url(/public/images/v1.png);
+      @include mixins.size(63.5rem, 28.5rem);
+    }
+
+    @media only screen and (width <= 42rem) {
+      @include mixins.size(32.8rem, 39.8rem);
+      gap: 1.8rem;
+      #card_image {
+        // background: url(/public/images/mv1.png);
+        @include mixins.size(32.8rem, 15rem);
+      }
+
+      section {
+        gap: 1rem;
+        @include mixins.size(32.8rem, 23rem);
+        align-self: flex-start;
+        h6 {
+          @include mixins.formatText(700, 1.6rem, 2.4rem);
+        }
+        p {
+          @include mixins.formatText(400, 1.4rem, 2.4rem);
+        }
+      }
+    }
+  }
+}
