@@ -1,5 +1,7 @@
 {
   "default": {
-    "hell": "Hello Monde"
+    "hell": "Hello Monde",
+    "test": "Teste"
+
   }
 }

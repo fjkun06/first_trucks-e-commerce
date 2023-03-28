@@ -1,5 +1,6 @@
 {
   "default": {
-    "hell": "Hello World"
+    "hell": "Hello World",
+    "test": "Test"
   }
 }
