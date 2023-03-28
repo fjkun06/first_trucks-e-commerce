@@ -16,9 +16,15 @@
     "@types/react-dom": "18.0.11",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
-    "next": "13.2.4",
+    "i18next": "^22.4.13",
+    "next": "^13.2.4",
+    "next-i18next": "^13.2.2",
+    "next-intl": "^2.12.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-i18next": "^12.2.0",
+    "react-intl": "^6.3.2",
+    "react-intl-universal": "^2.6.14",
     "typescript": "5.0.2"
   },
   "devDependencies": {
