@@ -1,6 +1,7 @@
 @use "../utils/mixins";
 nav {
-  border: 3px solid red;
+  z-index: 3;
+  border: 1px solid red;
   @include mixins.size(100vw, 6.6rem);
   @include mixins.grid;
   grid-template-columns: repeat(2, 1fr);
@@ -14,4 +15,6 @@ nav {
     }
     justify-self: flex-end;
   }
+
+    
 }
