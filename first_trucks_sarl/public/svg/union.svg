@@ -1,0 +1,47 @@
+<svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- <svg width="28" height="21" viewBox="0 0 28 21" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M27.9997 2.48994H0.820312V0.677979H27.9997V2.48994ZM27.9997 11.5495H0.820312V9.73754H27.9997V11.5495ZM0.820312 20.6091H27.9997V18.7971H0.820312V20.6091Z" fill="#1968B7" />
+</svg>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 166.28 97.41">
+  <path d="M55.5,79.5l5,22c8.56,17.79,19.74,26.33,38,10l9-26c4.87-21.65-4.88-25.55-26-15.68C81,54.42,72.14,50.36,55.5,57Z" transform="translate(-55 -53.44)" fill="#fff" stroke="#000" stroke-miterlimit="10" />
+  <path d="M151.5,117.5c-15.38,5.67-12.25,12.57,14,21,18.18,22.75,21.37,9.81,20-14l17.92,14q-17.4-32.64,16.08-26L200,95.85c-13-11.8-23.51-16.2-24.5,7.65Z" transform="translate(-55 -53.44)" fill="#fff" stroke="#000" stroke-miterlimit="10" />
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 79.56 67.26">
+  <path d="M55.5,79.5l5,22c8.56,17.79,19.74,26.33,38,10l9-26c4.87-21.65-4.88-25.55-26-15.68C81,54.42,72.14,50.36,55.5,57Z" transform="translate(-38.72 -53.44)" fill="#fff" stroke="#000" stroke-miterlimit="10" />
+  <path d="M48.5,86.5c-15.38,5.67-12.25,12.57,14,21,18.18,22.75,21.37,9.81,20-14l17.92,14Q83,74.86,116.5,81.5L97,64.85c-13-11.8-23.51-16.2-24.5,7.65Z" transform="translate(-38.72 -53.44)" fill="#fff" stroke="#000" stroke-miterlimit="10" />
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 79.89 67.26">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M55.5,79.5l5,22c8.56,17.79,19.74,26.33,38,10l9-26c4.87-21.65-4.88-25.55-26-15.68C81,54.42,72.14,50.36,55.5,57Z" transform="translate(-38.72 -53.44)" />
+  <path class="cls-1" d="M48.5,86.5c-15.38,5.67-12.25,12.57,14,21,18.18,22.75,21.37,9.81,20-14,0,0,3.84,21,17.92,14s21.08-17,16.08-26S97,64.85,97,64.85c-13-11.8-23.51-16.2-24.5,7.65Z" transform="translate(-38.72 -53.44)" />
+  <path class="cls-1" d="M208.5,233.5" transform="translate(-38.72 -53.44)" />
+</svg>
+
+<svg xmlns="http://www.w3.org/2000/svg" id="open" viewBox="0 0 53.05 34">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <line class="cls-1" x1="0.02" y1="1" x2="53.02" y2="1" />
+  <line class="cls-1" x1="0.02" y1="17" x2="53.02" y2="17" />
+  <line class="cls-1" x1="0.02" y1="33" x2="53.02" y2="33" />
+  <line class="cls-1" x1="0.52" y1="33" x2="52.52" y2="1" />
+  <line class="cls-1" x1="52.52" y1="33" x2="0.52" y2="1" />
+</svg>

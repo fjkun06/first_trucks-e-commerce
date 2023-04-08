@@ -1,4 +1,17 @@
 @use "../utils/mixins";
 nav {
   border: 3px solid red;
+  @include mixins.size(100vw, 6.6rem);
+  @include mixins.grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 4.2rem;
+  svg {
+    // justify-self: flex-start;
+    @include mixins.size(3rem);
+    path {
+      stroke: #1968b7;
+      stroke-width: 3.5px;
+    }
+    justify-self: flex-end;
+  }
 }
