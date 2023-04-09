@@ -20,15 +20,16 @@ const Navbar: React.FC<NavbarProps> = ({ opened }) => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <>
       <AnimatePresence>
-        <motion.nav layout key="1">
+        <motion.nav layout key="1" animate={{height: isOpen? '19.5rem' : '6.6rem'}}>
           <motion.div layout>
             <Image src={logo} alt="logo" />
             <Menu isOpen={isOpen} handler={handleClick} />
           </motion.div>
-          <motion.div layout>
+          <motion.div layout animate={{scale: isOpen? 1 : 0,display: isOpen? "flex":"none"}}>
             <motion.span>
               À Propos de Nous
               {/* <Menu/> */}

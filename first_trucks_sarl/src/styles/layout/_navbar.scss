@@ -2,8 +2,9 @@
 nav {
   filter: drop-shadow(0px 0px 25px rgba(0, 0, 0, 0.1));
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
-  @include mixins.size(100vw, 6.6rem);
-  @include mixins.size(100vw, 19.5rem);
+  // @include mixins.size(100vw, 6.6rem);
+  width: 100vw;
+  // @include mixins.size(100vw, 19.5rem);
   @include mixins.flex(column);
   @media only screen and (700px <width < 1200px) {
     padding: 0 7.7rem;
@@ -35,7 +36,7 @@ nav {
           @include mixins.size(inherit);
           path {
             stroke: #1968b7;
-            stroke-width: .5px;
+            stroke-width: 0.5px;
           }
         }
         @media only screen and (width > 1200px) {
@@ -69,36 +70,6 @@ nav {
         @media only screen and (width > 1200px) {
           border-bottom: 5px solid #000;
           height: 100%;
-        }
-      }
-
-      button {
-        @include mixins.flex;
-        @include mixins.size(14.4rem, 3.612rem);
-        padding: 10px;
-        gap: 0.75rem;
-        background: #145ba1;
-        border: 1px solid transparent;
-        border-radius: 2.5px;
-        color: white;
-        font-family: "Poppins";
-        @include mixins.formatText(700, 1.1rem, 1.6rem);
-        @media only screen and (700px <width < 1200px) {
-          @include mixins.formatText(700, 1.1rem, 1.6rem);
-        }
-        /*******contact button svg*************/
-        svg {
-          @include mixins.size(1.61rem);
-        }
-        @media only screen and (width > 1200px) {
-          svg {
-            @include mixins.size(2.58rem);
-          }
-          padding: 16.0554px;
-          gap: 8.03px;
-          @include mixins.size(20.088rem, 4.811rem);
-          @include mixins.formatText(700, 1.76rem, 2.5rem);
-          box-shadow: none;
         }
       }
     }
