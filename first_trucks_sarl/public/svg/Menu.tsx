@@ -1,16 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-const Menu = () => {
+interface MenuProps{
+  /**
+   * @param {boolean} [isOpen=false] - Used to check if navbar is open or not.
+   * @param {void} handler - Toggle menu state.
+   *
+   *
+   * */
+  isOpen: boolean;
+  handler: () => void;
+}
+const Menu:React.FC<MenuProps> = ({isOpen,handler}) => {
   const op = false;
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
+  console.log("opened", isOpen)
+
+ 
   return (
     <>
-      <span onClick={handleClick}>
-        <svg width="230" height="180" viewBox="0 0 23 18" transform="scale(0.2)">
+      <span onClick={handler}>
+        <svg width="230" height="180" viewBox="0 0 23 18">
+        {/* <svg width="230" height="180" viewBox="0 0 23 18" transform="scale(0.2)"> */}
           <Path
             d="M 2 2.5 L 20 2.5"
             vars={{

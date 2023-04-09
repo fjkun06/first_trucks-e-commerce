@@ -24,14 +24,18 @@ nav {
       @include mixins.grid;
       grid-template-columns: repeat(2, 1fr);
       span {
+        cursor: pointer;
         @include mixins.flex {
           justify-content: flex-end;
         }
+        justify-self: flex-end;
+        @include mixins.size(4rem);
+
         svg {
-          @include mixins.size(3rem);
+          @include mixins.size(inherit);
           path {
             stroke: #1968b7;
-            strokewidth: 3.5px;
+            stroke-width: .5px;
           }
         }
         @media only screen and (width > 1200px) {

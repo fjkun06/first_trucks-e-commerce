@@ -15,24 +15,22 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ opened }) => {
-  const [isClicked, setIsClicked] = React.useState(false);
-
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const handleClick = () => {
-    setIsClicked(!isClicked);
+    setIsOpen(!isOpen);
   };
-
   return (
     <>
       <AnimatePresence>
-        <motion.nav layout key='1'>
+        <motion.nav layout key="1">
           <motion.div layout>
             <Image src={logo} alt="logo" />
-            <Open />
+            <Menu isOpen={isOpen} handler={handleClick} />
           </motion.div>
           <motion.div layout>
             <motion.span>
               À Propos de Nous
-             <Menu/>
+              {/* <Menu/> */}
             </motion.span>
             <button>
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,9 +60,6 @@ const Navbar: React.FC<NavbarProps> = ({ opened }) => {
               </svg>
               Contactez-nous
             </button>
-            <motion.div onClick={handleClick} animate={{ scale: isClicked ? 1.2 : 1 }} transition={{ duration: 0.5 }}>
-              <h1>Click Me!</h1>
-            </motion.div>
           </motion.div>
         </motion.nav>
         <motion.div id="modal" />
