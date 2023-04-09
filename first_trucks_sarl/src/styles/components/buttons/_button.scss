@@ -1,0 +1,30 @@
+@use "../../utils/mixins";
+// button {
+//   @include mixins.flex;
+//   @include mixins.size(14.4rem, 3.612rem);
+//   padding: 10px;
+//   gap: 0.75rem;
+//   background: #145ba1;
+//   border: 1px solid transparent;
+//   border-radius: 2.5px;
+//   color: white;
+//   font-family: "Poppins";
+//   @include mixins.formatText(700, 1.1rem, 1.6rem);
+//   @media only screen and (700px <width < 1200px) {
+//     @include mixins.formatText(700, 1.1rem, 1.6rem);
+//   }
+//   /*******contact button svg*************/
+//   svg {
+//     @include mixins.size(1.61rem);
+//   }
+//   @media only screen and (width > 1200px) {
+//     svg {
+//       @include mixins.size(2.58rem);
+//     }
+//     padding: 16.0554px;
+//     gap: 8.03px;
+//     @include mixins.size(20.088rem, 4.811rem);
+//     @include mixins.formatText(700, 1.76rem, 2.5rem);
+//     box-shadow: none;
+//   }
+// }
