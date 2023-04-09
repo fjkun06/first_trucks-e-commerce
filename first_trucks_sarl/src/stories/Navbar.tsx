@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimatePresence, motion, animate } from "framer-motion";
+import { AnimatePresence, motion, animate, Variants } from "framer-motion";
 import Image from "next/image";
 import logo from "../../public/images/logoM.png";
 import Open from "../../public/svg/Open";
@@ -12,11 +12,58 @@ interface NavbarProps {
    * */
   opened: boolean;
 }
+interface PathProps {
+  /**
+   * @param {string} d - Used to draw SVG path.
+   * @param {any | undefined} vars - Set this to control animations.
+   *
+   *
+   * */
+  d: string;
+  vars: any | undefined;
+}
 const Navbar: React.FC<NavbarProps> = ({ opened }) => {
+  const [isClicked, setIsClicked] = React.useState(false);
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+  };
+
+  const logoCross = {
+    open: {
+      d: "M 3 16.5 L 17 2.5",
+      transition: {
+        duration: 0.35,
+        delay: 1,
+      },
+    },
+  };
+
+  const logoMiddle = {
+    open: {
+      scale: 0,
+      transition: {
+        duration: 0.35,
+        delay: 1,
+      },
+    },
+  };
+
+  const Path: React.FC<PathProps> = ({ d, vars }) => {
+    let variant: any = {};
+    variant.open = Object.assign(vars.open, {
+      transition: {
+        duration: 0.35,
+        delay: 1,
+      },
+    });
+    return <motion.path d={d} initial="closed" animate="open" stroke="#1968B7" variants={variant} />;
+  };
+
   return (
     <>
       <AnimatePresence>
-        <motion.nav layout>
+        <motion.nav layout key='1'>
           <motion.div layout>
             <Image src={logo} alt="logo" />
             <Open />
@@ -25,57 +72,28 @@ const Navbar: React.FC<NavbarProps> = ({ opened }) => {
             <motion.span>
               À Propos de Nous
               <svg width="230" height="180" viewBox="0 0 23 18">
-                <motion.path
+                <Path
                   d="M 2 2.5 L 20 2.5"
-                  className="top"
-                  initial="closed"
-                  animate="open"
-                  fill="red"
-                  stroke="red"
-                  variants={{
-                    closed: { d: "M 2 2.5 L 20 2.5" },
+                  vars={{
                     open: {
                       d: "M 3 16.5 L 17 2.5",
-                      transition: {
-                        duration: 0.35,
-                        delay: 1,
-                      },
-                    },
-                  }}
-                >
-                  {/* <animate attributeName="d" to="M 3 16.5 L 17 2.5" dur="0.25s" repeatCount="1" from='M 2 2.5 L 20 2.5' fill="freeze" begin='1s'/> */}
-                </motion.path>
-                <motion.path
-                  d="M 2 9.423 L 20 9.423"
-                  opacity="1"
-                  animate="open"
-                  className="middle"
-                  stroke="red"
-                  variants={{
-                    closed: { scale: 1 },
-                    open: {
-                      scale: 0,
-                      transition: {
-                        duration: 0.35,
-                        delay: 1,
-                      },
                     },
                   }}
                 />
-                <motion.path
+
+                <Path
+                  d="M 2 9.423 L 20 9.423"
+                  vars={{
+                    open: {
+                      scale: 0,
+                    },
+                  }}
+                />
+                <Path
                   d="M 2 16.346 L 20 16.346"
-                  className="bottom"
-                  initial="closed"
-                  stroke="red"
-                  animate="open"
-                  variants={{
-                    closed: { d: "M 2 16.346 L 20 16.346" },
+                  vars={{
                     open: {
                       d: "M 3 2.5 L 17 16.346",
-                      transition: {
-                        duration: 0.35,
-                        delay: 1,
-                      },
                     },
                   }}
                 />
@@ -109,6 +127,9 @@ const Navbar: React.FC<NavbarProps> = ({ opened }) => {
               </svg>
               Contactez-nous
             </button>
+            <motion.div onClick={handleClick} animate={{ scale: isClicked ? 1.2 : 1 }} transition={{ duration: 0.5 }}>
+              <h1>Click Me!</h1>
+            </motion.div>
           </motion.div>
         </motion.nav>
         <motion.div id="modal" />

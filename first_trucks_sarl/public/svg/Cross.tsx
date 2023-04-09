@@ -35,10 +35,10 @@ const Cross = () => {
   return (
     <span>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53.05 34">
-        <motion.path stroke="#1968B7" d={path} stroke-width="1.81" strokeLinecap="round" strokeLinejoin="round"/>
+        <motion.path stroke="#1968B7" d={path} strokeWidth="1.81" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
       {/* <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <motion.path stroke="#1968B7" d={path} stroke-width="1.81" />
+        <motion.path stroke="#1968B7" d={path} strokeWidth="1.81" />
       </svg> */}
     </span>
   );

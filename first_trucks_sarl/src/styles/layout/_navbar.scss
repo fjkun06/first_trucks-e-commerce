@@ -31,7 +31,7 @@ nav {
           @include mixins.size(3rem);
           path {
             stroke: #1968b7;
-            stroke-width: 3.5px;
+            strokewidth: 3.5px;
           }
         }
         @media only screen and (width > 1200px) {

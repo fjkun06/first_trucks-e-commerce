@@ -35,7 +35,7 @@
         fill: none;
         stroke: #000;
         stroke-miterlimit: 10;
-        stroke-width: 2px;
+        strokeWidth: 2px;
       }
     </style>
   </defs>

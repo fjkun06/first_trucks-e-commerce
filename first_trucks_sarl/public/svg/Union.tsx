@@ -38,7 +38,7 @@ const Union = () => {
       const elapsed = now - start;
       const duration = 1000; // 1 second
       const t = elapsed / duration;
-      console.log("I am t: ", t);
+      // console.log("I am t: ", t);
       const d = result(t);
       animatePath(d);
       if (t < 1) {
@@ -57,10 +57,10 @@ const Union = () => {
         <motion.path id="path" d="" fill="none" strokeMiterlimit="10" stroke="#1968B7" strokeWidth="1.81" ref={ref} transition={{ duration: 0.8, ease: "easeInOut" }} />
       </svg>
       {/* <svg xmlns="http://www.w3.org/2000/svg" width="400px" height="400px" viewBox="0 0 53.05 34">
-        <motion.path stroke="#1968B7" d="" stroke-width="1.81" strokeLinecap="round" strokeLinejoin="round" />
+        <motion.path stroke="#1968B7" d="" strokeWidth="1.81" strokeLinecap="round" strokeLinejoin="round" />
       </svg> */}
       <svg xmlns="http://www.w3.org/2000/svg" width="400px" height="400px" viewBox="0 0 53.05 34">
-        <motion.path d="" fill="none" stroke="yellow" strokeMiterlimit="10" stroke-linecap="round" strokeLinejoin="round" stroke-width="2" />
+        <motion.path d="" fill="none" stroke="yellow" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
       </svg>
     </span>
   );
