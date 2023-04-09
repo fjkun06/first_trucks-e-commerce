@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "../../public/images/logoM.png";
 import Open from "../../public/svg/Open";
 import Union from "../../public/svg/Union";
+import Menu from "../../public/svg/Menu";
 interface NavbarProps {
   /**
    * @param {boolean} [opened=false] - Used to check if navbar is open or not.
@@ -12,52 +13,12 @@ interface NavbarProps {
    * */
   opened: boolean;
 }
-interface PathProps {
-  /**
-   * @param {string} d - Used to draw SVG path.
-   * @param {any | undefined} vars - Set this to control animations.
-   *
-   *
-   * */
-  d: string;
-  vars: any | undefined;
-}
+
 const Navbar: React.FC<NavbarProps> = ({ opened }) => {
   const [isClicked, setIsClicked] = React.useState(false);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
-  };
-
-  const logoCross = {
-    open: {
-      d: "M 3 16.5 L 17 2.5",
-      transition: {
-        duration: 0.35,
-        delay: 1,
-      },
-    },
-  };
-
-  const logoMiddle = {
-    open: {
-      scale: 0,
-      transition: {
-        duration: 0.35,
-        delay: 1,
-      },
-    },
-  };
-
-  const Path: React.FC<PathProps> = ({ d, vars }) => {
-    let variant: any = {};
-    variant.open = Object.assign(vars.open, {
-      transition: {
-        duration: 0.35,
-        delay: 1,
-      },
-    });
-    return <motion.path d={d} initial="closed" animate="open" stroke="#1968B7" variants={variant} />;
   };
 
   return (
@@ -71,33 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ opened }) => {
           <motion.div layout>
             <motion.span>
               À Propos de Nous
-              <svg width="230" height="180" viewBox="0 0 23 18">
-                <Path
-                  d="M 2 2.5 L 20 2.5"
-                  vars={{
-                    open: {
-                      d: "M 3 16.5 L 17 2.5",
-                    },
-                  }}
-                />
-
-                <Path
-                  d="M 2 9.423 L 20 9.423"
-                  vars={{
-                    open: {
-                      scale: 0,
-                    },
-                  }}
-                />
-                <Path
-                  d="M 2 16.346 L 20 16.346"
-                  vars={{
-                    open: {
-                      d: "M 3 2.5 L 17 16.346",
-                    },
-                  }}
-                />
-              </svg>
+             <Menu/>
             </motion.span>
             <button>
               <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
