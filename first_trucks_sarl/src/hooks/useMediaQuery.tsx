@@ -11,7 +11,7 @@ import React from "react";
 // query: string;
 // }
 const useMediaQuery = (query: string) => {
-  const [state, setState] = React.useState<boolean>(true);
+  const [state, setState] = React.useState<boolean>(false);
 
   //detecting clientOS theme
   React.useEffect(() => {

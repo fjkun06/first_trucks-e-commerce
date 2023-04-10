@@ -4,7 +4,9 @@ nav {
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
   // @include mixins.size(100vw, 6.6rem);
   width: 100vw;
-  transition: height 1s ease-in-out;
+  transition: height 0.25s ease-in-out;
+  // transition-property: height;
+  // transition-timing-function: ease-in-out;
   // // @include mixins.size(100vw, 19.5rem);
   @include mixins.flex(column);
   justify-content: flex-start;
@@ -91,6 +93,7 @@ nav {
   position: absolute;
   transform: translate(0);
   background-color: rgba(#145ba1, 0.25);
-  @include mixins.size(100vw, 200vh);
+  // @include mixins.size(100vw, 200vh);
+  width: 100vw;
   z-index: 1;
 }

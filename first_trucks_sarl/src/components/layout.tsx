@@ -11,8 +11,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   };
   return (
     <main lang="en-US">
-      <Navbar isOpen={isOpen} handleClick={handleClick}/>
-      {children}
+      <Navbar isOpen={isOpen} handleClick={handleClick} />
+      <section onClick={() => setIsOpen(false)}>{children}</section>
       <Footer />
     </main>
   );
