@@ -10,12 +10,14 @@ button {
   color: white;
   font-family: "Poppins";
   @include mixins.formatText(700, 1.1rem, 1.6rem);
+  cursor: pointer;
   @media only screen and (700px <width < 1200px) {
     @include mixins.formatText(700, 1.1rem, 1.6rem);
   }
   /*******contact button svg*************/
   svg {
     @include mixins.size(1.61rem);
+    cursor: pointer;
   }
   @media only screen and (width > 1200px) {
     svg {

@@ -72,17 +72,32 @@ nav {
       }
 
       span {
-        // opacity: 0;
+        cursor: pointer;
         font-family: "Poppins 700";
         @include mixins.formatText(700, 1.4rem, 2.1rem);
         text-transform: capitalize;
         color: #145ba1;
-        // border: 1px solid red;
         @include mixins.flex;
         text-align: center;
+        position: relative;
+        transition: all 0.25s ease-in-out;
         @media only screen and (width > 1200px) {
-          border-bottom: 5px solid #000;
-          height: 100%;
+          &:hover {
+            &::after {
+              @include mixins.size(100%, 4px);
+            }
+          }
+          &::after {
+            position: absolute;
+            display: block;
+            content: "";
+            transition: width 0.25s ease-in-out;
+            top: 185%;
+            left: 0;
+            @include mixins.size(0%, 5px);
+            border-radius: 10px;
+            background-color: #1968b7;
+          }
         }
       }
     }
@@ -93,7 +108,6 @@ nav {
   position: absolute;
   transform: translate(0);
   background-color: rgba(#145ba1, 0.25);
-  // @include mixins.size(100vw, 200vh);
   width: 100vw;
   z-index: 1;
 }
