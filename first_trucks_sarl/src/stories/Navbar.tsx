@@ -2,24 +2,21 @@ import React from "react";
 import { AnimatePresence, motion, animate, Variants, LayoutGroup } from "framer-motion";
 import Image from "next/image";
 import logo from "../../public/images/logoM.png";
-import Open from "../../public/svg/Open";
-import Union from "../../public/svg/Union";
 import Menu from "../../public/svg/Menu";
 import Button from "./Button";
+import useMediaQuery from "@/hooks/useMediaQuery";
 interface NavbarProps {
   /**
-   * @param {boolean} [opened=false] - Used to check if navbar is open or not.
-   *
+   * @param {boolean} [isOpen=false] - Used to check if navbar is open or not.
+   * @param {void} handleClick - Toggle menu state.
    *
    * */
-  opened: boolean;
+  isOpen: boolean;
+  handleClick: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ opened }) => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
+const Navbar: React.FC<NavbarProps> = ({ isOpen,handleClick }) => {
+  const tester = useMediaQuery("(width > 700px)");
 
   return (
     <>
@@ -32,6 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ opened }) => {
             <Image src={logo} alt="logo" />
             <Menu isOpen={isOpen} handler={handleClick} />
           </motion.div>
+          {tester && <span className="">700px</span>}
           <AnimatePresence>
             {isOpen && (
               <motion.div
@@ -39,8 +37,8 @@ const Navbar: React.FC<NavbarProps> = ({ opened }) => {
                 layout
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ stiffness: 100, delay: 0.65, exit: {duration: 0.4, delay: 0.2} }}
-                exit={{ opacity: 0, transition: { duration: 0.7, delay: 0.25 } }}
+                transition={{ stiffness: 100, delay: 0.65, exit: { duration: 0.4, delay: 0.2 } }}
+                exit={{ opacity: 0, transition: { duration: 0.5, delay: 0.25 } }}
               >
                 {/* <motion.div id="nav2" layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ stiffness: 100, delay: 0.65 }} exit={{  scaleY: 0 }}> */}
                 <motion.span>

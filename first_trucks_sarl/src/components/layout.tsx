@@ -5,9 +5,13 @@ export interface LayoutProps {
   children: React.ReactNode;
 }
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <main lang="en-US">
-      <Navbar />
+      <Navbar isOpen={isOpen} handleClick={handleClick}/>
       {children}
       <Footer />
     </main>
