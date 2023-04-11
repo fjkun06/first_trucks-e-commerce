@@ -32,12 +32,9 @@ export default function Home() {
   return (
     <>
       hello
-      <Open /> 
-      <br />
-      <br />
+ 
       {/* implies default.hell */}
       <span>{t("hell")}</span>
-      <Union />
       <button type="submit" onClick={toggleState}>
         ToggleState
       </button>

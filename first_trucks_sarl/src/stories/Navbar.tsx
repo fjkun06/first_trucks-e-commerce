@@ -32,6 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, handleClick, set }) => {
     }
   });
 
+
   return (
     <>
       <LayoutGroup>
@@ -44,7 +45,6 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, handleClick, set }) => {
             <Image src={logo} alt="logo" />
             <Menu isOpen={isOpen} handler1={handleClick} handler2={handler2} />
           </motion.div>
-          {tester && <span className="">700px</span>}
           <AnimatePresence>
             {isOpen && (
               <motion.div
@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, handleClick, set }) => {
         </motion.nav>
       </LayoutGroup>
 
-      <motion.div id="modal" layout animate={{ height: isOpen ?  (tester ? "0rem" : "100vh") : "0rem" }} transition={{ duration: 0.5, delay: 0.5 }} />
+      <motion.div onClick={() => set(false)} id="modal" layout animate={{ height: isOpen ?  (tester ? "0rem" : "100vh") : "0rem" }} transition={{ duration: 0.5, delay: 0.5 }} />
     </>
   );
 };

@@ -10,6 +10,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     setIsOpen(!isOpen);
     console.log("layoutOpen: " + isOpen);
   };
+
+  //scroll useEffect
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsOpen(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
   return (
     <main lang="en-US">
       <Navbar isOpen={isOpen} handleClick={handleClick} set={setIsOpen} />

@@ -1,8 +1,9 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Button = () => {
   return (
-    <button type="button">
+    <motion.button type="button" whileHover={{scale:1.025}} whileTap={{scale:0.95}}>
       {/* <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_72_1637)">
           <path
@@ -54,7 +55,7 @@ const Button = () => {
         </defs>
       </svg>
       Contactez-nous
-    </button>
+    </motion.button>
   );
 };
 
