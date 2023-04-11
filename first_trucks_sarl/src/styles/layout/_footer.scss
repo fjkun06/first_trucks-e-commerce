@@ -3,31 +3,89 @@ footer {
   border: 1px solid red;
   width: 100vw;
   height: 391px;
-  @include mixins.size(100vw, 50.1rem);
+  @include mixins.size(100vw, 55.2rem);
   @include mixins.flex(column);
   row-gap: 2rem;
 
   /************Footer Body Section**********/
-  div {
-    border: 3px solid rgb(0, 255, 51);
+  section.footer {
+    border: 3px solid rgb(170, 0, 255);
     @include mixins.size(100vw, 39.1rem);
-    // padding: 1.8rem 6.9rem;
-    @include mixins.customgrid(8, 5, 1fr);
-    // column-gap: 5rem;
-    section {
+
+    span {
+      @include mixins.size(100vw, 3.1rem);
       @include mixins.flex(column);
-      @include mixins.size(100%);
-      border: 1px solid red;
-      &:nth-child(1) {
-        grid-row: 1/8;
-        grid-column: 1/3;
-      }
-      &:nth-child(3) {
-        grid-row: 8/9;
-        grid-column: 1/6;
+    }
+
+    div.footer__menu {
+      border: 3px solid rgb(0, 255, 51);
+      @include mixins.size(100vw, 36rem);
+      // padding: 1.8rem 6.9rem;
+      @include mixins.customgrid(8, 4, 1fr);
+      // column-gap: 5rem;
+      section {
+        @include mixins.flex(column);
+        @include mixins.size(100%);
+        border: 1px solid red;
+        &:nth-child(1) {
+          grid-row: 1/8;
+          grid-column: 1/3;
+          @include mixins.flex(column);
+          row-gap: 5rem;
+        }
+        &:nth-child(2) {
+          grid-row: 1/8;
+          grid-column: 3/5;
+          @include mixins.flex(column);
+          row-gap: 0rem;
+          justify-content: flex-start;
+
+          div.footer__contact1,
+          div.footer__contact2 {
+            @include mixins.flex(column);
+            border: 1px solid red;
+            @include mixins.size(100%, max-content);
+            padding-top: 1.8rem;
+            // width: 22.4rem;
+            span {
+              width: max-content;
+              width: 50%;
+              font-family: "Poppins";
+              font-style: normal;
+              font-weight: 600;
+              font-size: 10px;
+              line-height: 15px;
+              text-align: right;
+              color: #145ba1;
+              @include mixins.flex;
+              justify-content: flex-end;
+            }
+
+            div.footer__contact__town {
+              @include mixins.flex(column);
+              row-gap: 0rem;
+              justify-content: flex-start;
+              width: 50%;
+              padding: 0;
+              span {
+                color: #4690ff;
+                height: max-content;
+                width: 100%;
+              }
+            }
+          }
+          div.footer__contact2 {
+            padding: 0;
+          }
+        }
+        &:nth-child(3) {
+          grid-row: 8/9;
+          grid-column: 1/6;
+        }
       }
     }
   }
+
   /************Diamond Background Section**********/
   section.diamond {
     border: 1px solid red;
