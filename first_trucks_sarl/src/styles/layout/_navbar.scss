@@ -2,12 +2,8 @@
 nav {
   filter: drop-shadow(0px 0px 25px rgba(0, 0, 0, 0.1));
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
-  // @include mixins.size(100vw, 6.6rem);
   width: 100vw;
   transition: height 0.25s ease-in-out;
-  // transition-property: height;
-  // transition-timing-function: ease-in-out;
-  // // @include mixins.size(100vw, 19.5rem);
   @include mixins.flex(column);
   justify-content: flex-start;
 
@@ -59,12 +55,9 @@ nav {
     /*******Text and button*************/
     &#nav2 {
       transition: transform 0.25s ease-in-out;
-      // opacity: 0;
-      // border: 1px solid red;
       @include mixins.flex(column) {
         align-items: flex-start;
       }
-      // border: 1px solid red;
       gap: 1.5rem;
       @media only screen and (width > 1200px) {
         @include mixins.flex;

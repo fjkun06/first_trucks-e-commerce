@@ -1,5 +1,8 @@
 @use "../utils/mixins";
 footer{
   border: 3px solid red;
-
+  width: 100vw;
+  height: 391px;
+  @include mixins.size(100vw, 39.1rem);
+  padding: 1.8rem 5.8rem;
 }
