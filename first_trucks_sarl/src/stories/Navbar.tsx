@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, handleClick, set }) => {
         </motion.nav>
       </LayoutGroup>
 
-      <motion.div onClick={() => set(false)} id="modal" layout animate={{ height: isOpen ?  (tester ? "0rem" : "100vh") : "0rem" }} transition={{ duration: 0.5, delay: 0.5 }} />
+      <motion.div onClick={() => set(false)} id="modal" layout animate={{ height: isOpen ?  (tester ? "0rem" : "100vh") : "0rem" }} transition={{ delay: 0.35 }} />
     </>
   );
 };

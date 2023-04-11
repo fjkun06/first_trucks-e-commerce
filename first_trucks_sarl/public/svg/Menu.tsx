@@ -27,7 +27,6 @@ const Menu: React.FC<MenuProps> = ({ isOpen, handler1, handler2 }) => {
           }}
         >
           <svg width="230" height="180" viewBox="0 0 23 18">
-            {/* <svg width="230" height="180" viewBox="0 0 23 18" transform="scale(0.2)"> */}
             <Path
               d="M 2 2.5 L 20 2.5"
               vars={{
