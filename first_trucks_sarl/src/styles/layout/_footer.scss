@@ -14,11 +14,18 @@ footer {
   @include mixins.size(100vw, 58.2rem);
   @include mixins.flex(column);
   row-gap: 2rem;
-
+  background: yellow;
+  @media only screen and (width > 500px) {
+    height: 47.2rem;
+    justify-content: flex-start;
+  }
   /************Footer Body Section**********/
   section.footer {
     // border: 3px solid rgb(170, 0, 255);
     @include mixins.size(100vw, 39.1rem);
+    @media only screen and (width > 500px) {
+      height: 31.1rem;
+    }
 
     span {
       @include mixins.size(100vw, 3.1rem);
@@ -33,6 +40,10 @@ footer {
       // padding: 1.8rem 6.9rem;
       @include mixins.customgrid(8, 4, 1fr);
       // column-gap: 5rem;
+      @media only screen and (width > 500px) {
+        height: 30rem;
+        margin-bottom: 0;
+      }
       section {
         @include mixins.flex(column);
         @include mixins.size(100%);
@@ -43,12 +54,20 @@ footer {
           @include mixins.flex(column);
           row-gap: 5rem;
         }
+        /************Location and Contact Section**********/
         &:nth-child(2) {
           grid-row: 1/8;
           grid-column: 3/5;
           @include mixins.flex(column);
           row-gap: 0rem;
           justify-content: flex-start;
+          @media only screen and (width > 500px) {
+            @include mixins.flex;
+            flex-direction: row-reverse;
+            grid-row: 1/4;
+            margin-top: -2rem;
+            gap: 1rem;
+          }
 
           div.footer__contact1,
           div.footer__contact2 {
@@ -57,11 +76,20 @@ footer {
             @include mixins.size(100%, max-content);
             padding-top: 1.8rem;
             // width: 22.4rem;
+            @media only screen and (width > 500px) {
+              align-items: flex-start;
+              padding-top: 0rem;
+            }
             span {
-              width: max-content;
               width: 50%;
               @include spanX;
               justify-content: flex-end;
+              @media only screen and (width > 500px) {
+                justify-content: flex-start;
+                width: 100%;
+
+                // align-items: flex-start;
+              }
             }
 
             div.footer__contact__town {
@@ -75,6 +103,13 @@ footer {
                 height: max-content;
                 width: 100%;
               }
+              @media only screen and (width > 500px) {
+                gap: 0.25rem;
+                .footer__contact__number {
+                  width: 135%;
+                  padding-left: 1rem;
+                }
+              }
             }
           }
           div.footer__contact2 {
@@ -83,10 +118,14 @@ footer {
         }
         /************Social Media Section**********/
         &:nth-child(3) {
-      margin-top: -4rem;
+          margin-top: -4rem;
           grid-row: 8/9;
           grid-column: 1/6;
           @include mixins.flex(column);
+          @media only screen and (width > 500px) {
+            grid-column: 3/5;
+            grid-row: 5/6;
+          }
 
           span {
             @include spanX;
@@ -148,18 +187,18 @@ footer {
     @include mixins.size(100vw, 11rem);
     @include mixins.customgrid(1, 1, auto);
     @media only screen and (width > 500px) {
-    @include mixins.size(100vw, 21.5rem);
-    @include mixins.size(100vw, 11rem);
+      @include mixins.size(100vw, 21.5rem);
+      @include mixins.size(100vw, 11rem);
     }
     @media only screen and (width > 600px) {
-    @include mixins.size(100vw, 21.5rem);
+      @include mixins.size(100vw, 21.5rem);
     }
     img {
       @include mixins.size(inherit);
       grid-row: 1/2;
       grid-column: 1/2;
       z-index: 0;
-      @include mixins.defaultSignature
+      @include mixins.defaultSignature;
     }
     button {
       grid-row: 1/2;

@@ -30,7 +30,7 @@ const Button = () => {
         </defs>
       </svg> */}
       <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0_72_1637)">
+        <g clipPath="url(#clip0_72_1637)">
           <path
             d="M0.72152 12.8451C0.720918 15.0203 1.28928 17.1443 2.37 19.0163L0.618164 25.4126L7.16394 23.6962C8.97441 24.6819 11.0029 25.1983 13.0643 25.1984H13.0697C19.8747 25.1984 25.4141 19.661 25.417 12.8549C25.4183 9.55679 24.1351 6.4555 21.8036 4.12225C19.4726 1.7892 16.3724 0.503672 13.0692 0.502167C6.26343 0.502167 0.724431 6.03926 0.721621 12.8451"
             fill="transparent"
@@ -46,8 +46,8 @@ const Button = () => {
         </g>
         <defs>
           <linearGradient id="paint0_linear_72_1637" x1="1284.6" y1="2580.42" x2="1284.6" y2="0.0553665" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#F9F9F9" />
-            <stop offset="1" stop-color="white" />
+            <stop stopColor="#F9F9F9" />
+            <stop offset="1" stopColor="white" />
           </linearGradient>
           <clipPath id="clip0_72_1637">
             <rect width="25.6886" height="25.8893" fill="white" transform="translate(0.172852 0.0553665)" />
