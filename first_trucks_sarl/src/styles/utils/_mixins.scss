@@ -199,3 +199,27 @@ $background: rgba(255, 255, 255, 1);
     color: variables.$grey;
   }
 }
+
+@mixin signatures($mobile: none, $tablet: none, $desktop: none) {
+  &:nth-of-type(1) {
+    display: $mobile;
+  }
+  &:nth-of-type(2) {
+    display: $tablet;
+  }
+  &:nth-of-type(3) {
+    display: $desktop;
+  }
+}
+
+//controlling the display of 3 successive elements via media query
+@mixin defaultSignature{
+  @include signatures(block);
+
+  @media screen and (480px < width <= 960px) {
+    @include signatures($tablet: block);
+  }
+  @media screen and (width > 960px) {
+    @include signatures($desktop: block);
+  }
+}

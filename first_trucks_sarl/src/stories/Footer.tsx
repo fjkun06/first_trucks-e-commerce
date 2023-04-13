@@ -1,15 +1,22 @@
 import Button from "./Button";
-import diamondBG from "../../public/images/blurM.png";
+import diamondM from "../../public/images/blurM.png";
+import diamondT from "../../public/images/blurT.png";
+import diamondD from "../../public/images/blurD.png";
 import engine from "../../public/images/engine.png";
 import logoWText from "../../public/svg/logoWtext.svg";
 import Image from "next/image";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 const Footer = () => {
+  const min700 = useMediaQuery("(width > 700px)");
   return (
     <footer>
       <section className="diamond">
         <Button />
-        <Image src={diamondBG} alt="diamond background" />
+        <Image src={diamondT} alt="diamond background" />
+        <Image src={diamondM} alt="diamond background" />
+        <Image src={diamondD} alt="diamond background" />
+        {/* {min700 ? <Image src={diamondT} alt="diamond background" /> : <Image src={diamondM} alt="diamond background" />} */}
       </section>
       <section className="footer">
         <div className="footer__menu">
@@ -73,7 +80,16 @@ const Footer = () => {
             </div>
           </section>
         </div>
-        <span>2023 FISRT TRUCKS SARL</span>
+        <span className="footer__copyright">
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M3.53906 0.252563C1.58448 0.252563 0 1.83705 0 3.79162C0 5.74619 1.58448 7.33068 3.53906 7.33068C5.49363 7.33068 7.07811 5.74619 7.07811 3.79162C7.07811 1.83705 5.49363 0.252563 3.53906 0.252563ZM5.2106 5.20086C5.18789 5.22751 4.64298 5.85346 3.64299 5.85346C2.4344 5.85346 1.58114 4.95072 1.58114 3.77616C1.58114 2.61594 2.46597 1.72978 3.63268 1.72978C4.58819 1.72978 5.08776 2.26228 5.10856 2.28495C5.13418 2.31288 5.14981 2.34851 5.15301 2.38627C5.1562 2.42404 5.14678 2.46179 5.12622 2.49363L4.80685 2.98817C4.74907 3.0776 4.62456 3.09307 4.54665 3.02092C4.54332 3.01786 4.16807 2.68014 3.66359 2.68014C3.0055 2.68014 2.60878 3.15927 2.60878 3.76586C2.60878 4.331 2.97288 4.9031 3.66875 4.9031C4.22097 4.9031 4.60032 4.4987 4.60408 4.49461C4.67732 4.41519 4.80471 4.42278 4.8682 4.50963L5.2185 4.98872C5.24123 5.01982 5.25282 5.05767 5.25138 5.09616C5.24995 5.13465 5.23559 5.17154 5.2106 5.20086Z"
+              fill="#0119C2"
+              fill-opacity="0.58"
+            />
+          </svg>
+          2023 FISRT TRUCKS SARL
+        </span>
       </section>
     </footer>
   );
