@@ -13,7 +13,7 @@ const Footer = () => {
     <footer>
       <section className="diamond">
         <Button />
-        
+
         {/* <Image src={diamondT} alt="diamond background" />
         <Image src={diamondM} alt="diamond background" />
         <Image src={diamondD} alt="diamond background" /> */}
@@ -26,6 +26,7 @@ const Footer = () => {
             <Image src={engine} alt="engine" />
           </section>
           <section>
+            <div className="footer__contact3">pic here</div>
             <div className="footer__contact1">
               <span>Nous sommes à</span>
               <div className="footer__contact__town">
@@ -44,7 +45,7 @@ const Footer = () => {
             </div>
           </section>
           <section>
-            <span className ='title'>Suivez-nous</span>
+            <span className="title">Suivez-nous</span>
             <div>
               <span>
                 <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
