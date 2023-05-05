@@ -15,9 +15,10 @@ const Footer = () => {
       <section className="diamond">
         <Button />
 
-        {/* <Image src={diamondT} alt="diamond background" />
+        <Image src={diamondT} alt="diamond background" />
+
         <Image src={diamondM} alt="diamond background" />
-        <Image src={diamondD} alt="diamond background" /> */}
+        <Image src={diamondD} alt="diamond background" />
         {/* {min700 ? <Image src={diamondT} alt="diamond background" /> : <Image src={diamondM} alt="diamond background" />} */}
       </section>
       <section className="footer">
@@ -93,7 +94,7 @@ const Footer = () => {
               fillOpacity="0.58"
             />
           </svg>
-           2023 FISRT TRUCKS SARL
+          2023 FISRT TRUCKS SARL
         </span>
       </section>
     </footer>

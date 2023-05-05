@@ -18,6 +18,12 @@ footer {
   @media only screen and (width > 500px) {
     height: 47.2rem;
     justify-content: flex-start;
+    // row-gap: 4rem;
+  }
+  @media only screen and (width > 800px) {
+    height: 58.2rem;
+    justify-content: flex-start;
+    row-gap: 6rem;
   }
   /************Footer Body Section**********/
   section.footer {
@@ -258,7 +264,6 @@ footer {
             gap: 6rem;
             margin-left: -5vw;
             grid-row: 8/9;
-
           }
         }
       }
@@ -295,7 +300,7 @@ footer {
         position: absolute;
         content: "";
         display: block;
-        @include mixins.size(inherit, 2px);
+        @include mixins.size(80vw, 2px);
         background-color: #4690ff;
         top: -0.25rem;
         @media only screen and (width > 800px) {
@@ -315,15 +320,20 @@ footer {
 
   /*******************************************************Diamond Background Section*****************************************************/
   section.diamond {
-    border: 1px solid red;
     @include mixins.size(100vw, 11rem);
     @include mixins.customgrid(1, 1, auto);
     @media only screen and (width > 500px) {
-      @include mixins.size(100vw, 21.5rem);
-      @include mixins.size(100vw, 11rem);
+      // @include mixins.size(100vw, 21.5rem);
+      // @include mixins.size(100vw, 21rem);
     }
     @media only screen and (width > 600px) {
-      // @include mixins.size(100vw, 21.5rem);
+      @include mixins.size(100vw, 15.5rem);
+    }
+    @media only screen and (width > 1200px) {
+      @include mixins.size(100vw, 18.5rem);
+    }
+    @media only screen and (width > 1500px) {
+      @include mixins.size(100vw, 21rem);
     }
     img {
       @include mixins.size(inherit);
