@@ -13,9 +13,10 @@ const Footer = () => {
     <footer>
       <section className="diamond">
         <Button />
-        <Image src={diamondT} alt="diamond background" />
+        
+        {/* <Image src={diamondT} alt="diamond background" />
         <Image src={diamondM} alt="diamond background" />
-        <Image src={diamondD} alt="diamond background" />
+        <Image src={diamondD} alt="diamond background" /> */}
         {/* {min700 ? <Image src={diamondT} alt="diamond background" /> : <Image src={diamondM} alt="diamond background" />} */}
       </section>
       <section className="footer">
@@ -43,7 +44,7 @@ const Footer = () => {
             </div>
           </section>
           <section>
-            <span>Suivez-nous</span>
+            <span className ='title'>Suivez-nous</span>
             <div>
               <span>
                 <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">

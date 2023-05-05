@@ -14,8 +14,6 @@ interface MenuProps {
   handler1: () => void;
 }
 const Menu: React.FC<MenuProps> = ({ isOpen, handler1, handler2 }) => {
-  const op = false;
-  console.log("opened", isOpen);
   const tester = useMediaQuery("(width > 1200px)");
 
   return (
@@ -32,6 +30,10 @@ const Menu: React.FC<MenuProps> = ({ isOpen, handler1, handler2 }) => {
               vars={{
                 open: {
                   d: isOpen ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5",
+                  // d: isOpen ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5",
+                },
+                closed: {
+                  d: "M 2 2.5 L 20 2.5",
                 },
               }}
             />
@@ -42,6 +44,9 @@ const Menu: React.FC<MenuProps> = ({ isOpen, handler1, handler2 }) => {
                 open: {
                   scale: isOpen ? 0 : 1,
                 },
+                closed: {
+                  scale: 0,
+                },
               }}
             />
             <Path
@@ -49,6 +54,9 @@ const Menu: React.FC<MenuProps> = ({ isOpen, handler1, handler2 }) => {
               vars={{
                 open: {
                   d: isOpen ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346",
+                },
+                closed: {
+                  d: "M 2 16.346 L 20 16.346",
                 },
               }}
             />
@@ -75,6 +83,12 @@ interface PathProps {
 const Path: React.FC<PathProps> = ({ d, vars }) => {
   const variant: any = {};
   variant.open = Object.assign(vars.open, {
+    transition: {
+      duration: 0.35,
+      // delay: 1,
+    },
+  });
+  variant.closed = Object.assign(vars.closed, {
     transition: {
       duration: 0.35,
       // delay: 1,

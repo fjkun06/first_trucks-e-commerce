@@ -14,7 +14,7 @@ footer {
   @include mixins.size(100vw, 58.2rem);
   @include mixins.flex(column);
   row-gap: 2rem;
-  background: yellow;
+  // background: yellow;
   @media only screen and (width > 500px) {
     height: 47.2rem;
     justify-content: flex-start;
@@ -25,6 +25,9 @@ footer {
     @include mixins.size(100vw, 39.1rem);
     @media only screen and (width > 500px) {
       height: 31.1rem;
+    }
+    @media only screen and (width > 800px) {
+      @include mixins.flex(column);
     }
 
     span {
@@ -43,6 +46,10 @@ footer {
       @media only screen and (width > 500px) {
         height: 30rem;
         margin-bottom: 0;
+      }
+      @media only screen and (width > 800px) {
+        width: 61rem;
+        background-color: aliceblue;
       }
       section {
         @include mixins.flex(column);
@@ -87,8 +94,11 @@ footer {
               @media only screen and (width > 500px) {
                 justify-content: flex-start;
                 width: 100%;
-
+                font-size: 1.25rem;
                 // align-items: flex-start;
+              }
+              @media only screen and (width < 330px) {
+                width: 51%;
               }
             }
 
@@ -102,6 +112,11 @@ footer {
                 color: #4690ff;
                 height: max-content;
                 width: 100%;
+              }
+              @media only screen and (width < 330px) {
+                span {
+                  width: 105%;
+                }
               }
               @media only screen and (width > 500px) {
                 gap: 0.25rem;
@@ -122,14 +137,10 @@ footer {
           grid-row: 8/9;
           grid-column: 1/6;
           @include mixins.flex(column);
-          @media only screen and (width > 500px) {
-            grid-column: 3/5;
-            grid-row: 5/6;
-          }
-
           span {
             @include spanX;
           }
+          /***********************Icons**********************/
           div {
             @include mixins.flex;
             column-gap: 2rem;
@@ -145,10 +156,40 @@ footer {
                   fill: white;
                 }
                 background-color: #4690ff;
+                border: none;
               }
               svg path {
                 fill: #145ba1;
                 transition: fill 0.25s ease-in-out;
+              }
+            }
+          }
+          @media only screen and (width > 500px) {
+            grid-column: 3/5;
+            grid-row: 5/6;
+            gap: 0.5rem;
+
+            span {
+              font-size: 1.25rem;
+            }
+          }
+          @media only screen and (width > 800px) {
+            grid-column: 3/5;
+            grid-row: 7/8;
+            gap: 2rem;
+            align-items: flex-start;
+
+            span.title {
+              font-size: 1.75rem;
+              width: 100%;
+              // border: 1px solid red;
+              justify-content: flex-start;
+              padding-left: 4.5rem;
+            }
+            div {
+              column-gap: 3rem;
+              span {
+                transform: scale(1.5);
               }
             }
           }
@@ -169,7 +210,9 @@ footer {
       // @include mixins.size(100vw, auto);
       width: 100vw;
       position: relative;
-
+      @media only screen and (width > 500px) {
+        font-size: 1rem;
+      }
       &::after {
         position: absolute;
         content: "";
@@ -177,13 +220,16 @@ footer {
         @include mixins.size(80vw, 2px);
         background-color: #4690ff;
         top: -0.25rem;
+        @media only screen and (width > 800px) {
+          width: 61rem;
+        }
       }
     }
   }
 
   /************Diamond Background Section**********/
   section.diamond {
-    // border: 1px solid red;
+    border: 1px solid red;
     @include mixins.size(100vw, 11rem);
     @include mixins.customgrid(1, 1, auto);
     @media only screen and (width > 500px) {
@@ -191,7 +237,7 @@ footer {
       @include mixins.size(100vw, 11rem);
     }
     @media only screen and (width > 600px) {
-      @include mixins.size(100vw, 21.5rem);
+      // @include mixins.size(100vw, 21.5rem);
     }
     img {
       @include mixins.size(inherit);
