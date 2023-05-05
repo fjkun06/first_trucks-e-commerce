@@ -8,7 +8,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
-    console.log("layoutOpen: " + isOpen);
   };
 
   //scroll useEffect

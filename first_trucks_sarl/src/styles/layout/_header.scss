@@ -1,5 +1,21 @@
 @use "../utils/mixins";
-header{
-  @include mixins.size(100vw,400px);
-  border:1px solid red;
+header {
+  @include mixins.size(100vw, 400px);
+  @include mixins.size(100vw, auto);
+  border: 1px solid red;
+  @media only screen and (width > 800px) {
+    height: 45.152rem;
+  }
+  @media only screen and (width > 1200px) {
+    height: 85.152rem
+
+  }
+  @media only screen and (width > 1500px) {
+    height: 90vh;
+  }
+  img {
+    @include mixins.size(inherit);
+    // max-height: 39.1rem;
+    @include mixins.defaultSignature;
+  }
 }
