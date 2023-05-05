@@ -1,0 +1,5 @@
+@use "../utils/mixins";
+header{
+  @include mixins.size(100vw,400px);
+  border:1px solid red;
+}

@@ -31,8 +31,9 @@ export default function Home() {
   };
   return (
     <>
-      hello
- 
+    <header>
+      header
+    </header>
       {/* implies default.hell */}
       <span>{t("hell")}</span>
       <button type="submit" onClick={toggleState}>
