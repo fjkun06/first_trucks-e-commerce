@@ -169,16 +169,21 @@ footer {
           @media only screen and (width > 1024px) {
             div.footer__contact1 {
               align-items: flex-start;
+              margin-left: 6rem;
             }
           }
 
           div.footer__contact3 {
-            border: 1px solid red;
+            // border: 1px solid red;
             display: none;
             @media only screen and (width > 1500px) {
               @include mixins.flex;
-              @include mixins.size(100%);
+              @include mixins.size(100%, max-content);
               justify-content: flex-start;
+              margin-top: 7rem;
+              img {
+                object-fit: cover;
+              }
             }
           }
         }
@@ -244,6 +249,17 @@ footer {
               }
             }
           }
+          @media only screen and (width > 1500px) {
+            span.title {
+              width: auto;
+            }
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 6rem;
+            margin-left: -5vw;
+            grid-row: 8/9;
+
+          }
         }
       }
     }
@@ -266,6 +282,14 @@ footer {
       }
       @media only screen and (width > 800px) {
         font-size: 1.5rem;
+        svg {
+          transform: scale(1.5);
+          path {
+            fill: #145ba1;
+          }
+        }
+        padding-top: 2rem;
+        color: #145ba1;
       }
       &::after {
         position: absolute;
@@ -275,8 +299,15 @@ footer {
         background-color: #4690ff;
         top: -0.25rem;
         @media only screen and (width > 800px) {
-          width: 61rem;
           width: 74vw;
+        }
+        @media only screen and (width > 1024px) {
+          width: 64vw;
+          margin-left: -3vw;
+        }
+        @media only screen and (width > 1500px) {
+          width: 64vw;
+          margin-left: 0vw;
         }
       }
     }

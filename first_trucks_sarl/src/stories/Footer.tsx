@@ -2,6 +2,7 @@ import Button from "./Button";
 import diamondM from "../../public/images/blurM.png";
 import diamondT from "../../public/images/blurT.png";
 import diamondD from "../../public/images/blurD.png";
+import reels from "../../public/images/reels.png";
 import engine from "../../public/images/engine.png";
 import logoWText from "../../public/svg/logoWtext.svg";
 import Image from "next/image";
@@ -26,7 +27,9 @@ const Footer = () => {
             <Image src={engine} alt="engine" />
           </section>
           <section>
-            <div className="footer__contact3">pic here</div>
+            <div className="footer__contact3">
+              <Image src={reels} alt="discs" />
+            </div>
             <div className="footer__contact1">
               <span>Nous sommes à</span>
               <div className="footer__contact__town">
@@ -90,7 +93,7 @@ const Footer = () => {
               fillOpacity="0.58"
             />
           </svg>
-          2023 FISRT TRUCKS SARL
+           2023 FISRT TRUCKS SARL
         </span>
       </section>
     </footer>
