@@ -50,22 +50,24 @@ header {
       span {
         grid-row: 1/2;
         grid-column: 1/2;
+        // border: 1px solid red;
+        // background-color: #000;
         // padding-inline: 2rem;
         &:nth-child(1) {
-          transform: translate(3.5rem);
-          z-index: 4;
+          // transform: translate(3.5rem);
+          z-index: 5;
         }
         &:nth-child(2) {
           transform: translate(-3.5rem,7rem);
           transform: translate(-3.5rem);
-          z-index: 4;
+          z-index: 4
 
         }
         &:nth-child(3) {
-          transform: translate(-1rem);
+          // transform: translate(-1rem);
         }
         &:nth-child(4) {
-          transform: translate(-9rem,-1.45rem);
+          // transform: translateY(-1.45rem);
         }
       }
     }

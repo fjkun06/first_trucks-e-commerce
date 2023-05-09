@@ -24,18 +24,19 @@ const Header = () => {
           <Button />
         </div>
         <div className="hdr_content_image">
-          <span>
+          <motion.span initial={{x:"12rem"}} animate={{x:"3.5rem" }}  transition={{delay:1.5,duration:0.35}}>
             <Image src={item1M} alt="image" />
-          </span>
-          <span>
+          </motion.span>
+
+          <motion.span initial={{x:"12rem"}} animate={{x:"-3.5rem" }}  transition={{delay:1,duration:0.35}}>
             <Image src={item2M} alt="image" />
-          </span>
-          <span>
+          </motion.span>
+          <motion.span initial={{x:"12rem"}} animate={{x:"-1rem" }} transition={{duration:0.35}}>
             <Image src={item3M} alt="image" />
-          </span>
-          <span>
+          </motion.span>
+          <motion.span initial={{y:"10rem"}} animate={{y:"-1.45rem" }} style={{x:"-8rem"}} transition={{delay:0.5,duration:0.35}}>
             <Image src={item4M} alt="image" />
-          </span>
+          </motion.span>
         </div>
       </div>
     </header>
