@@ -1,11 +1,10 @@
+import Header from "@/components/header";
 import useRoute from "@/hooks/useRoute";
 import { useTranslations } from "next-intl";
-import headerMob from "../../public/images/hdr_mob.png";
-import headerTab from "../../public/images/hdr_tab.png";
-import headerDesk from "../../public/images/hdr_desk.png";
+
 
 import React from "react";
-import Image from "next/image";
+
 //6 in every page do this
 export async function getStaticProps(context: { locale: any }) {
   return {
@@ -32,19 +31,13 @@ export default function Home() {
   };
   return (
     <>
-    <header>
-    <Image src={headerMob} alt="logo" />
-    <Image src={headerTab} alt="logo" />
-    <Image src={headerDesk} alt="logo" />
-
-
-    </header>
+    <Header/>
       {/* implies default.hell */}
-      <span>{t("hell")}</span>
+      {/* <span>{t("hell")}</span> */}
       <button type="submit" onClick={toggleState}>
         ToggleState
       </button>
-   
+
       <button type="button" className="" onClick={() => testFunction("fr")}>
         test fr
       </button>
@@ -57,4 +50,3 @@ export default function Home() {
     </>
   );
 }
-
