@@ -1,9 +1,10 @@
 import Button from "./Button";
-import diamondM from "../../public/images/blurM.png";
-import diamondT from "../../public/images/blurT.png";
-import diamondD from "../../public/images/blurD.png";
-import reels from "../../public/images/reels.png";
-import engine from "../../public/svg/i3m.svg";
+import diamondM from "../../public/images/blurM.webp";
+import diamondT from "../../public/images/blurT.webp";
+import diamondD from "../../public/images/blurD.webp";
+import reels from "../../public/images/reels.webp";
+import engine from "../../public/images/i3m.webp";
+// import engine from "../../public/svg/i3m.svg";
 import logoWText from "../../public/svg/logoWtext.svg";
 import Image from "next/image";
 import useMediaQuery from "@/hooks/useMediaQuery";
@@ -25,7 +26,7 @@ const Footer = () => {
         <div className="footer__menu">
           <section>
             <Image src={logoWText} alt="logo" />
-            <Image src={engine} alt="engine" />
+            <Image src={engine} alt="engine" id="eng" />
           </section>
           <section>
             <div className="footer__contact3">

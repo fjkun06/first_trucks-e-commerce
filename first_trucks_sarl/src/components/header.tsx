@@ -1,11 +1,12 @@
 import React from "react";
-import headerMob from "../../public/svg/hdr_mob.svg";
+import headerMob from "../../public/images/hdr_mob.webp";
 import headerTab from "../../public/images/hdr_tab.png";
-import headerDesk from "../../public/images/hdr_desk.png";
-import item1M from "../../public/svg/i1m.svg";
-import item2M from "../../public/svg/i2m.svg";
-import item3M from "../../public/svg/i3m.svg";
-import item4M from "../../public/svg/i4m.svg";
+import headerDesk from "../../public/images/hdr_desk.webp";
+import item1M from "../../public/images/i1m.webp";
+import item2M from "../../public/images/i2m.webp";
+import item3M from "../../public/images/i3m.webp";
+import item4M from "../../public/images/i4m.webp";
+// import item4M from "../../public/svg/i4m.svg";
 import Image from "next/image";
 import Button from "@/stories/Button";
 import { motion, Variants } from "framer-motion";
