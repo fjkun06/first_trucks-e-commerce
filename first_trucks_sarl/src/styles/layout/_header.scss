@@ -1,11 +1,11 @@
 @use "../utils/mixins";
 header {
   @include mixins.size(100vw, 400px);
-  border: 3px solid rgb(63, 26, 195);
+  // border: 3px solid rgb(63, 26, 195);
   // @include mixins.size(100vw, auto);
   @include mixins.customgrid(1, 1, auto);
   margin-bottom: 100vh;
-  border: 1px solid red;
+  // border: 1px solid red;
   @media only screen and (width > 800px) {
     height: 45.152rem;
   }
@@ -29,7 +29,7 @@ header {
 
     grid-row: 1/2;
     grid-column: 1/2;
-    border: 3px solid rgb(38, 180, 137);
+    // border: 3px solid rgb(38, 180, 137);
     img {
       @include mixins.size(100vw, inherit);
       object-fit: cover;
@@ -46,15 +46,41 @@ header {
     @include mixins.size(inherit);
     grid-row: 1/2;
     grid-column: 1/2;
-    border: 3px solid gold;
+    // border: 3px solid gold;
     @include mixins.customgrid(1, 1, auto);
     /*********************************Header Content text*********************************/
     &_text {
       grid-row: 1/2;
       grid-column: 1/2;
-      border: 3px solid red;
+      @include mixins.flex(column);
+      // border: 3px solid red;
       @include mixins.size(100%);
       @include mixins.size(inherit);
+      padding-left: 2rem;
+      row-gap: 0rem;
+      justify-content: space-evenly;
+      span {
+        width: 25.2rem;
+        // height: 210px;
+        align-self: flex-start;
+        // @include mixins.size(24.8rem,inherit);
+
+        font-family: "Nunito 800";
+        font-style: italic;
+        font-size: 30px;
+        line-height: 30px;
+        color: #145ba1;
+
+        text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+        span {
+          color: #28a2f7;
+        }
+      }
+
+      button{
+        align-self: flex-start;
+       margin-bottom: 5rem;
+      }
     }
     /*********************************Header Content images*********************************/
     &_image {

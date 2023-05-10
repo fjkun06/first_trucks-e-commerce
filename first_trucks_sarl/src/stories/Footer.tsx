@@ -3,7 +3,7 @@ import diamondM from "../../public/images/blurM.png";
 import diamondT from "../../public/images/blurT.png";
 import diamondD from "../../public/images/blurD.png";
 import reels from "../../public/images/reels.png";
-import engine from "../../public/images/engine.png";
+import engine from "../../public/svg/i3m.svg";
 import logoWText from "../../public/svg/logoWtext.svg";
 import Image from "next/image";
 import useMediaQuery from "@/hooks/useMediaQuery";

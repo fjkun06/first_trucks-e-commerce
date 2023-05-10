@@ -86,11 +86,7 @@
     </g>
   </g>
   <defs>
-    <style>
-      svg{
-        border: 1px solid red;
-      }
-    </style>
+
     <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
       <use xlink:href="#image0_83_2941" transform="scale(0.00114286 0.000845309)" />
     </pattern>

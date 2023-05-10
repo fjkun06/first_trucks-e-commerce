@@ -1,7 +1,7 @@
 import React from "react";
 import { AnimatePresence, motion, animate, Variants, LayoutGroup } from "framer-motion";
 import Image from "next/image";
-import logo from "../../public/images/logoM.png";
+import logo from "../../public/svg/logoWtext.svg";
 import Menu from "../../public/svg/Menu";
 import Button from "./Button";
 import useMediaQuery from "@/hooks/useMediaQuery";

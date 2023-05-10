@@ -48,6 +48,9 @@ nav {
           display: none;
         }
       }
+      img{
+        @include mixins.size(8rem,3.9rem)
+      }
     }
     @include mixins.size(inherit);
     padding: inherit;
