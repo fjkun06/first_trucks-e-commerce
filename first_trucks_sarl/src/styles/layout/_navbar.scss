@@ -6,7 +6,7 @@ nav {
   transition: height 0.25s ease-in-out;
   @include mixins.flex(column);
   justify-content: flex-start;
-
+  background-color: #fff;
   @media only screen and (700px <width < 1200px) {
     padding: 0 7.7rem;
   }
@@ -48,8 +48,8 @@ nav {
           display: none;
         }
       }
-      img{
-        @include mixins.size(8rem,3.9rem)
+      img {
+        @include mixins.size(8rem, 3.9rem);
       }
     }
     @include mixins.size(inherit);
