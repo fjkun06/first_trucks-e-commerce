@@ -63,6 +63,9 @@ header {
       @media only screen and (520px < width) {
         padding-left: 6rem;
       }
+      @media only screen and (1800px < width) {
+        padding-left: 14rem;
+      }
       row-gap: 0rem;
       justify-content: space-evenly;
       span {
@@ -84,15 +87,35 @@ header {
         @media only screen and (width > 800px) {
           width: 416.35px;
           height: 185px;
-
           font-size: 3.6rem;
           line-height: 37px;
         }
         @media only screen and (width > 960px) {
           width: 500px;
         }
+        @media only screen and (width > 1200px) {
+          width: 728.14px;
+          height: 324px;
+          font-size: 55.8617px;
+          line-height: 65px;
+        }
+        @media only screen and (width > 1500px) {
+          width: 728.14px;
+          height: 324px;
+          font-size: 65.8617px;
+          line-height: 65px;
+        }
       }
 
+      @media only screen and (width > 960px) {
+        justify-content: center;
+        button {
+          @include mixins.size(20rem, 6rem);
+        }
+      }
+      @media only screen and (width > 1500px) {
+        row-gap: 6rem;
+      }
       button {
         align-self: flex-start;
         margin-bottom: 5rem;
