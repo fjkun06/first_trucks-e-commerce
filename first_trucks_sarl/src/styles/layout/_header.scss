@@ -2,7 +2,7 @@
 header {
   @include mixins.size(100vw, 400px);
   @include mixins.customgrid(1, 1, auto);
-  margin-bottom: 100vh;
+  // margin-bottom: 100vh;
   @media only screen and (width > 800px) {
     height: 45.152rem;
   }
