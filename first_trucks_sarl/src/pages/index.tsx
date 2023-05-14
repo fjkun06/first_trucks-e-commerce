@@ -1,10 +1,10 @@
+import Header from "@/components/header";
 import useRoute from "@/hooks/useRoute";
 import { useTranslations } from "next-intl";
-import Union from "../../public/svg/Union";
+
+
 import React from "react";
-import Open from "../../public/svg/Open";
-import Close from "../../public/svg/Close";
-import { MorphReplace, MorphReplaceResize } from "react-svg-morph";
+
 //6 in every page do this
 export async function getStaticProps(context: { locale: any }) {
   return {
@@ -31,14 +31,13 @@ export default function Home() {
   };
   return (
     <>
-      hello
- 
+    <Header/>
       {/* implies default.hell */}
-      <span>{t("hell")}</span>
+      {/* <span>{t("hell")}</span> */}
       <button type="submit" onClick={toggleState}>
         ToggleState
       </button>
-   
+
       <button type="button" className="" onClick={() => testFunction("fr")}>
         test fr
       </button>
@@ -51,4 +50,3 @@ export default function Home() {
     </>
   );
 }
-

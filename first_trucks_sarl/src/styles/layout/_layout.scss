@@ -1,3 +1,10 @@
 @use 'footer';
 @use 'navbar';
 @use 'scrollbar';
+@use 'header';
+
+main{
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+}

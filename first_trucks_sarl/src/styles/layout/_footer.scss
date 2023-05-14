@@ -70,6 +70,10 @@ footer {
           @media only screen and (width > 800px) {
             grid-column: 1/2;
           }
+
+          #eng{
+            @include mixins.size(11.5rem,14rem)
+          }
         }
         /************Location and Contact Section**********/
         &:nth-child(2) {

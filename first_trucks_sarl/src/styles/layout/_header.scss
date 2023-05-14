@@ -1,0 +1,191 @@
+@use "../utils/mixins";
+header {
+  @include mixins.size(100vw, 400px);
+  @include mixins.customgrid(1, 1, auto);
+  margin-bottom: 100vh;
+  @media only screen and (width > 800px) {
+    height: 45.152rem;
+  }
+  @media only screen and (width > 1200px) {
+    height: 85.152rem;
+  }
+  @media only screen and (width > 1500px) {
+    height: 90vh;
+  }
+
+  /*********************************Header Background image*********************************/
+  div.hdr_image {
+    @include mixins.size(inherit);
+    @include mixins.position("1/2");
+
+    img {
+      @include mixins.size(100vw, inherit);
+      object-fit: cover;
+      @media only screen and (width > 1200px) {
+        height: calc(100vh - 66px);
+        max-height: calc(100vh - 66px);
+      }
+      overflow: initial;
+      @include mixins.defaultSignature;
+    }
+  }
+  /*********************************Header Content*********************************/
+  div.hdr_content {
+    @include mixins.size(inherit);
+    @include mixins.position("1/2");
+    @include mixins.customgrid(1, 1, auto);
+    /*********************************Header Content text*********************************/
+    &_text {
+      @include mixins.position("1/2");
+      @include mixins.flex(column);
+      @include mixins.size(inherit);
+      padding-left: 2rem;
+      @media only screen and (520px < width) {
+        padding-left: 6rem;
+      }
+      @media only screen and (1800px < width) {
+        padding-left: 14rem;
+      }
+      row-gap: 0rem;
+      justify-content: space-evenly;
+      span {
+        width: 25.2rem;
+        align-self: flex-start;
+
+        font-family: "Nunito 800";
+        font-style: italic;
+        color: #145ba1;
+        @include mixins.formatText(800, 3rem, 3rem);
+        text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
+        span {
+          color: #28a2f7;
+        }
+        @media only screen and (width > 800px) {
+          @include mixins.size(41.635rem, 18.5rem);
+          @include mixins.formatText(800, 3.6rem, 3.7rem);
+        }
+        @media only screen and (width > 960px) {
+          width: 500px;
+        }
+        @media only screen and (width > 1200px) {
+          @include mixins.size(72.814rem, 32.4rem);
+          @include mixins.formatText(800, 5.58617rem, 6.5rem);
+        }
+        @media only screen and (width > 1500px) {
+          @include mixins.size(72.814rem, 32.4rem);
+          @include mixins.formatText(800, 6.58617rem, 6.5rem);
+        }
+      }
+
+      @media only screen and (width > 960px) {
+        justify-content: center;
+        button {
+          @include mixins.size(20rem, 6rem);
+        }
+      }
+      @media only screen and (width > 1500px) {
+        row-gap: 6rem;
+      }
+      button {
+        align-self: flex-start;
+        margin-bottom: 5rem;
+      }
+    }
+    /*********************************Header Content images*********************************/
+    &_image {
+      // border: 3px solid red;
+      transform: translate(-20px, -70px);
+      justify-self: flex-end;
+      align-self: flex-end;
+      @include mixins.position("1/2");
+      @include mixins.customgrid(1, 1, auto);
+      @include mixins.size(19.3rem, 14rem);
+      @media only screen and (520px < width < 800px) {
+        transform: translate(-70px, -70px) scale(1.15);
+      }
+      @media only screen and (width > 800px) {
+        @include mixins.size(37rem, 26.8rem);
+      }
+      @media only screen and (width > 1200px) {
+        @include mixins.size(71.3rem, 51.7rem);
+      }
+      justify-content: flex-end;
+      align-items: flex-end;
+      overflow: hidden;
+      span {
+        @include mixins.position("1/2");
+
+        &:nth-child(1) {
+          z-index: 5;
+          img {
+            @include mixins.size(5.6rem, 3.7rem);
+          }
+        }
+        &:nth-child(2) {
+          z-index: 4;
+          img {
+            @include mixins.size(6.7rem, 9.2rem);
+          }
+        }
+        &:nth-child(3) {
+          img {
+            @include mixins.size(11.5rem, 14rem);
+          }
+        }
+        &:nth-child(4) {
+          img {
+            @include mixins.size(10.4rem, 10.2rem);
+          }
+        }
+        /************800px**********/
+
+        @media only screen and (width > 800px) {
+          &:nth-child(1) {
+            img {
+              @include mixins.size(10.6rem, 7rem);
+            }
+          }
+          &:nth-child(2) {
+            img {
+              @include mixins.size(12.7rem, 19rem);
+            }
+          }
+          &:nth-child(3) {
+            img {
+              @include mixins.size(22rem, 26.8rem);
+            }
+          }
+          &:nth-child(4) {
+            img {
+              @include mixins.size(15.3rem, 14.4rem);
+            }
+          }
+        }
+        /************1200px**********/
+
+        @media only screen and (width > 1200px) {
+          &:nth-child(1) {
+            img {
+              @include mixins.size(20.5rem, 13.4rem);
+            }
+          }
+          &:nth-child(2) {
+            img {
+              @include mixins.size(24.3rem, 36.5rem);
+            }
+          }
+          &:nth-child(3) {
+            img {
+              @include mixins.size(42.2rem, 51.6rem);
+            }
+          }
+          &:nth-child(4) {
+            img {
+              @include mixins.size(29.5rem, 27.7rem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
