@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import Products from "@/components/products";
 import useRoute from "@/hooks/useRoute";
 import { useTranslations } from "next-intl";
 
@@ -32,6 +33,7 @@ export default function Home() {
   return (
     <>
     <Header/>
+    <Products/>
       {/* implies default.hell */}
       {/* <span>{t("hell")}</span> */}
       <button type="submit" onClick={toggleState}>

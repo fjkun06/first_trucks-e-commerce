@@ -57,7 +57,7 @@ header {
         color: #145ba1;
         @include mixins.formatText(800, 3rem, 3rem);
         text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
-        span {
+        span.logo {
           color: #28a2f7;
         }
         @media only screen and (width > 800px) {

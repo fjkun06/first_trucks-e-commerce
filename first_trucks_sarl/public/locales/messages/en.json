@@ -2,5 +2,10 @@
   "default": {
     "hell": "Hello World",
     "test": "Test"
+  },
+  "header": {
+    "trust": "Trust",
+    "name": "First Trucks Sarl",
+    "end": "for automotive parts, engine lubricants, and quality fluids."
   }
 }

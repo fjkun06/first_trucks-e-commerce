@@ -8,8 +8,11 @@ import item4M from "../../public/images/i4m.webp";
 import Image from "next/image";
 import Button from "@/stories/Button";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const Header = () => {
+  const t = useTranslations("header");
+
   return (
     <header>
       <div className="hdr_image">
@@ -20,7 +23,7 @@ const Header = () => {
       <div className="hdr_content">
         <div className="hdr_content_text">
           <span className="">
-            Faites confiance à <span> First Trucks Sarl</span> pour des pièces automobiles, lubrifiants moteur, et fluid de qualité.
+            <span>{t('trust')}</span> <span className="logo">{t('name')}</span> <span>{t('end')}</span>
           </span>
           <Button />
         </div>
