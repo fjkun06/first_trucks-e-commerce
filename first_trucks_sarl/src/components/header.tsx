@@ -1,5 +1,5 @@
 import headerMob from "../../public/images/hdr_mob.webp";
-import headerTab from "../../public/svg/hdr_tab2.svg";
+import headerTab from "../../public/images/hdr_tab2.webp";
 import headerDesk from "../../public/images/hdr_desk.webp";
 import item1M from "../../public/images/i1m.webp";
 import item2M from "../../public/images/i2m.webp";

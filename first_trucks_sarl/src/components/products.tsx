@@ -2,6 +2,11 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import { motion } from "framer-motion";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import Image, { StaticImageData } from "next/image";
+import card1m from "../../public/images/c1m.webp";
+import card1t from "../../public/images/c1t.webp";
+import card1d from "../../public/images/c1d.webp";
+
 
 const Products = () => {
   const t = useTranslations("products");
@@ -42,25 +47,43 @@ export const Card = () => {
   const desktop = useMediaQuery("(width > 1200px)");
   const height = desktop ? "30rem" : tablet ? "34.1rem" : "16.971rem";
   console.log(height);
-  
+
   return (
     // <motion.article onClick={handleClick} >
     <motion.article onClick={handleClick} animate={{ height: isOpen ? `calc(${height} * 2)` : height }}>
-      <motion.div style={{height: height}}>title</motion.div>
-      <CardItem toggle={isOpen} height={height}/>
+      <motion.div></motion.div>
+      <CardHeading height={height} src={[card1m,card1t,card1d]} />
+      <CardItem toggle={isOpen} height={height} />
     </motion.article>
   );
 };
 
+interface CardHeading {
+  src: StaticImageData[];
+  height: string;
+}
 interface CardItem {
   toggle: boolean;
-  height: string
+  height: string;
 }
 
-export const CardItem: React.FC<CardItem> = ({ toggle,height }) => {
+export const CardItem: React.FC<CardItem> = ({ toggle, height }) => {
   return (
     <motion.article className="card_item" animate={{ height: toggle ? height : "0rem", display: toggle ? "flex" : "none" }}>
       CardItem
+    </motion.article>
+  );
+};
+
+export const CardHeading: React.FC<CardHeading> = ({ height, src }) => {
+  return (
+    <motion.article className="card_heading"  style={{ height: height }}>
+      <motion.span className="card_heading_text">CardHeading</motion.span>
+      <div className="card_heading_image">
+        <Image src={src[0]} alt="logo" priority quality={100} />
+        <Image src={src[1]} alt="logo" priority quality={100} />
+        <Image src={src[2]} alt="logo" priority quality={100} />
+      </div>
     </motion.article>
   );
 };

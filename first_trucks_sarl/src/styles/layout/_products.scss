@@ -25,6 +25,7 @@ section.products {
     row-gap: 0.5rem;
     article {
       width: 367px;
+      width: 75vw;
       height: calc(169.71px * 2);
       border: 1px solid red;
       cursor: pointer;
@@ -35,24 +36,57 @@ section.products {
       @media only screen and (width > 1200px) {
         // height: 85.152rem;
         width: 60vw;
-
       }
       @media only screen and (width > 1500px) {
-        // height: 90vh;
+        width: 1200px;
       }
       /*********************************Card Background*********************************/
-      div {
+      article.card_heading {
         border: 1px solid rgb(24, 185, 131);
         // @include mixins.size(inherit, 16.971rem);
         width: inherit;
+        @include mixins.customgrid(1, 1, auto);
+
+        /*********************************Card Article Heading Text*********************************/
+        .card_heading_text {
+          @include mixins.position("1/2");
+          z-index: 2;
+          @include mixins.flex;
+          font-family: "Poppins 700";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 25.4566px;
+          line-height: 38px;
+          text-transform: uppercase;
+          color: #ffffff;
+          display: none;
+        }
+
+        /*********************************Card Article Heading Image*********************************/
+        .card_heading_image {
+          @include mixins.position("1/2");
+          overflow: hidden;
+          img {
+            // @include mixins.size(inherit);
+            // @include mixins.size(100%);
+            @include mixins.signatures(block);
+
+            @media screen and (500px < width <= 1200px) {
+              @include mixins.signatures($tablet: block);
+            }
+            @media screen and (width > 1200px) {
+              @include mixins.signatures($desktop: block);
+            }
+          }
+        }
       }
+      /*********************************Card Article*********************************/
       /*********************************Card Article*********************************/
       article.card_item {
         border: 1px solid rgb(42, 34, 189);
         @include mixins.size(inherit, 16.971rem);
         transition: transform 0.5s;
-
-        display:none;
+        display: none;
       }
     }
   }
