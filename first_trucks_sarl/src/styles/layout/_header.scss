@@ -16,8 +16,8 @@ header {
   /*********************************Header Background image*********************************/
   div.hdr_image {
     @include mixins.size(inherit);
-    grid-row: 1/2;
-    grid-column: 1/2;
+    @include mixins.position("1/2");
+
     img {
       @include mixins.size(100vw, inherit);
       object-fit: cover;
@@ -32,14 +32,11 @@ header {
   /*********************************Header Content*********************************/
   div.hdr_content {
     @include mixins.size(inherit);
-    // grid-row: 1/2;
-    // grid-column: 1/2;
     @include mixins.position("1/2");
     @include mixins.customgrid(1, 1, auto);
     /*********************************Header Content text*********************************/
     &_text {
-      grid-row: 1/2;
-      grid-column: 1/2;
+      @include mixins.position("1/2");
       @include mixins.flex(column);
       @include mixins.size(inherit);
       padding-left: 2rem;
@@ -53,40 +50,30 @@ header {
       justify-content: space-evenly;
       span {
         width: 25.2rem;
-        // height: 210px;
         align-self: flex-start;
-        // @include mixins.size(24.8rem,inherit);
 
         font-family: "Nunito 800";
         font-style: italic;
-        font-size: 30px;
-        line-height: 30px;
         color: #145ba1;
-
+        @include mixins.formatText(800, 3rem, 3rem);
         text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
         span {
           color: #28a2f7;
         }
         @media only screen and (width > 800px) {
-          width: 416.35px;
-          height: 185px;
-          font-size: 3.6rem;
-          line-height: 37px;
+          @include mixins.size(41.635rem, 18.5rem);
+          @include mixins.formatText(800, 3.6rem, 3.7rem);
         }
         @media only screen and (width > 960px) {
           width: 500px;
         }
         @media only screen and (width > 1200px) {
-          width: 728.14px;
-          height: 324px;
-          font-size: 55.8617px;
-          line-height: 65px;
+          @include mixins.size(72.814rem, 32.4rem);
+          @include mixins.formatText(800, 5.58617rem, 6.5rem);
         }
         @media only screen and (width > 1500px) {
-          width: 728.14px;
-          height: 324px;
-          font-size: 65.8617px;
-          line-height: 65px;
+          @include mixins.size(72.814rem, 32.4rem);
+          @include mixins.formatText(800, 6.58617rem, 6.5rem);
         }
       }
 
