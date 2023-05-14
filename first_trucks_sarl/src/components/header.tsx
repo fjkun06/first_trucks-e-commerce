@@ -33,21 +33,26 @@ const Header = () => {
           <Button />
         </div>
         <div className="hdr_content_image">
-          <motion.span initial={{ x: "22rem" }} animate={{ x: "7.5rem" }} transition={{ delay: 1.5, duration: 0.5 }}>
-          {/* <motion.span initial={{ x: "12rem" }} animate={{ x: "3.5rem" }} transition={{ delay: 1.5, duration: 0.35 }}> */}
+          {/* <motion.span initial={{ x: "22rem" }} animate={{ x: "7.5rem" }} transition={{ delay: 1.5, duration: 0.5 }}> */}
+          {/* <motion.span initial={{ x: "12rem" }}  transition={{ delay: 1.5, duration: 0.35 }}> */}
+          <motion.span initial={{ x: "25vw" }} animate={{ x: "6vw" }} transition={{ delay: 1.5, duration: 0.5 }}>
+          {/* <motion.span initial={{ x: "20vw" }} animate={{ x: "3.5rem" }} transition={{ delay: 1.5, duration: 0.35 }}> */}
             <Image src={item1M} alt="image" />
           </motion.span>
 
-          <motion.span initial={{ x: "20rem" }} animate={{ x: "-6.5rem" }} transition={{ delay: 1, duration: 0.5 }}>
+          {/* <motion.span initial={{ x: "20rem" }} animate={{ x: "-6.5rem" }} transition={{ delay: 1, duration: 0.5 }}> */}
+          <motion.span initial={{ x: "20.57vw" }} animate={{ x: "-6vw" }} transition={{ delay: 1, duration: 0.5 }}>
           {/* <motion.span initial={{ x: "12rem" }} animate={{ x: "-3.5rem" }} transition={{ delay: 1, duration: 0.35 }}> */}
             <Image src={item2M} alt="image" />
           </motion.span>
-          <motion.span initial={{ x: "22rem" }} animate={{ x: "-2rem" }} transition={{ duration: 0.5 }}>
+          {/* <motion.span initial={{ x: "22rem" }} animate={{ x: "-2rem" }} transition={{ duration: 0.5 }}> */}
+          <motion.span initial={{ x: "20.57vw" }} animate={{ x: "-1.7vw" }} transition={{ duration: 0.5 }}>
           {/* <motion.span initial={{ x: "12rem" }} animate={{ x: "-1rem" }} transition={{ duration: 0.35 }}> */}
             <Image src={item3M} alt="image" />
           </motion.span>
-          <motion.span initial={{ y: "15.5rem" }} animate={{ y: "-7.45rem" }} style={{ x: "-12rem" }} transition={{ delay: 0.5, duration: 0.5 }}>
-          {/* <motion.span initial={{ y: "10rem" }} animate={{ y: "-1.45rem" }} style={{ x: "-8rem" }} transition={{ delay: 0.5, duration: 0.35 }}> */}
+          {/* <motion.span initial={{ y: "15.5rem" }} animate={{ y: "-7.45rem" }} style={{ x: "-12rem" }} transition={{ delay: 0.5, duration: 0.5 }}> */}
+           <motion.span initial={{ y: "19vw" }} animate={{ y: "-2.48vw" }} style={{ x: "-13.71vw" }} transition={{ delay: 0.5, duration: 0.35 }}>
+           {/* <motion.span initial={{ y: "10rem" }} animate={{ y: "-1.45rem" }} style={{ x: "-8rem" }} transition={{ delay: 0.5, duration: 0.35 }}> */}
             <Image src={item4M} alt="image" />
           </motion.span>
         </div>
