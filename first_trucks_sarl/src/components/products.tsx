@@ -45,12 +45,12 @@ export const Card = () => {
   };
   const tablet = useMediaQuery("(width > 800px)");
   const desktop = useMediaQuery("(width > 1200px)");
-  const height = desktop ? "30rem" : tablet ? "34.1rem" : "16.971rem";
+  const height = desktop ? "30rem" : tablet ? "31.5rem" : "16.971rem";
   console.log(height);
 
   return (
     // <motion.article onClick={handleClick} >
-    <motion.article onClick={handleClick} animate={{ height: isOpen ? `calc(${height} * 2)` : height }}>
+    <motion.article onClick={handleClick} animate={{ height: isOpen ? `calc(${height} * 2)` : height }} onMouseLeave={() => setIsOpen(false)}>
       <motion.div></motion.div>
       <CardHeading height={height} src={[card1m,card1t,card1d]} />
       <CardItem toggle={isOpen} height={height} />

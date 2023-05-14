@@ -25,7 +25,7 @@ section.products {
     row-gap: 0.5rem;
     article {
       width: 367px;
-      width: 75vw;
+      // width: 75vw;
       height: calc(169.71px * 2);
       border: 1px solid red;
       cursor: pointer;
@@ -71,7 +71,7 @@ section.products {
             // @include mixins.size(100%);
             @include mixins.signatures(block);
 
-            @media screen and (500px < width <= 1200px) {
+            @media screen and (800px < width <= 1200px) {
               @include mixins.signatures($tablet: block);
             }
             @media screen and (width > 1200px) {
