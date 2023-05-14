@@ -1,10 +1,17 @@
-@use 'footer';
-@use 'navbar';
-@use 'scrollbar';
-@use 'header';
+@use "footer";
+@use "navbar";
+@use "scrollbar";
+@use "header";
+@use "products";
 
-main{
+main {
   display: flex;
   flex-direction: column;
   place-content: center;
+  #content {
+    row-gap: 4rem;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+  }
 }

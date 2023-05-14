@@ -8,6 +8,9 @@
     "trust": "Faites confiance à",
     "name": "First Trucks Sarl",
     "end": "pour des pièces automobiles, lubrifiants moteur, et fluid de qualité."
+  },
+  "products":{
+    "title": "Nos Produits"
   }
   
 }

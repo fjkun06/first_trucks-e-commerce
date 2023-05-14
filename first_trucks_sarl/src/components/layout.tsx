@@ -25,7 +25,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <main lang="en-US">
       <Navbar isOpen={isOpen} handleClick={handleClick} set={setIsOpen} />
-      <section onClick={() => setIsOpen(false)}>{children}</section>
+      <section id="content" onClick={() => setIsOpen(false)}>{children}</section>
       <Footer />
     </main>
   );

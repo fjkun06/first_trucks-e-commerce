@@ -1,0 +1,59 @@
+@use "../utils/mixins";
+section.products {
+  border: 3px solid red;
+  @include mixins.size(100vw, fit-content);
+  @include mixins.flex(column);
+  padding: 2rem 3.2rem;
+  row-gap: 2rem;
+  /*********************************Title*********************************/
+  span.title {
+    @include mixins.size(11.7rem, 2.7rem);
+    @include mixins.size(auto, 2.7rem);
+    align-self: flex-start;
+    font-family: "Poppins 700";
+    border: 1px solid red;
+    @include mixins.formatText(700, 1.8rem, 2.7rem);
+    color: #0119c2;
+    svg {
+      @include mixins.size(1.1rem, 1.3rem);
+    }
+  }
+  /*********************************Main Cards*********************************/
+  div.container {
+    @include mixins.size(100vw, fit-content);
+    @include mixins.flex(column);
+    row-gap: 0.5rem;
+    article {
+      width: 367px;
+      height: calc(169.71px * 2);
+      border: 1px solid red;
+      cursor: pointer;
+      transition: height 0.5s;
+      @media only screen and (width > 800px) {
+        width: 68rem;
+      }
+      @media only screen and (width > 1200px) {
+        // height: 85.152rem;
+        width: 60vw;
+
+      }
+      @media only screen and (width > 1500px) {
+        // height: 90vh;
+      }
+      /*********************************Card Background*********************************/
+      div {
+        border: 1px solid rgb(24, 185, 131);
+        // @include mixins.size(inherit, 16.971rem);
+        width: inherit;
+      }
+      /*********************************Card Article*********************************/
+      article.card_item {
+        border: 1px solid rgb(42, 34, 189);
+        @include mixins.size(inherit, 16.971rem);
+        transition: transform 0.5s;
+
+        display:none;
+      }
+    }
+  }
+}
