@@ -66,9 +66,16 @@ section.products {
         .card_heading_image {
           @include mixins.position("1/2");
           overflow: hidden;
+          &:hover {
+            img {
+              transform: scale(1.25);
+            }
+          }
           img {
             // @include mixins.size(inherit);
             // @include mixins.size(100%);
+            transition: transform 0.5s;
+
             @include mixins.signatures(block);
 
             @media screen and (800px < width <= 1200px) {
@@ -81,12 +88,50 @@ section.products {
         }
       }
       /*********************************Card Article*********************************/
-      /*********************************Card Article*********************************/
+      /*********************************Card Item*********************************/
       article.card_item {
-        border: 1px solid rgb(42, 34, 189);
+        // border: 1px solid rgb(42, 34, 189);
+        // background-color: limegreen;
+        cursor:default;
         @include mixins.size(inherit, 16.971rem);
         transition: transform 0.5s;
         display: none;
+        padding: 1.9rem;
+        img {
+          @include mixins.size(17.5rem);
+        }
+        div {
+          @include mixins.flex(column);
+          row-gap: 1rem;
+          align-items: flex-start;
+          .card_item_heading {
+            font-family: "Poppins 700";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12.7283px;
+            line-height: 17px;
+            /* or 130% */
+
+            color: #0119c2;
+          }
+          .card_item_text {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10.6069px;
+            line-height: 14px;
+            /* or 130% */
+
+            color: rgba(0, 0, 0, 0.8);
+          }
+          button {
+            @include mixins.size(14.3rem, 3.8rem);
+            font-size: 1.2rem;
+            svg {
+              @include mixins.size(1.58rem);
+            }
+          }
+        }
       }
     }
   }

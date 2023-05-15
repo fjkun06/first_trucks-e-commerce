@@ -6,7 +6,8 @@ import Image, { StaticImageData } from "next/image";
 import card1m from "../../public/images/c1m.webp";
 import card1t from "../../public/images/c1t.webp";
 import card1d from "../../public/images/c1d.webp";
-
+import p1 from "../../public/images/p1.webp";
+import Button from "@/stories/Button";
 
 const Products = () => {
   const t = useTranslations("products");
@@ -50,9 +51,9 @@ export const Card = () => {
 
   return (
     // <motion.article onClick={handleClick} >
-    <motion.article onClick={handleClick} animate={{ height: isOpen ? `calc(${height} * 2)` : height }} onMouseLeave={() => setIsOpen(false)}>
-      <motion.div></motion.div>
-      <CardHeading height={height} src={[card1m,card1t,card1d]} />
+    <motion.article  animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}>
+      {/* <motion.div></motion.div> */}
+      <CardHeading height={height} src={[card1m, card1t, card1d]} handler={handleClick}/>
       <CardItem toggle={isOpen} height={height} />
     </motion.article>
   );
@@ -61,6 +62,7 @@ export const Card = () => {
 interface CardHeading {
   src: StaticImageData[];
   height: string;
+  handler : () => void
 }
 interface CardItem {
   toggle: boolean;
@@ -69,15 +71,21 @@ interface CardItem {
 
 export const CardItem: React.FC<CardItem> = ({ toggle, height }) => {
   return (
-    <motion.article className="card_item" animate={{ height: toggle ? height : "0rem", display: toggle ? "flex" : "none" }}>
-      CardItem
+    // <motion.article className="card_item" animate={{ height: toggle ? height : height }}>
+    <motion.article className="card_item" animate={{ height: toggle ? `calc(${height} * 1.2544` : "0rem", display: toggle ? "flex" : "none" }}>
+      <Image src={p1} alt="logo" priority quality={100} />
+      <div>
+        <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
+        <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
+        <Button />
+      </div>
     </motion.article>
   );
 };
 
-export const CardHeading: React.FC<CardHeading> = ({ height, src }) => {
+export const CardHeading: React.FC<CardHeading> = ({ height, src,handler }) => {
   return (
-    <motion.article className="card_heading"  style={{ height: height }}>
+    <motion.article className="card_heading" style={{ height: height }} onClick={handler}>
       <motion.span className="card_heading_text">CardHeading</motion.span>
       <div className="card_heading_image">
         <Image src={src[0]} alt="logo" priority quality={100} />
