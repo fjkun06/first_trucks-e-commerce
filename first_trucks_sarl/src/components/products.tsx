@@ -6,7 +6,7 @@ import Image, { StaticImageData } from "next/image";
 import card1m from "../../public/images/c1m.webp";
 import card1t from "../../public/images/c1t.webp";
 import card1d from "../../public/images/c1d.webp";
-import p1 from "../../public/images/p1.webp";
+import p1 from "../../public/images/p1d.webp";
 import Button from "@/stories/Button";
 
 const Products = () => {

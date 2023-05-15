@@ -99,6 +99,9 @@ section.products {
         padding: 1.9rem;
         img {
           @include mixins.size(17.5rem);
+          @media only screen and (width > 800px) {
+            @include mixins.size(32.428rem);
+          }
         }
         div {
           @include mixins.flex(column);
@@ -131,6 +134,36 @@ section.products {
               @include mixins.size(1.58rem);
             }
           }
+
+          @media only screen and (width > 800px) {
+          row-gap: 2rem;
+
+            .card_item_heading {
+              // font-family: 'Poppins';
+              font-style: normal;
+              font-weight: 700;
+              font-size: 23.5838px;
+              line-height: 31px;
+              /* or 130% */
+              
+              
+              color: #0119C2;}
+              .card_item_text {
+                font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 19.6532px;
+line-height: 26px;
+              }
+              button {
+                gap: 2rem;
+                @include mixins.size(28.223rem, 7.1rem);
+                font-size: 2.1rem;
+                svg {
+                  @include mixins.size(3.5rem);
+                }
+              }
+              }
         }
       }
     }
