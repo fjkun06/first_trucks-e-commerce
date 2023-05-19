@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import React from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import Image, { StaticImageData } from "next/image";
 import card1m from "../../public/images/c1m.webp";
@@ -33,6 +33,7 @@ const Products = () => {
       </span>
       <div className="container">
         <Card />
+        <Card />
         <article>
           <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
             <SwiperSlide>Slide 11</SwiperSlide>
@@ -44,7 +45,7 @@ const Products = () => {
             </SwiperSlide>
           </Swiper>
         </article>
-        <article></article>
+        {/* <article></article> */}
         <article></article>
         <article></article>
         <article></article>
@@ -66,10 +67,19 @@ export const Card = () => {
   const desktop = useMediaQuery("(width > 1200px)");
   const height = desktop ? "30rem" : tablet ? "31.5rem" : "16.971rem";
   console.log(height);
-
-  return (
+  return desktop ? (
     // <motion.article onClick={handleClick} >
-    <motion.article animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}>
+    <motion.article layout animate={{ height: isOpen ? `51.28rem` : height }} onMouseLeave={() => setIsOpen(false)}>
+      {/* <motion.article animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}> */}
+      {/* <motion.div></motion.div> */}
+      <CardHeading height={height} src={[card1m, card1t, card1d]} handler={handleClick} />
+      <CardItem toggle={isOpen} height={height} />
+      {/* <SwipeCardItem toggle={isOpen} height={height} /> */}
+    </motion.article>
+  ) : (
+    // <motion.article onClick={handleClick} >
+    <motion.article layout animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}>
+      {/* <motion.article animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}> */}
       {/* <motion.div></motion.div> */}
       <CardHeading height={height} src={[card1m, card1t, card1d]} handler={handleClick} />
       <CardItem toggle={isOpen} height={height} />
@@ -131,34 +141,40 @@ export const CardItem: React.FC<CardItem> = ({ toggle, height }) => {
   const lg = useMediaQuery("(width > 1500px)");
 
   return (
-    <section className="card_item_container">
-      <motion.article className="card_item" animate={{ height: toggle ? `21.28rem` : "0rem", display: toggle ? "flex" : "none" }}>
-      {/* <motion.article className="card_item" animate={{ height: toggle ? `calc(${height} * 1.2544)` : "0rem", display: toggle ? "flex" : "none" }}> */}
-        <Image src={p1} alt="logo" priority quality={100} />
-        <div>
-          <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
-          <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
-          <Button />
-        </div>
-      </motion.article>
+    <AnimatePresence>
+      {toggle && (
+        <motion.section layout className="card_item_container" transition={{ duration: 0.5, ease: "linear" }} animate={{ height: `21.28rem` }} initial={{ height: `0rem` }} exit={{ height: `0rem`,transition: { duration: 2 ,ease:"linear" } }}>
+          <article className="card_item">
+            {/* <motion.article className="card_item" animate={{ height: toggle ? `calc(${height} * 1.2544)` : "0rem", display: toggle ? "flex" : "none" }}> */}
+            <Image src={p1} alt="logo" priority quality={100} />
+            <div>
+              <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
+              <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
+              <Button />
+            </div>
+          </article>
 
-      <motion.article className="card_item" animate={{ height: toggle ? `21.28rem` : "0rem", display: toggle ? "flex" : "none" }}>
-        <Image src={p1} alt="logo" priority quality={100} />
-        <div>
-          <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
-          <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
-          <Button />
-        </div>
-      </motion.article>
-      <motion.article className="card_item" animate={{ height: toggle ? `21.28rem` : "0rem", display: toggle ? "flex" : "none" }}>
-        <Image src={p1} alt="logo" priority quality={100} />
-        <div>
-          <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
-          <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
-          <Button />
-        </div>
-      </motion.article>
-    </section>
+          <article className="card_item">
+            {/* <motion.article className="card_item" animate={{ height: toggle ? `21.28rem` : "0rem", display: toggle ? "flex" : "none" }}> */}
+            <Image src={p1} alt="logo" priority quality={100} />
+            <div>
+              <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
+              <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
+              <Button />
+            </div>
+          </article>
+          <article className="card_item">
+            {/* <motion.article className="card_item" animate={{ height: toggle ? `21.28rem` : "0rem", display: toggle ? "flex" : "none" }}> */}
+            <Image src={p1} alt="logo" priority quality={100} />
+            <div>
+              <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
+              <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
+              <Button />
+            </div>
+          </article>
+        </motion.section>
+      )}
+    </AnimatePresence>
 
     // <motion.article className="card_item" animate={{ height: toggle ? height : height }}>
   );

@@ -26,7 +26,7 @@ section.products {
     article {
       width: 367px;
       // width: 75vw;
-      height: calc(169.71px * 2);
+      height: calc(169.71px * 1.8);
       // border: 1px solid red;
       cursor: pointer;
       transition: height 0.5s;
@@ -179,11 +179,16 @@ section.products {
             }
           }
           @media only screen and (width > 1500px) {
+            row-gap: 4rem;
+
           }
         }
       }
       /*********************************Card Item*********************************/
       article.card_item {
+        display: flex;
+        height: inherit;
+        height: 21.28rem;
         @media only screen and (width > 1500px) {
           width: 367px;
           width: auto;
@@ -239,5 +244,7 @@ section.card_item_container {
   // box-shadow: inset 0 -3em 3em rgba(#0119c2, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
   overflow: hidden;
   display: flex;
-  border: 1px solid red;
+  // border: 1px solid red;
+  // transition: height 0.25s ease-in;
+
 }
