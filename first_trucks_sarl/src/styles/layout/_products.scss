@@ -27,7 +27,7 @@ section.products {
       width: 367px;
       // width: 75vw;
       height: calc(169.71px * 2);
-      border: 1px solid red;
+      // border: 1px solid red;
       cursor: pointer;
       transition: height 0.5s;
       @media only screen and (width > 800px) {
@@ -88,20 +88,23 @@ section.products {
         }
       }
       /*********************************Card Article*********************************/
-      /*********************************Card Item*********************************/
-      article.card_item {
+      /*********************************Card Items*********************************/
+      article.card_item,
+      article.swipe_card_item {
         // border: 1px solid rgb(42, 34, 189);
         // background-color: limegreen;
-        cursor:default;
+        // box-shadow: inset 0 -3em 3em rgba(#0119c2, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+        cursor: default;
         @include mixins.size(inherit, 16.971rem);
         transition: transform 0.5s;
         display: none;
         padding: 1.9rem;
+
         img {
           @include mixins.size(17.5rem);
-          @media only screen and (width > 800px) {
-            @include mixins.size(32.428rem);
-          }
+          // @media only screen and (width > 800px) {
+          //   @include mixins.size(32.428rem);
+          // }
         }
         div {
           @include mixins.flex(column);
@@ -114,7 +117,7 @@ section.products {
             font-size: 12.7283px;
             line-height: 17px;
             /* or 130% */
-
+            text-align: left;
             color: #0119c2;
           }
           .card_item_text {
@@ -124,7 +127,7 @@ section.products {
             font-size: 10.6069px;
             line-height: 14px;
             /* or 130% */
-
+            text-align: left;
             color: rgba(0, 0, 0, 0.8);
           }
           button {
@@ -134,9 +137,20 @@ section.products {
               @include mixins.size(1.58rem);
             }
           }
+        }
+      }
+      /*********************************Swipe Card Item*********************************/
+      article.swipe_card_item {
+        box-shadow: inset 0 -3em 3em rgba(#0119c2, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 
+        img {
           @media only screen and (width > 800px) {
-          row-gap: 2rem;
+            @include mixins.size(32.428rem);
+          }
+        }
+        div {
+          @media only screen and (width > 800px) {
+            row-gap: 2rem;
 
             .card_item_heading {
               // font-family: 'Poppins';
@@ -145,27 +159,85 @@ section.products {
               font-size: 23.5838px;
               line-height: 31px;
               /* or 130% */
-              
-              
-              color: #0119C2;}
-              .card_item_text {
-                font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 19.6532px;
-line-height: 26px;
+
+              color: #0119c2;
+            }
+            .card_item_text {
+              font-family: "Poppins";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 19.6532px;
+              line-height: 26px;
+            }
+            button {
+              gap: 2rem;
+              @include mixins.size(28.223rem, 7.1rem);
+              font-size: 2.1rem;
+              svg {
+                @include mixins.size(3.5rem);
               }
-              button {
-                gap: 2rem;
-                @include mixins.size(28.223rem, 7.1rem);
-                font-size: 2.1rem;
-                svg {
-                  @include mixins.size(3.5rem);
-                }
-              }
-              }
+            }
+          }
+          @media only screen and (width > 1500px) {
+          }
+        }
+      }
+      /*********************************Card Item*********************************/
+      article.card_item {
+        @media only screen and (width > 1500px) {
+          width: 367px;
+          width: auto;
+          // height: 21.28rem;
         }
       }
     }
   }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next {
+  transform: scale(0.35) translate(2rem, -50%);
+}
+.swiper-button-prev {
+  transform: scale(0.35) translate(-2rem, -50%);
+}
+
+@media only screen and (width > 800px) {
+  .swiper-button-next {
+    // top: 25%;
+    transform: scale(0.5) translate(1rem, -50%);
+  }
+  .swiper-button-prev {
+    // top: 25%;
+    transform: scale(0.5) translate(-1rem, -50%);
+  }
+}
+
+section.card_item_container {
+  // box-shadow: inset 0 -3em 3em rgba(#0119c2, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  border: 1px solid red;
 }

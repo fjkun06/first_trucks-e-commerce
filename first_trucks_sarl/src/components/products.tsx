@@ -8,6 +8,14 @@ import card1t from "../../public/images/c1t.webp";
 import card1d from "../../public/images/c1d.webp";
 import p1 from "../../public/images/p1d.webp";
 import Button from "@/stories/Button";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+// import required modules
+import { Navigation } from "swiper";
 
 const Products = () => {
   const t = useTranslations("products");
@@ -25,7 +33,17 @@ const Products = () => {
       </span>
       <div className="container">
         <Card />
-        <article></article>
+        <article>
+          <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            <SwiperSlide>Slide 11</SwiperSlide>
+            <SwiperSlide>Slide 2</SwiperSlide>
+            <SwiperSlide>Slide 3</SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <Image src={p1} alt="logo" priority quality={100} />
+            </SwiperSlide>
+          </Swiper>
+        </article>
         <article></article>
         <article></article>
         <article></article>
@@ -51,10 +69,11 @@ export const Card = () => {
 
   return (
     // <motion.article onClick={handleClick} >
-    <motion.article  animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}>
+    <motion.article animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}>
       {/* <motion.div></motion.div> */}
-      <CardHeading height={height} src={[card1m, card1t, card1d]} handler={handleClick}/>
+      <CardHeading height={height} src={[card1m, card1t, card1d]} handler={handleClick} />
       <CardItem toggle={isOpen} height={height} />
+      {/* <SwipeCardItem toggle={isOpen} height={height} /> */}
     </motion.article>
   );
 };
@@ -62,28 +81,90 @@ export const Card = () => {
 interface CardHeading {
   src: StaticImageData[];
   height: string;
-  handler : () => void
+  handler: () => void;
 }
 interface CardItem {
   toggle: boolean;
   height: string;
 }
 
-export const CardItem: React.FC<CardItem> = ({ toggle, height }) => {
+export const SwipeCardItem: React.FC<CardItem> = ({ toggle, height }) => {
   return (
+    <Swiper navigation={true} modules={[Navigation]} className="mySwiper" style={{ height: toggle ? `calc(${height} * 1.2544` : "0rem" }}>
+      <SwiperSlide>
+        <motion.article className="swipe_card_item" animate={{ height: toggle ? `calc(${height} * 1.2544` : "0rem", display: toggle ? "flex" : "none" }}>
+          <Image src={p1} alt="logo" priority quality={100} />
+          <div>
+            <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
+            <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
+            <Button />
+          </div>
+        </motion.article>
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <motion.article className="card_item" animate={{ height: toggle ? `calc(${height} * 1.2544` : "0rem", display: toggle ? "flex" : "none" }}>
+          <Image src={p1} alt="logo" priority quality={100} />
+          <div>
+            <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
+            <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
+            <Button />
+          </div>
+        </motion.article>
+      </SwiperSlide>
+      <SwiperSlide>
+        <motion.article className="card_item" animate={{ height: toggle ? `calc(${height} * 1.2544` : "0rem", display: toggle ? "flex" : "none" }}>
+          <Image src={p1} alt="logo" priority quality={100} />
+          <div>
+            <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
+            <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
+            <Button />
+          </div>
+        </motion.article>
+      </SwiperSlide>
+    </Swiper>
     // <motion.article className="card_item" animate={{ height: toggle ? height : height }}>
-    <motion.article className="card_item" animate={{ height: toggle ? `calc(${height} * 1.2544` : "0rem", display: toggle ? "flex" : "none" }}>
-      <Image src={p1} alt="logo" priority quality={100} />
-      <div>
-        <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
-        <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
-        <Button />
-      </div>
-    </motion.article>
   );
 };
 
-export const CardHeading: React.FC<CardHeading> = ({ height, src,handler }) => {
+export const CardItem: React.FC<CardItem> = ({ toggle, height }) => {
+  const lg = useMediaQuery("(width > 1500px)");
+
+  return (
+    <section className="card_item_container">
+      <motion.article className="card_item" animate={{ height: toggle ? `21.28rem` : "0rem", display: toggle ? "flex" : "none" }}>
+      {/* <motion.article className="card_item" animate={{ height: toggle ? `calc(${height} * 1.2544)` : "0rem", display: toggle ? "flex" : "none" }}> */}
+        <Image src={p1} alt="logo" priority quality={100} />
+        <div>
+          <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
+          <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
+          <Button />
+        </div>
+      </motion.article>
+
+      <motion.article className="card_item" animate={{ height: toggle ? `21.28rem` : "0rem", display: toggle ? "flex" : "none" }}>
+        <Image src={p1} alt="logo" priority quality={100} />
+        <div>
+          <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
+          <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
+          <Button />
+        </div>
+      </motion.article>
+      <motion.article className="card_item" animate={{ height: toggle ? `21.28rem` : "0rem", display: toggle ? "flex" : "none" }}>
+        <Image src={p1} alt="logo" priority quality={100} />
+        <div>
+          <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
+          <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
+          <Button />
+        </div>
+      </motion.article>
+    </section>
+
+    // <motion.article className="card_item" animate={{ height: toggle ? height : height }}>
+  );
+};
+
+export const CardHeading: React.FC<CardHeading> = ({ height, src, handler }) => {
   return (
     <motion.article className="card_heading" style={{ height: height }} onClick={handler}>
       <motion.span className="card_heading_text">CardHeading</motion.span>
