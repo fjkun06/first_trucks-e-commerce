@@ -2,17 +2,10 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import Image, { StaticImageData } from "next/image";
-import card1m from "../../public/images/c1m.webp";
-import card1t from "../../public/images/c1t.webp";
-import card1d from "../../public/images/c1d.webp";
-import test from "../../public/images/filtreaair.png";
-import testt from "../../public/images/faat.png";
-import testd from "../../public/images/faad.png";
-import p1 from "../../public/images/p1d.webp";
+import Image from "next/image";
 import Button from "@/stories/Button";
 // Import Swiper React components
-import { Swiper, SwiperProps, SwiperRef, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 const items = ["one", "two", "three"];
 // Import Swiper styles
 import "swiper/css";
@@ -24,7 +17,6 @@ import { nanoid } from "nanoid";
 
 const Products = () => {
   const t = useTranslations("products");
-console.log(...new Array(7).fill(7));
 
   return (
     <section className="products">
@@ -37,12 +29,7 @@ console.log(...new Array(7).fill(7));
         </svg>
         {t("title")}
       </span>
-      <div className="container">
-        {
-          ...new Array(8).fill(8).map((_,i) => <Card cardNumber={++i} direction={ i % 2 !== 0 ? "left" : "right"}/>)
-        }
-
-      </div>
+      <div className="container">{...new Array(8).fill(8).map((_, i) => <Card key={nanoid()} cardNumber={++i} direction={i % 2 !== 0 ? "left" : "right"} />)}</div>
     </section>
   );
 };
@@ -50,8 +37,6 @@ console.log(...new Array(7).fill(7));
 export const Card: React.FC<Card> = ({ direction, cardNumber = 1 }) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const t = useTranslations("products");
-  const x = 1;
-  // console.log(t(`item${cardNumber}.items.one.title`));
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -67,7 +52,7 @@ export const Card: React.FC<Card> = ({ direction, cardNumber = 1 }) => {
     <motion.article layout animate={{ height: isOpen ? `51.28rem` : height }} onMouseLeave={() => setIsOpen(false)}>
       {/* <motion.article animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}> */}
       {/* <motion.div></motion.div> */}
-      <CardHeading direction={direction} height={height} src={[test, testt, testd]} handler={handleClick} heading={t(`item${cardNumber}.name`)} />
+      <CardHeading cardNumber={cardNumber} direction={direction} height={height} handler={handleClick} heading={t(`item${cardNumber}.name`)} />
       <CardItem toggle={isOpen} height={height} cardNumber={cardNumber} />
       {/* <SwipeCardItem toggle={isOpen} height={height} /> */}
     </motion.article>
@@ -77,7 +62,7 @@ export const Card: React.FC<Card> = ({ direction, cardNumber = 1 }) => {
     <motion.article layout animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}>
       {/* <motion.article animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}> */}
       {/* <motion.div></motion.div> */}
-      <CardHeading direction={direction} height={height} src={[test, testt, testd]} handler={handleClick} heading={t(`item${cardNumber}.name`)} />
+      <CardHeading cardNumber={cardNumber} direction={direction} height={height} handler={handleClick} heading={t(`item${cardNumber}.name`)} />
       {/* <CardItem toggle={isOpen} height={height} />swipe_ */}
       <SwipeCardItem toggle={isOpen} height={height} cardNumber={cardNumber} />
     </motion.article>
@@ -88,11 +73,9 @@ interface Card {
   direction?: "left" | "right";
   cardNumber?: number;
 }
-interface CardHeading {
-  src: StaticImageData[];
+interface CardHeading extends Card {
   height: string;
   handler: () => void;
-  direction?: "left" | "right";
   heading: string;
 }
 interface CardItem {
@@ -122,7 +105,9 @@ export const SwipeCardItem: React.FC<CardItem> = ({ toggle, height, cardNumber =
               {items.map((item) => (
                 <SwiperSlide key={nanoid()}>
                   <motion.article className="swipe_card_item" initial={{ height: `calc(${height} * 1.2544` }}>
-                    <Image src={p1} alt="logo" priority quality={100} />
+                    {/* <Image src={require(`../../public/images/cards/1/default.webp`)} alt="logo" priority quality={100} /> */}
+                    <Image src={require(`../../public/images/cards/${cardNumber}/default.webp`)} alt="logo" priority quality={100} />
+
                     <div>
                       <span className="card_item_heading">{t(`${item}.title`)}</span>
                       <span className="card_item_text">{t(`${item}.desc`)}</span>
@@ -136,7 +121,6 @@ export const SwipeCardItem: React.FC<CardItem> = ({ toggle, height, cardNumber =
         </motion.section>
       )}
     </AnimatePresence>
-
   );
 };
 
@@ -161,7 +145,8 @@ export const CardItem: React.FC<CardItem> = ({ toggle, cardNumber = 1 }) => {
           ) : (
             items.map((item) => (
               <article className="card_item" key={nanoid()}>
-                <Image src={p1} alt="logo" priority quality={100} />
+                {/* <Image src={require(`../../public/images/cards/1/default.webp`)} alt="logo" priority quality={100} /> */}
+                <Image src={require(`../../public/images/cards/${cardNumber}/default.webp`)} alt="logo" priority quality={100} />
                 <div>
                   <span className="card_item_heading">{t(`${item}.title`)}</span>
                   <span className="card_item_text">{t(`${item}.desc`)}</span>
@@ -170,23 +155,24 @@ export const CardItem: React.FC<CardItem> = ({ toggle, cardNumber = 1 }) => {
               </article>
             ))
           )}
-      
         </motion.section>
       )}
     </AnimatePresence>
-
   );
 };
 
-export const CardHeading: React.FC<CardHeading> = ({ height, src, handler, direction = "left", heading }) => {
+export const CardHeading: React.FC<CardHeading> = ({ height, cardNumber = 1, handler, direction = "left", heading }) => {
+  const sizes = ["mobile", "tablet", "desktop"];
   return (
     <motion.article className="card_heading" style={{ height: height }} onClick={handler}>
       <motion.span className={direction === "right" ? "card_heading_text right" : "card_heading_text"}>{heading}</motion.span>
       <div className="card_heading_image">
         <span></span>
-        <Image src={src[0]} alt="logo" priority quality={100} />
-        <Image src={src[1]} alt="logo" priority quality={100} />
-        <Image src={src[2]} alt="logo" priority quality={100} />
+
+        {sizes.map((size) => (
+          <Image key={nanoid()} src={require(`../../public/images/cards/${cardNumber}/${size}.webp`)} alt="logo" priority quality={100} />
+          // <Image key={nanoid()} src={require(`../../public/images/cards/${cardNumber}/${size}.png`)} alt="logo" priority quality={100} />
+        ))}
       </div>
     </motion.article>
   );
