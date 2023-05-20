@@ -111,7 +111,7 @@ export const SwipeCardItem: React.FC<CardItem> = ({ toggle, height, cardNumber =
                     <div>
                       <span className="card_item_heading">{t(`${item}.title`)}</span>
                       <span className="card_item_text">{t(`${item}.desc`)}</span>
-                      <Button />
+                      <Button item = {t(`${item}.title`)} />
                     </div>
                   </motion.article>
                 </SwiperSlide>

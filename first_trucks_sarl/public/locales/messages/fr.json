@@ -74,5 +74,8 @@
         "three": { "title": "BOSCH F 026 407 090 Filtre à huile", "desc": "Hauteur [mm]: 82. Diamètre intérieur 2 [mm]: 29. Type de filtre: Cartouche filtrante. Diamètre [mm]: 70." }
       }
     }
+  },
+  "contact": {
+    "text": "Contactez-nous"
   }
 }

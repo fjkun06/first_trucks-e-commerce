@@ -74,5 +74,8 @@
         "three": { "title": "BOSCH F 026 407 090 Oil filter", "desc": "Height [mm]: 82. Inner diameter 2 [mm]: 29. Filter type: Filter cartridge. Diameter [mm]: 70." }
       }
     }
+  },
+  "contact": {
+    "text": "Contact Us"
   }
 }
