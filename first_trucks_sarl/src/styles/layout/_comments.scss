@@ -1,6 +1,6 @@
 @use "../utils/mixins";
 section.comments {
-  border: 3px solid red;
+  // border: 3px solid red;
   @include mixins.size(100vw, fit-content);
   @include mixins.flex(column);
   padding: 2rem 3.2rem;
@@ -12,7 +12,7 @@ section.comments {
     margin-top: -12rem;
   }
   div {
-    border: 3px solid red;
+    // border: 3px solid red;
     @include mixins.size(100vw, fit-content);
     min-height: 800px;
     @include mixins.flex(column);

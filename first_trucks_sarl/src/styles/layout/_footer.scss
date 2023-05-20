@@ -259,6 +259,7 @@ footer {
               }
             }
           }
+    
           @media only screen and (width > 1500px) {
             span.title {
               width: auto;
@@ -337,7 +338,7 @@ footer {
       @include mixins.size(100vw, 18.5rem);
     }
     @media only screen and (width > 1500px) {
-      @include mixins.size(100vw, 21rem);
+      @include mixins.size(100vw, 24rem);
     }
     img {
       @include mixins.size(inherit);

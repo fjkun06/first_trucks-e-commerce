@@ -1,6 +1,6 @@
 @use "../utils/mixins";
 section.about {
-  border: 3px solid red;
+  // border: 3px solid red;
   @include mixins.size(100vw, fit-content);
   @include mixins.flex(column);
   padding: 2rem 3.2rem;

@@ -15,13 +15,7 @@ const Comments = () => {
   return (
     <section className="comments">
       <Heading text={t("title")} />
-      <div ref={ref}>
-        {/* <Comment delay={0} inView={isInView} />
-        <Comment delay={0.5} direction="right" inView={isInView} />
-        <Comment delay={1} inView={isInView} />
-        <Comment delay={1.5} direction="right" inView={isInView} /> */}
-        {...users.map((el, i) => <Comment delay={i} direction={el} id={`c${i}`} key={nanoid()} inView={isInView} />)}
-      </div>
+      <div ref={ref}>{...users.map((el, i) => <Comment delay={i} direction={el} id={`c${i}`} key={nanoid()} inView={isInView} />)}</div>
     </section>
   );
 };
@@ -40,8 +34,6 @@ export const Comment: React.FC<CommentProps> = ({ direction = "left", inView = f
     <AnimatePresence>
       {inView && (
         <motion.p initial={{ x: direction === "right" ? "-105%" : "105%" }} animate={{ x: "0%" }} transition={{ duration: 0.5, delay: 0.5 * delay }}>
-          {/* <motion.p animate={{ x: inView ? "0%" : direction === "right" ? "-105%" : "105%" }} transition={{ duration: 0.5, ease: "easeInOut" }}> */}
-          {/* <motion.p animate={{ x: inView ? "0%" : direction === "right" ? "-105%" : "105%" }} transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 * delay }}> */}
           <span className="user_comment">{t("text")}</span>
           <span className="user_name"> {t("user")}</span>
         </motion.p>
