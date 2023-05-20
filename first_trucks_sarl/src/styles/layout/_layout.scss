@@ -10,6 +10,13 @@ main {
   place-content: center;
   #content {
     row-gap: 4rem;
+    @media only screen and (width > 800px), (width > 1200px) {
+      row-gap: 8rem;
+    }
+    @media only screen and (1000px < width < 1200px) {
+      row-gap: 12rem;
+    }
+
     display: flex;
     flex-direction: column;
     place-content: center;

@@ -15,6 +15,21 @@ import "swiper/scss/navigation";
 import { Navigation } from "swiper";
 import { nanoid } from "nanoid";
 
+interface Card {
+  direction?: "left" | "right";
+  cardNumber?: number;
+}
+interface CardHeading extends Card {
+  height: string;
+  handler: () => void;
+  heading: string;
+}
+interface CardItem {
+  toggle: boolean;
+  height: string;
+  cardNumber?: number;
+} 
+
 const Products = () => {
   const t = useTranslations("products");
 
@@ -40,49 +55,23 @@ export const Card: React.FC<Card> = ({ direction, cardNumber = 1 }) => {
 
   const handleClick = () => {
     setIsOpen(!isOpen);
-    console.log("clicked card");
   };
   const tablet = useMediaQuery("(width > 800px)");
   const desktop = useMediaQuery("(width > 1500px)");
   const lg = useMediaQuery("(width > 1200px)");
   const height = lg ? "30rem" : tablet ? "31.5rem" : "16.971rem";
-  console.log(height);
   return desktop ? (
-    // <motion.article onClick={handleClick} >
     <motion.article layout animate={{ height: isOpen ? `51.28rem` : height }} onMouseLeave={() => setIsOpen(false)}>
-      {/* <motion.article animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}> */}
-      {/* <motion.div></motion.div> */}
       <CardHeading cardNumber={cardNumber} direction={direction} height={height} handler={handleClick} heading={t(`item${cardNumber}.name`)} />
       <CardItem toggle={isOpen} height={height} cardNumber={cardNumber} />
-      {/* <SwipeCardItem toggle={isOpen} height={height} /> */}
     </motion.article>
   ) : (
-    // <motion.article onClick={handleClick} >
-    // <motion.article layout animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} >
     <motion.article layout animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}>
-      {/* <motion.article animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}> */}
-      {/* <motion.div></motion.div> */}
       <CardHeading cardNumber={cardNumber} direction={direction} height={height} handler={handleClick} heading={t(`item${cardNumber}.name`)} />
-      {/* <CardItem toggle={isOpen} height={height} />swipe_ */}
       <SwipeCardItem toggle={isOpen} height={height} cardNumber={cardNumber} />
     </motion.article>
   );
 };
-
-interface Card {
-  direction?: "left" | "right";
-  cardNumber?: number;
-}
-interface CardHeading extends Card {
-  height: string;
-  handler: () => void;
-  heading: string;
-}
-interface CardItem {
-  toggle: boolean;
-  height: string;
-  cardNumber?: number;
-}
 
 export const SwipeCardItem: React.FC<CardItem> = ({ toggle, height, cardNumber = 1 }) => {
   const t = useTranslations(`products.item${cardNumber}.items`);
@@ -105,13 +94,11 @@ export const SwipeCardItem: React.FC<CardItem> = ({ toggle, height, cardNumber =
               {items.map((item) => (
                 <SwiperSlide key={nanoid()}>
                   <motion.article className="swipe_card_item" initial={{ height: `calc(${height} * 1.2544` }}>
-                    {/* <Image src={require(`../../public/images/products/cards/1/default.webp`)} alt="logo" priority quality={100} /> */}
                     <Image src={require(`../../public/images/products/cards/${cardNumber}/default.webp`)} alt="logo" priority quality={100} />
-
                     <div>
                       <span className="card_item_heading">{t(`${item}.title`)}</span>
                       <span className="card_item_text">{t(`${item}.desc`)}</span>
-                      <Button item = {t(`${item}.title`)} />
+                      <Button item={t(`${item}.title`)} />
                     </div>
                   </motion.article>
                 </SwiperSlide>
@@ -145,7 +132,6 @@ export const CardItem: React.FC<CardItem> = ({ toggle, cardNumber = 1 }) => {
           ) : (
             items.map((item) => (
               <article className="card_item" key={nanoid()}>
-                {/* <Image src={require(`../../public/images/products/cards/1/default.webp`)} alt="logo" priority quality={100} /> */}
                 <Image src={require(`../../public/images/products/cards/${cardNumber}/default.webp`)} alt="logo" priority quality={100} />
                 <div>
                   <span className="card_item_heading">{t(`${item}.title`)}</span>
