@@ -6,10 +6,13 @@ section.comments {
   padding: 2rem 3.2rem;
   // row-gap: 2rem;
   justify-self: flex-start;
-  margin-top: -8rem;
+  margin-top: -6rem;
   background-color: #fbfbfb;
   @media only screen and (1000px < width < 1200px) {
     margin-top: -12rem;
+  }
+  @media only screen and (width < 800px) {
+    margin-top: -4rem;
   }
   div {
     // border: 3px solid red;
