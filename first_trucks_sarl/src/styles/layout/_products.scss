@@ -1,38 +1,11 @@
 @use "../utils/mixins";
 section.products {
-  // border: 3px solid red;
+  border: 3px solid red;
   @include mixins.size(100vw, fit-content);
   @include mixins.flex(column);
   padding: 2rem 3.2rem;
   row-gap: 2rem;
-  /*********************************Title*********************************/
-  span.title {
-    @include mixins.size(11.7rem, 2.7rem);
-    @include mixins.size(auto, 2.7rem);
-    align-self: flex-start;
-    font-family: "Poppins 700";
-    // border: 1px solid red;
-    @include mixins.formatText(700, 1.8rem, 2.7rem);
-    color: #0119c2;
-    @include mixins.flex;
-    gap: 0.5rem;
-    svg {
-      @include mixins.size(1.1rem, 1.3rem);
-    }
-    @media only screen and (width > 800px) {
-      width: 68rem;
-      align-self: center;
-      justify-content: flex-start;
-      @include mixins.formatText(700, 3.06rem, 4.6rem);
-      svg {
-        transform: scale(1.65);
-      }
-    }
-    @media only screen and (width > 1200px) {
-      @include mixins.formatText(700, 3.5rem, 5.2rem);
-      @include mixins.size(60vw, 5.3rem);
-    }
-  }
+
   /*********************************Main Cards*********************************/
   div.container {
     @include mixins.size(100vw, fit-content);

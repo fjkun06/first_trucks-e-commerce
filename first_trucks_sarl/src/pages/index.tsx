@@ -1,3 +1,4 @@
+import About from "@/components/about";
 import Header from "@/components/header";
 import Products from "@/components/products";
 import useRoute from "@/hooks/useRoute";
@@ -34,8 +35,7 @@ export default function Home() {
     <>
     <Header/>
     <Products/>
-      {/* implies default.hell */}
-      {/* <span>{t("hell")}</span> */}
+    <About/>
       <button type="submit" onClick={toggleState}>
         ToggleState
       </button>

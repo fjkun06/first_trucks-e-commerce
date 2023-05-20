@@ -14,6 +14,7 @@ import "swiper/scss/navigation";
 // import required modules
 import { Navigation } from "swiper";
 import { nanoid } from "nanoid";
+import Heading from "./heading";
 
 interface Card {
   direction?: "left" | "right";
@@ -28,26 +29,19 @@ interface CardItem {
   toggle: boolean;
   height: string;
   cardNumber?: number;
-} 
+}
 
 const Products = () => {
   const t = useTranslations("products");
 
   return (
     <section className="products">
-      <span className="title">
-        <svg viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g opacity="0.9">
-            <path d="M0 6.53275L0 1.63929L5.65069 0.344345C5.698 0.333504 5.74716 0.352388 5.77504 0.392112L10.0853 6.53275H0Z" fill="#1968B7" />
-            <path d="M0 6.53268L0 11.4261L5.65069 12.7211C5.698 12.7319 5.74716 12.713 5.77504 12.6733L10.0853 6.53268H0Z" fill="#28A2F7" />
-          </g>
-        </svg>
-        {t("title")}
-      </span>
+      <Heading text={t("title")}/>
       <div className="container">{...new Array(8).fill(8).map((_, i) => <Card key={nanoid()} cardNumber={++i} direction={i % 2 !== 0 ? "left" : "right"} />)}</div>
     </section>
   );
 };
+
 
 export const Card: React.FC<Card> = ({ direction, cardNumber = 1 }) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
@@ -153,11 +147,9 @@ export const CardHeading: React.FC<CardHeading> = ({ height, cardNumber = 1, han
     <motion.article className="card_heading" style={{ height: height }} onClick={handler}>
       <motion.span className={direction === "right" ? "card_heading_text right" : "card_heading_text"}>{heading}</motion.span>
       <div className="card_heading_image">
-        <span></span>
-
+        <span />
         {sizes.map((size) => (
           <Image key={nanoid()} src={require(`../../public/images/products/cards/${cardNumber}/${size}.webp`)} alt="logo" priority quality={100} />
-          // <Image key={nanoid()} src={require(`../../public/images/products/cards/${cardNumber}/${size}.png`)} alt="logo" priority quality={100} />
         ))}
       </div>
     </motion.article>

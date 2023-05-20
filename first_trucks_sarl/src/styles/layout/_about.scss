@@ -1,0 +1,33 @@
+@use "../utils/mixins";
+section.about {
+  border: 3px solid red;
+  @include mixins.size(100vw, fit-content);
+  @include mixins.flex(column);
+  padding: 2rem 3.2rem;
+  row-gap: 2rem;
+  justify-self: flex-start;
+
+  /*********************************Main Text*********************************/
+  p {
+    span {
+      color: #4690ff;
+    }
+    width: 32.5rem;
+    text-align: justify;
+    font-family: "Poppins";
+    color: rgba(0, 0, 0, 0.8);
+    @include mixins.formatText(400, 1.5rem, 2.2rem);
+    @media only screen and (width > 800px) {
+      width: 65.593rem;
+      @include mixins.formatText(400, 1.8rem, 2.7rem);
+    }
+    @media only screen and (width > 1200px) {
+      width: 57vw;
+      @include mixins.formatText(400, 2rem, 3.2rem);
+    }
+    @media only screen and (width > 1500px) {
+      width: 115rem;
+      @include mixins.formatText(400, 2.4rem, 3.6rem);
+    }
+  }
+}
