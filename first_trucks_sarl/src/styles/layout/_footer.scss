@@ -28,6 +28,9 @@ footer {
   /************Footer Body Section**********/
   section.footer {
     // border: 3px solid rgb(170, 0, 255);
+    background: url('../../../public/images/footer/left_ft.png'),url('../../../public/images/footer/right_ft.png'),white;
+    background-repeat: no-repeat;
+    background-position: left,right;
     @include mixins.size(100vw, 39.1rem);
     @media only screen and (width > 500px) {
       height: 31.1rem;
@@ -56,7 +59,7 @@ footer {
       @media only screen and (width > 800px) {
         width: 61rem;
         width: 74vw;
-        background-color: aliceblue;
+        // background-color: aliceblue;
       }
       section {
         @include mixins.flex(column);
@@ -182,6 +185,10 @@ footer {
               margin-left: 6rem;
             }
           }
+          // @media only screen and (width > 1200px) {
+          //   flex-direction: row;
+
+          // }
 
           div.footer__contact3 {
             // border: 1px solid red;

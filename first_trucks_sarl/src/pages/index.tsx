@@ -5,7 +5,6 @@ import Products from "@/components/products";
 import useRoute from "@/hooks/useRoute";
 import { useTranslations } from "next-intl";
 
-
 import React from "react";
 
 //6 in every page do this
@@ -34,23 +33,10 @@ export default function Home() {
   };
   return (
     <>
-    <Header/>
-    <Products/>
-    <About/>
-    <Comments/>
-      {/* <button type="submit" onClick={toggleState}>
-        ToggleState
-      </button>
-
-      <button type="button" className="" onClick={() => testFunction("fr")}>
-        test fr
-      </button>
-      <button type="button" className="" onClick={() => testFunction("de")}>
-        test de
-      </button>
-      <button type="button" className="" onClick={() => testFunction("en")}>
-        test en
-      </button> */}
+      <Header />
+      <Products />
+      <About />
+      <Comments />
     </>
   );
 }

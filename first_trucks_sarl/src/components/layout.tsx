@@ -15,6 +15,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   //scroll useEffect
   React.useEffect(() => {
+    if (desktop) {
+      setIsOpen(true);
+    }
+  })
+  React.useEffect(() => {
     const handleScroll = () => {
       if (!desktop) setIsOpen(false);
     };
