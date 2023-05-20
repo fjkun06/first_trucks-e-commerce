@@ -28,15 +28,18 @@ footer {
   /************Footer Body Section**********/
   section.footer {
     // border: 3px solid rgb(170, 0, 255);
-    background: url('../../../public/images/footer/left_ft.png'),url('../../../public/images/footer/right_ft.png'),white;
-    background-repeat: no-repeat;
-    background-position: left,right;
+
     @include mixins.size(100vw, 39.1rem);
     @media only screen and (width > 500px) {
       height: 31.1rem;
     }
     @media only screen and (width > 800px) {
       @include mixins.flex(column);
+    }
+    @media only screen and (width > 1500px) {
+      background: url("../../../public/images/footer/left_ft.png"), url("../../../public/images/footer/right_ft.png"), white;
+      background-repeat: no-repeat;
+      background-position: left, right;
     }
 
     span {
@@ -74,8 +77,8 @@ footer {
             grid-column: 1/2;
           }
 
-          #eng{
-            @include mixins.size(11.5rem,14rem)
+          #eng {
+            @include mixins.size(11.5rem, 14rem);
           }
         }
         /************Location and Contact Section**********/
@@ -266,7 +269,7 @@ footer {
               }
             }
           }
-    
+
           @media only screen and (width > 1500px) {
             span.title {
               width: auto;
@@ -345,7 +348,7 @@ footer {
       @include mixins.size(100vw, 18.5rem);
     }
     @media only screen and (width > 1500px) {
-      @include mixins.size(100vw, 24rem);
+      @include mixins.size(100vw, 30rem);
     }
     img {
       @include mixins.size(inherit);
