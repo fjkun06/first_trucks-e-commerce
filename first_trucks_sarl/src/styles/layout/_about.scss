@@ -39,7 +39,7 @@ section.about {
     width: 32.5rem;
     text-align: justify;
     font-family: "Poppins";
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 1);
     @include mixins.formatText(400, 1.5rem, 2.2rem);
     @media only screen and (width > 800px) {
       width: 65.593rem;
@@ -47,7 +47,7 @@ section.about {
     }
     @media only screen and (width > 1200px) {
       width: 57vw;
-      @include mixins.formatText(400, 2rem, 3.2rem);
+      @include mixins.formatText(400, 2.1rem, 3.2rem);
     }
     @media only screen and (width > 1500px) {
       width: 115rem;

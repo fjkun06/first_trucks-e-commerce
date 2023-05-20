@@ -1,4 +1,5 @@
 import About from "@/components/about";
+import Comments from "@/components/comments";
 import Header from "@/components/header";
 import Products from "@/components/products";
 import useRoute from "@/hooks/useRoute";
@@ -36,6 +37,7 @@ export default function Home() {
     <Header/>
     <Products/>
     <About/>
+    <Comments/>
       <button type="submit" onClick={toggleState}>
         ToggleState
       </button>

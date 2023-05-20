@@ -47,7 +47,10 @@
       "items": {
         "one": { "title": "Kam b — synthétique pour moteur à essence 5w30 SN", "desc": "combinaison, huile brillante pour véhicules, automobile, super léger, Protection contre une excellente tenue" },
         "two": { "title": "Kam b — synthétique pour moteur à essence 5w30 SN", "desc": "combinaison, huile brillante pour véhicules, automobile, super léger, Protection contre une excellente tenue" },
-        "three": { "title": "Kam b — synthétique pour moteur à essence 5w30 SN", "desc": "combinaison, huile brillante pour véhicules, automobile, super léger, Protection contre une excellente tenue" }
+        "three": {
+          "title": "Kam b — synthétique pour moteur à essence 5w30 SN",
+          "desc": "combinaison, huile brillante pour véhicules, automobile, super léger, Protection contre une excellente tenue"
+        }
       }
     },
     "item6": {
@@ -86,5 +89,23 @@
       "end": ", nous sommes passionnés d'aider nos clients à assurer le bon fonctionnement et l'efficacité de leurs véhicules et équipements. Avec plus de cinq années d'expérience dans l'industrie, nous avons bâti une réputation d'excellence et sommes fiers d'être un fournisseur de confiance d'huiles moteur, de moteurs de camion, de moteurs, de filtres à huile, de filtres à air et plus encore."
     },
     "p2": "Nous croyons en la fourniture de produits et services exceptionnels, et notre équipe d'experts se consacre à vous aider à trouver les solutions adaptées à vos besoins. De la sélection de la bonne huile à l'amélioration des performances de l'équipement, nous sommes là pour vous aider à atteindre vos objectifs."
+  },
+  "comments": {
+    "c0": {
+      "user": "Mr. NJOLEU Charles",
+      "text": "J'utilise les huiles moteur et les filtres de chez Future Trucks depuis des années et je n'ai jamais été déçu. Leurs produits m'ont aidé à assurer le bon fonctionnement et l'efficacité de mon véhicule, et leurs prix sont très abordable."
+    },
+    "c1": {
+      "user": "Mr. Karl ZOGO",
+      "text": "Future Trucks est ma référence pour tous mes besoins en matière de moteur et d'équipement. Leurs produits sont de qualité supérieure et leur personnel est toujours compétent et serviable. J'apprécie leur souci du détail et leur approche personnalisée."
+    },
+    "c2": {
+      "user": "Mme Beatrice LIKOME",
+      "text": "J'ai récemment eu un problème avec mon véhicule, et l'équipe de Futur Trucks Sarl a pu diagnostiquer le problème et fournir une solution rapide et efficace. J'ai été impressionné par leur expertise et leur professionnalisme."
+    },
+    "c3": {
+      "user": "Mme Beatrice LIKOME",
+      "text": "J'apprécie la qualité et la fiabilité des produits de Future Trucks, mais ce qui les distingue vraiment, c'est leur service client exceptionnel. Leur personnel est sympathique, réactif et toujours prêt à aller au-delà pour m'aider à trouver les bonnes solutions à mes besoins."
+    }
   }
 }

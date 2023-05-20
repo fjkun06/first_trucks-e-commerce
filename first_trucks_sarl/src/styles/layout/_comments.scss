@@ -1,0 +1,80 @@
+@use "../utils/mixins";
+section.comments {
+  border: 3px solid red;
+  @include mixins.size(100vw, fit-content);
+  @include mixins.flex(column);
+  padding: 2rem 3.2rem;
+  // row-gap: 2rem;
+  justify-self: flex-start;
+  margin-top: -8rem;
+  background-color: #fbfbfb;
+  @media only screen and (1000px < width < 1200px) {
+    margin-top: -12rem;
+  }
+  div {
+    border: 3px solid red;
+    @include mixins.size(100vw, fit-content);
+    @include mixins.flex(column);
+    padding: 2rem 3.2rem;
+    row-gap: 2rem;
+    width: 36.6rem;
+
+    @media only screen and (width > 1200px) {
+      gap: 4rem;
+    }
+    @media only screen and (width > 800px) {
+      width: 65.593rem;
+    }
+    @media only screen and (width > 1200px) {
+      width: 57vw;
+    }
+    @media only screen and (width > 1500px) {
+      width: 115rem;
+    }
+    p {
+      // height: 149.34px;
+      // border: 1px solid red;
+      @include mixins.flex(column);
+      padding: 15px;
+      gap: 0.567rem;
+      box-shadow: 0px 0px 11.3443px rgba(0, 0, 0, 0.05);
+      border-radius: 0.25rem;
+      width: 100%;
+      span.user_comment {
+        font-family: "Nunito 300";
+        font-style: italic;
+        @include mixins.formatText(300, 1.5rem, 1.7rem);
+        color: #0119c2;
+      }
+      span.user_name {
+        align-self: flex-end;
+        font-family: "Poppins";
+        @include mixins.formatText(600, 1.5rem, 2.2rem);
+        color: #28a2f7;
+      }
+      @media only screen and (width > 800px) {
+        span.user_name,
+        span.user_comment {
+          font-size: 1.8rem;
+          line-height: 2.3rem;
+        }
+        gap: 1rem;
+      }
+      @media only screen and (width > 1200px) {
+        span.user_name,
+        span.user_comment {
+          font-size: 2.1rem;
+          line-height: 3.2rem;
+        }
+        // gap: 4rem;
+      }
+      @media only screen and (width > 1500px) {
+        span.user_name,
+        span.user_comment {
+          font-size: 2.4rem;
+          line-height: 3.6rem;
+        }
+      }
+    }
+  }
+}
