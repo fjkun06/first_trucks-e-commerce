@@ -12,11 +12,11 @@
     "title": "Our Products",
     "item1": {
       "name": "Air filter",
-      "items": [
-        { "title": "BMC FBSS70-70 “Direct Intake” Universal Conical Air Filter", "desc": "optimized for engines below 1600cc" },
-        { "title": "BMC FBSS70-70 “Direct Intake” Universal Conical Air Filter", "desc": "optimized for engines below 1600cc" },
-        { "title": "BMC FBSS70-70 “Direct Intake” Universal Conical Air Filter", "desc": "optimized for engines below 1600cc" }
-      ]
+      "items": {
+        "one": { "title": "BMC FBSS70-70 “Direct Intake” Universal Conical Air Filter", "desc": "optimized for engines below 1600cc" },
+        "two": { "title": "BMC FBSS70-70 “Direct Intake” Universal Conical Air Filter", "desc": "optimized for engines below 1600cc" },
+        "three": { "title": "BMC FBSS70-70 “Direct Intake” Universal Conical Air Filter", "desc": "optimized for engines below 1600cc" }
+      }
     }
   }
 }

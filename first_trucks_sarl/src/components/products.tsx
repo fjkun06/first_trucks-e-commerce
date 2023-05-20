@@ -13,16 +13,18 @@ import p1 from "../../public/images/p1d.webp";
 import Button from "@/stories/Button";
 // Import Swiper React components
 import { Swiper, SwiperProps, SwiperRef, SwiperSlide } from "swiper/react";
-
+const items = ["one", "two", "three"];
 // Import Swiper styles
 import "swiper/css";
 import "swiper/scss/navigation";
 
 // import required modules
 import { Navigation } from "swiper";
+import { nanoid } from "nanoid";
 
 const Products = () => {
   const t = useTranslations("products");
+console.log(...new Array(7).fill(7));
 
   return (
     <section className="products">
@@ -36,34 +38,21 @@ const Products = () => {
         {t("title")}
       </span>
       <div className="container">
-        <Card />
-        <Card direction="right"/>
-        <Card />
-        <article>
-          <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-            <SwiperSlide>Slide 11</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>
-              {" "}
-              <Image src={p1} alt="logo" priority quality={100} />
-            </SwiperSlide>
-          </Swiper>
-        </article>
-        {/* <article></article> */}
-        {/* <article></article> */}
-        <article></article>
-        <article></article>
-        <article></article>
-        <article></article>
-        <article></article>
+        {
+          ...new Array(8).fill(8).map((_,i) => <Card cardNumber={++i} direction={ i % 2 !== 0 ? "left" : "right"}/>)
+        }
+
       </div>
     </section>
   );
 };
 
-export const Card: React.FC<Card> = ({direction}) => {
+export const Card: React.FC<Card> = ({ direction, cardNumber = 1 }) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const t = useTranslations("products");
+  const x = 1;
+  // console.log(t(`item${cardNumber}.items.one.title`));
+
   const handleClick = () => {
     setIsOpen(!isOpen);
     console.log("clicked card");
@@ -78,8 +67,8 @@ export const Card: React.FC<Card> = ({direction}) => {
     <motion.article layout animate={{ height: isOpen ? `51.28rem` : height }} onMouseLeave={() => setIsOpen(false)}>
       {/* <motion.article animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}> */}
       {/* <motion.div></motion.div> */}
-      <CardHeading direction={direction} height={height} src={[test, testt, testd]} handler={handleClick} />
-      <CardItem toggle={isOpen} height={height} />
+      <CardHeading direction={direction} height={height} src={[test, testt, testd]} handler={handleClick} heading={t(`item${cardNumber}.name`)} />
+      <CardItem toggle={isOpen} height={height} cardNumber={cardNumber} />
       {/* <SwipeCardItem toggle={isOpen} height={height} /> */}
     </motion.article>
   ) : (
@@ -88,28 +77,32 @@ export const Card: React.FC<Card> = ({direction}) => {
     <motion.article layout animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}>
       {/* <motion.article animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}> */}
       {/* <motion.div></motion.div> */}
-      <CardHeading direction={direction} height={height} src={[test, testt, testd]} handler={handleClick} />
+      <CardHeading direction={direction} height={height} src={[test, testt, testd]} handler={handleClick} heading={t(`item${cardNumber}.name`)} />
       {/* <CardItem toggle={isOpen} height={height} />swipe_ */}
-      <SwipeCardItem toggle={isOpen} height={height} />
+      <SwipeCardItem toggle={isOpen} height={height} cardNumber={cardNumber} />
     </motion.article>
   );
 };
 
 interface Card {
   direction?: "left" | "right";
+  cardNumber?: number;
 }
 interface CardHeading {
   src: StaticImageData[];
   height: string;
   handler: () => void;
   direction?: "left" | "right";
+  heading: string;
 }
 interface CardItem {
   toggle: boolean;
   height: string;
+  cardNumber?: number;
 }
 
-export const SwipeCardItem: React.FC<CardItem> = ({ toggle, height }) => {
+export const SwipeCardItem: React.FC<CardItem> = ({ toggle, height, cardNumber = 1 }) => {
+  const t = useTranslations(`products.item${cardNumber}.items`);
   return (
     <AnimatePresence>
       {toggle && (
@@ -120,48 +113,35 @@ export const SwipeCardItem: React.FC<CardItem> = ({ toggle, height }) => {
           initial={{ height: `0rem` }}
           exit={{ height: `0rem`, transition: { duration: 0.5, ease: "easeOut" } }}
         >
-          <Swiper effect="fade" speed={1000} navigation={true} modules={[Navigation]} className="mySwiper">
-            <SwiperSlide>
-              <motion.article className="swipe_card_item" initial={{ height: `calc(${height} * 1.2544` }}>
-                <Image src={p1} alt="logo" priority quality={100} />
-                <div>
-                  <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
-                  <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
-                  <Button />
-                </div>
-              </motion.article>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <motion.article className="swipe_card_item" initial={{ height: `calc(${height} * 1.2544` }}>
-                <Image src={p1} alt="logo" priority quality={100} />
-                <div>
-                  <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
-                  <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
-                  <Button />
-                </div>
-              </motion.article>
-            </SwiperSlide>
-            <SwiperSlide>
-              <motion.article className="swipe_card_item" initial={{ height: `calc(${height} * 1.2544` }}>
-                <Image src={p1} alt="logo" priority quality={100} />
-                <div>
-                  <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
-                  <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
-                  <Button />
-                </div>
-              </motion.article>
-            </SwiperSlide>
-          </Swiper>
+          {cardNumber === undefined ? (
+            <Swiper effect="fade" speed={1000} navigation={true} modules={[Navigation]} className="mySwiper">
+              Item out of stock.
+            </Swiper>
+          ) : (
+            <Swiper effect="fade" speed={1000} navigation={true} modules={[Navigation]} className="mySwiper">
+              {items.map((item) => (
+                <SwiperSlide key={nanoid()}>
+                  <motion.article className="swipe_card_item" initial={{ height: `calc(${height} * 1.2544` }}>
+                    <Image src={p1} alt="logo" priority quality={100} />
+                    <div>
+                      <span className="card_item_heading">{t(`${item}.title`)}</span>
+                      <span className="card_item_text">{t(`${item}.desc`)}</span>
+                      <Button />
+                    </div>
+                  </motion.article>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          )}
         </motion.section>
       )}
     </AnimatePresence>
 
-    // <motion.article className="card_item" animate={{ height: toggle ? height : height }}>
   );
 };
 
-export const CardItem: React.FC<CardItem> = ({ toggle }) => {
+export const CardItem: React.FC<CardItem> = ({ toggle, cardNumber = 1 }) => {
+  const t = useTranslations(`products.item${cardNumber}.items`);
 
   return (
     <AnimatePresence>
@@ -174,48 +154,36 @@ export const CardItem: React.FC<CardItem> = ({ toggle }) => {
           initial={{ height: `0rem` }}
           exit={{ height: `0rem`, transition: { duration: 2, ease: "linear" } }}
         >
-          <article className="card_item">
-            {/* <motion.article className="card_item" animate={{ height: toggle ? `calc(${height} * 1.2544)` : "0rem", display: toggle ? "flex" : "none" }}> */}
-            <Image src={p1} alt="logo" priority quality={100} />
-            <div>
-              <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
-              <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
-              <Button />
-            </div>
-          </article>
-
-          <article className="card_item">
-            {/* <motion.article className="card_item" animate={{ height: toggle ? `21.28rem` : "0rem", display: toggle ? "flex" : "none" }}> */}
-            <Image src={p1} alt="logo" priority quality={100} />
-            <div>
-              <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
-              <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
-              <Button />
-            </div>
-          </article>
-          <article className="card_item">
-            {/* <motion.article className="card_item" animate={{ height: toggle ? `21.28rem` : "0rem", display: toggle ? "flex" : "none" }}> */}
-            <Image src={p1} alt="logo" priority quality={100} />
-            <div>
-              <span className="card_item_heading">Filtre à air conique universelle “admission directe BMC FBSS70-70”</span>
-              <span className="card_item_text">optimisé pour les moteurs inférieur à 1600cc</span>
-              <Button />
-            </div>
-          </article>
+          {cardNumber === undefined ? (
+            <Swiper effect="fade" speed={1000} navigation={true} modules={[Navigation]} className="mySwiper">
+              Item out of stock.
+            </Swiper>
+          ) : (
+            items.map((item) => (
+              <article className="card_item" key={nanoid()}>
+                <Image src={p1} alt="logo" priority quality={100} />
+                <div>
+                  <span className="card_item_heading">{t(`${item}.title`)}</span>
+                  <span className="card_item_text">{t(`${item}.desc`)}</span>
+                  <Button />
+                </div>
+              </article>
+            ))
+          )}
+      
         </motion.section>
       )}
     </AnimatePresence>
 
-    // <motion.article className="card_item" animate={{ height: toggle ? height : height }}>
   );
 };
 
-export const CardHeading: React.FC<CardHeading> = ({ height, src, handler, direction = "left" }) => {
+export const CardHeading: React.FC<CardHeading> = ({ height, src, handler, direction = "left", heading }) => {
   return (
     <motion.article className="card_heading" style={{ height: height }} onClick={handler}>
-      <motion.span className={direction === "right" ? "card_heading_text right" : "card_heading_text"}>Filtre a Air</motion.span>
+      <motion.span className={direction === "right" ? "card_heading_text right" : "card_heading_text"}>{heading}</motion.span>
       <div className="card_heading_image">
-      <span ></span>
+        <span></span>
         <Image src={src[0]} alt="logo" priority quality={100} />
         <Image src={src[1]} alt="logo" priority quality={100} />
         <Image src={src[2]} alt="logo" priority quality={100} />
