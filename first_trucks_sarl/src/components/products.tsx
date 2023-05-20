@@ -70,7 +70,8 @@ export const Card: React.FC<Card> = ({direction}) => {
   };
   const tablet = useMediaQuery("(width > 800px)");
   const desktop = useMediaQuery("(width > 1500px)");
-  const height = desktop ? "30rem" : tablet ? "31.5rem" : "16.971rem";
+  const lg = useMediaQuery("(width > 1200px)");
+  const height = lg ? "30rem" : tablet ? "31.5rem" : "16.971rem";
   console.log(height);
   return desktop ? (
     // <motion.article onClick={handleClick} >
@@ -214,8 +215,8 @@ export const CardHeading: React.FC<CardHeading> = ({ height, src, handler, direc
   return (
     <motion.article className="card_heading" style={{ height: height }} onClick={handler}>
       <motion.span className={direction === "right" ? "card_heading_text right" : "card_heading_text"}>Filtre a Air</motion.span>
-      {/* <motion.span className={"card_heading_filter"}></motion.span> */}
       <div className="card_heading_image">
+      <span ></span>
         <Image src={src[0]} alt="logo" priority quality={100} />
         <Image src={src[1]} alt="logo" priority quality={100} />
         <Image src={src[2]} alt="logo" priority quality={100} />
