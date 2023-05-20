@@ -1,19 +1,16 @@
 @use "../utils/mixins";
 section.about {
-  border: 3px solid red;
   @include mixins.size(100vw, fit-content);
   @include mixins.flex(column);
   padding: 2rem 3.2rem;
   row-gap: 2rem;
   justify-self: flex-start;
-
   background: transparent;
   position: relative;
   z-index: 1;
   margin-top: -8rem;
-  @media only screen and (1000px  < width < 1200px) {
-  margin-top: -12rem;
-
+  @media only screen and (1000px < width < 1200px) {
+    margin-top: -12rem;
   }
   &::after {
     @include mixins.flex(column);
@@ -21,15 +18,12 @@ section.about {
     content: "";
     top: 0;
     left: 0;
-    @include mixins.size(100vw, fit-content);
     @include mixins.size(100%);
     background: url("../../../public/images/about/about_bg.webp") no-repeat;
-    background-size: 80%;
     background-size: 36.1rem 28rem;
     background-position: left 25%;
     transform: scaleX(-1);
     @media only screen and (width > 1500px) {
-      background-size: 100%;
       background-size: 61.6rem 47.726rem;
       background-position: unset;
       transform: unset;
@@ -38,7 +32,6 @@ section.about {
   /*********************************Main Text*********************************/
   p {
     z-index: 2;
-
     span {
       color: #4690ff;
     }
