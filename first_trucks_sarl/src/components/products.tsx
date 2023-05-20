@@ -105,8 +105,8 @@ export const SwipeCardItem: React.FC<CardItem> = ({ toggle, height, cardNumber =
               {items.map((item) => (
                 <SwiperSlide key={nanoid()}>
                   <motion.article className="swipe_card_item" initial={{ height: `calc(${height} * 1.2544` }}>
-                    {/* <Image src={require(`../../public/images/cards/1/default.webp`)} alt="logo" priority quality={100} /> */}
-                    <Image src={require(`../../public/images/cards/${cardNumber}/default.webp`)} alt="logo" priority quality={100} />
+                    {/* <Image src={require(`../../public/images/products/cards/1/default.webp`)} alt="logo" priority quality={100} /> */}
+                    <Image src={require(`../../public/images/products/cards/${cardNumber}/default.webp`)} alt="logo" priority quality={100} />
 
                     <div>
                       <span className="card_item_heading">{t(`${item}.title`)}</span>
@@ -145,8 +145,8 @@ export const CardItem: React.FC<CardItem> = ({ toggle, cardNumber = 1 }) => {
           ) : (
             items.map((item) => (
               <article className="card_item" key={nanoid()}>
-                {/* <Image src={require(`../../public/images/cards/1/default.webp`)} alt="logo" priority quality={100} /> */}
-                <Image src={require(`../../public/images/cards/${cardNumber}/default.webp`)} alt="logo" priority quality={100} />
+                {/* <Image src={require(`../../public/images/products/cards/1/default.webp`)} alt="logo" priority quality={100} /> */}
+                <Image src={require(`../../public/images/products/cards/${cardNumber}/default.webp`)} alt="logo" priority quality={100} />
                 <div>
                   <span className="card_item_heading">{t(`${item}.title`)}</span>
                   <span className="card_item_text">{t(`${item}.desc`)}</span>
@@ -170,8 +170,8 @@ export const CardHeading: React.FC<CardHeading> = ({ height, cardNumber = 1, han
         <span></span>
 
         {sizes.map((size) => (
-          <Image key={nanoid()} src={require(`../../public/images/cards/${cardNumber}/${size}.webp`)} alt="logo" priority quality={100} />
-          // <Image key={nanoid()} src={require(`../../public/images/cards/${cardNumber}/${size}.png`)} alt="logo" priority quality={100} />
+          <Image key={nanoid()} src={require(`../../public/images/products/cards/${cardNumber}/${size}.webp`)} alt="logo" priority quality={100} />
+          // <Image key={nanoid()} src={require(`../../public/images/products/cards/${cardNumber}/${size}.png`)} alt="logo" priority quality={100} />
         ))}
       </div>
     </motion.article>

@@ -1,10 +1,10 @@
-import headerMob from "../../public/images/hdr_mob.webp";
-import headerTab from "../../public/images/hdr_tab2.webp";
-import headerDesk from "../../public/images/hdr_desk.webp";
-import item1M from "../../public/images/i1m.webp";
-import item2M from "../../public/images/i2m.webp";
-import item3M from "../../public/images/i3m.webp";
-import item4M from "../../public/images/i4m.webp";
+import headerMob from "../../public/images/header/hdr_mob.webp";
+import headerTab from "../../public/images/header/hdr_tab2.webp";
+import headerDesk from "../../public/images/header/hdr_desk.webp";
+import item1M from "../../public/images/header/i1m.webp";
+import item2M from "../../public/images/header/i2m.webp";
+import item3M from "../../public/images/header/i3m.webp";
+import item4M from "../../public/images/header/i4m.webp";
 import Image from "next/image";
 import Button from "@/stories/Button";
 import { motion } from "framer-motion";

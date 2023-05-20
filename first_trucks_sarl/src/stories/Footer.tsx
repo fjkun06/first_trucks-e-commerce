@@ -1,9 +1,9 @@
 import Button from "./Button";
-import diamondM from "../../public/images/blurM.webp";
-import diamondT from "../../public/images/blurT.webp";
-import diamondD from "../../public/images/blurD.webp";
-import reels from "../../public/images/reels.webp";
-import engine from "../../public/images/i3m.webp";
+import diamondM from "../../public/images/footer/blurM.webp";
+import diamondT from "../../public/images/footer/blurT.webp";
+import diamondD from "../../public/images/footer/blurD.webp";
+import reels from "../../public/images/footer/reels.webp";
+import engine from "../../public/images/header/i3m.webp";
 // import engine from "../../public/svg/i3m.svg";
 import logoWText from "../../public/svg/logoWtext.svg";
 import Image from "next/image";
