@@ -13,8 +13,8 @@
     @include mixins.size(auto, 2.7rem);
     align-self: flex-start;
     font-family: "Poppins 700";
-    // border: 1px solid red;
-    @include mixins.formatText(700, 1.8rem, 2.7rem);
+    z-index: 3;
+        @include mixins.formatText(700, 1.8rem, 2.7rem);
     color: #0119c2;
     @include mixins.flex;
     gap: 0.5rem;

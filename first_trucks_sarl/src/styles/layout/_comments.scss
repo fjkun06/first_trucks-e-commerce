@@ -14,6 +14,7 @@ section.comments {
   div {
     border: 3px solid red;
     @include mixins.size(100vw, fit-content);
+    min-height: 800px;
     @include mixins.flex(column);
     padding: 2rem 3.2rem;
     row-gap: 2rem;
@@ -42,8 +43,8 @@ section.comments {
       width: 100%;
       span.user_comment {
         font-family: "Nunito 300";
-        font-style: italic;
         @include mixins.formatText(300, 1.5rem, 1.7rem);
+        font-style: italic;
         color: #0119c2;
       }
       span.user_name {

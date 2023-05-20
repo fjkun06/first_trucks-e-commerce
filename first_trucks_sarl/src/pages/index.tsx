@@ -38,7 +38,7 @@ export default function Home() {
     <Products/>
     <About/>
     <Comments/>
-      <button type="submit" onClick={toggleState}>
+      {/* <button type="submit" onClick={toggleState}>
         ToggleState
       </button>
 
@@ -50,7 +50,7 @@ export default function Home() {
       </button>
       <button type="button" className="" onClick={() => testFunction("en")}>
         test en
-      </button>
+      </button> */}
     </>
   );
 }

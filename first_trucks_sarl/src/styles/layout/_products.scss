@@ -11,6 +11,8 @@ section.products {
     @include mixins.size(100vw, fit-content);
     @include mixins.flex(column);
     row-gap: 0.5rem;
+    background-color: #fff;
+    overflow: hidden;
     article {
       width: 367px;
       // width: 75vw;
@@ -90,7 +92,6 @@ section.products {
             }
           }
           img {
-        
             z-index: 2;
             @include mixins.position("1/2");
 
