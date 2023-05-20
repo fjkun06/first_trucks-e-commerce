@@ -77,5 +77,14 @@
   },
   "contact": {
     "text": "Contact Us"
+  },
+  "about": {
+    "title": "About Us",
+    "p1": {
+      "start": "At ",
+      "middle": "First Trucks Sarl",
+      "end": ", we are passionate about helping our customers keep their vehicles and equipment running smoothly and efficiently. With over five years of industry experience, we have built a reputation for excellence and are proud to be a trusted supplier of engine oils, truck engines, motors, oil filters, air filters and more."
+    },
+    "p2": "We believe in providing exceptional products and services, and our team of experts is dedicated to helping you find the right solutions for your needs. From selecting the right oil to improving equipment performance, we're here to help you achieve your goals."
   }
 }
