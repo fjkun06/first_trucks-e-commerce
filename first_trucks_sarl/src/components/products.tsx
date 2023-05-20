@@ -88,7 +88,7 @@ export const Card: React.FC<Card> = ({direction}) => {
     <motion.article layout animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}>
       {/* <motion.article animate={{ height: isOpen ? `calc(${height} * 2.254)` : height }} onMouseLeave={() => setIsOpen(false)}> */}
       {/* <motion.div></motion.div> */}
-      <CardHeading height={height} src={[test, testt, testd]} handler={handleClick} />
+      <CardHeading direction={direction} height={height} src={[test, testt, testd]} handler={handleClick} />
       {/* <CardItem toggle={isOpen} height={height} />swipe_ */}
       <SwipeCardItem toggle={isOpen} height={height} />
     </motion.article>
@@ -161,8 +161,7 @@ export const SwipeCardItem: React.FC<CardItem> = ({ toggle, height }) => {
   );
 };
 
-export const CardItem: React.FC<CardItem> = ({ toggle, height }) => {
-  const lg = useMediaQuery("(width > 1500px)");
+export const CardItem: React.FC<CardItem> = ({ toggle }) => {
 
   return (
     <AnimatePresence>

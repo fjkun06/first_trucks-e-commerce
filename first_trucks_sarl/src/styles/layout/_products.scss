@@ -103,7 +103,6 @@ section.products {
           @include mixins.size(inherit);
           @include mixins.customgrid(1, 1, 1fr);
           span {
-            // mix-blend-mode: color-burn;
             @include mixins.position("1/2");
             justify-self: center;
             @include mixins.size(inherit);
@@ -118,10 +117,8 @@ section.products {
             }
           }
           img {
-            // @include mixins.size(inherit);
-            // @include mixins.size(100%);
+        
             z-index: 2;
-            // @include mixins.size(inherit);
             @include mixins.position("1/2");
 
             transition: transform 0.5s;
