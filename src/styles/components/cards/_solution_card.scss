@@ -1,0 +1,123 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+.ensome__solutioncard {
+  /****************** variant4 **********************/
+  &__item {
+    @include mixins.flex;
+    gap: 0.75rem;
+  }
+  /****************** variant3 **********************/
+  &__variant1,
+  &__variant2,
+  &__variant3 {
+    //initialise card
+    @include mixins.cardInit;
+    // gap: 12.1rem;
+    @include mixins.size(54rem, 26.5rem);
+    padding: 4.1rem 3.5rem 3.5rem;
+    align-items: flex-start;
+    padding: 2rem 3.5rem;
+    gap: 2rem;
+    span.ensome__icon_data__primary {
+      transform: scale(1.4);
+    }
+
+    @media only screen and (width <= 42rem) {
+      @include mixins.size(32.8rem, 26.4rem);
+      padding: 2.5rem 2rem;
+      gap: 1.6rem;
+      span.ensome__icon_data__primary {
+        transform: scale(1);
+      }
+      p {
+        @include mixins.formatText(400, 1.4rem, 2.4rem);
+      }
+    }
+  }
+
+  /****************** variant2 **********************/
+  &__variant2,
+  &__variant1 {
+    background-color: variables.$tertiary;
+    box-shadow: variables.$shadowCard2;
+    padding: 3.5rem;
+    gap: 2.5rem;
+    @include mixins.size(35rem, 41.1rem);
+    span.ensome__icon_data__primary {
+      transform: scale(1);
+    }
+    @include mixins.customgrid(8, 1, auto);
+    justify-content: start;
+    align-items: flex-start;
+
+    section {
+      @include mixins.customgrid(8, 1, auto);
+      gap: 1rem;
+    }
+
+    button {
+      justify-self: start;
+    }
+    @media only screen and (width <= 42rem) {
+      padding: 3rem 2rem;
+      gap: 2rem;
+      @include mixins.size(30rem, 37.1rem);
+      section {
+        gap: 1rem;
+        @include mixins.customgrid(6, 1, auto);
+
+        div p {
+          @include mixins.formatText(400, 1.4rem, 2.4rem);
+          color: variables.$black;
+        }
+      }
+    }
+  }
+
+  // &__variant2,
+  // &__variant1 {
+  //   p {
+  //     color: variables.$black;
+  //   }
+  // }
+  /****************** variant1 **********************/
+  &__variant1 {
+    &::after {
+      position: absolute;
+      top: 0.16%;
+      display: block;
+      content: "";
+      @include mixins.size(100%, 0.6rem);
+      background-color: variables.$primary;
+    }
+    background-color: variables.$white;
+    @include mixins.size(35rem, 39.7rem);
+    align-items: flex-end;
+    padding: 4.1rem 3.5rem 3.5rem;
+    position: relative;
+    button {
+      position: absolute;
+      bottom: 8%;
+      left: 11%;
+    }
+    span.ensome__icon_data__primary {
+      display: none;
+    }
+    section {
+      gap: 1rem;
+      @include mixins.customgrid(12, 1, auto);
+      div p {
+        @include mixins.formatText(400, 1.4rem, 2.4rem);
+        color: variables.$black;
+      }
+    }
+    @media only screen and (width <= 42rem) {
+      @include mixins.size(32.8rem, 37rem);
+      padding: 3.5rem 2.5rem 3rem;
+      h6 {
+        @include mixins.formatText(700, 2rem, 3rem);
+      }
+      // gap: 10.1rem;
+    }
+  }
+}

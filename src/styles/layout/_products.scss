@@ -1,0 +1,277 @@
+@use "../utils/mixins";
+section.products {
+  // border: 3px solid red;
+  @include mixins.size(100vw, fit-content);
+  @include mixins.flex(column);
+  padding: 2rem 3.2rem;
+  row-gap: 2rem;
+
+  /*********************************Main Cards*********************************/
+  div.container {
+    @include mixins.size(100vw, fit-content);
+    @include mixins.flex(column);
+    row-gap: 0.5rem;
+    background-color: #fff;
+    overflow: hidden;
+
+    @media only screen and (width < 800px) {
+      padding-bottom: 3rem;
+    }
+    article {
+      width: 367px;
+      // width: 75vw;
+      height: calc(169.71px * 1.8);
+      // border: 1px solid red;
+      cursor: pointer;
+      transition: height 0.5s;
+      @media only screen and (width > 800px) {
+        width: 68rem;
+      }
+      @media only screen and (width > 1200px) {
+        // height: 85.152rem;
+        width: 60vw;
+      }
+      @media only screen and (width > 1500px) {
+        width: 1200px;
+      }
+      /*********************************Card Background*********************************/
+
+      article.card_heading {
+        border: 1px solid rgb(24, 185, 131);
+        // @include mixins.size(inherit, 16.971rem);
+        width: inherit;
+        @include mixins.customgrid(1, 1, auto);
+
+        /*********************************Card Article Heading Text*********************************/
+
+        .card_heading_text {
+          @include mixins.position("1/2");
+          z-index: 3;
+          @include mixins.flex;
+          font-family: "Poppins 700";
+
+          @include mixins.formatText(700, 2.54rem, 3.8rem);
+
+          text-transform: uppercase;
+          color: #ffffff;
+          // display: none;
+          @media only screen and (width > 800px) {
+            @include mixins.formatText(700, 4.694rem, 7rem);
+          }
+          @media only screen and (width > 1200px) {
+            @include mixins.formatText(700, 4rem, 6rem);
+            justify-content: flex-start;
+            align-self: flex-start;
+            padding: 6.5rem 0 0 6.5rem;
+          }
+        }
+
+        .right {
+          @media only screen and (width > 1200px) {
+            justify-content: flex-end;
+            align-self: flex-start;
+            padding: 6.5rem 6.5rem 0 0;
+          }
+        }
+
+        /*********************************Card Article Heading Image*********************************/
+        .card_heading_image {
+          @include mixins.position("1/2");
+          overflow: hidden;
+          background-color: transparent;
+          @include mixins.size(inherit);
+          @include mixins.customgrid(1, 1, 1fr);
+          span {
+            @include mixins.position("1/2");
+            justify-self: center;
+            @include mixins.size(inherit);
+            background-color: #0119c2;
+            display: flex;
+            z-index: 1;
+          }
+
+          &:hover {
+            img {
+              transform: scale(1.25);
+            }
+          }
+          img {
+            z-index: 2;
+            @include mixins.position("1/2");
+
+            transition: transform 0.5s;
+            @include mixins.signatures(block);
+
+            @media screen and (800px < width <= 1200px) {
+              @include mixins.signatures($tablet: block);
+            }
+            @media screen and (width > 1200px) {
+              @include mixins.signatures($desktop: block);
+            }
+          }
+        }
+      }
+      /*********************************Card Article*********************************/
+      /*********************************Card Items*********************************/
+      article.card_item,
+      article.swipe_card_item {
+        // border: 1px solid rgb(42, 34, 189);
+        // background-color: limegreen;
+        // box-shadow: inset 0 -3em 3em rgba(#0119c2, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+        cursor: default;
+        @include mixins.size(inherit, 16.971rem);
+        transition: transform 0.5s;
+        display: flex;
+        padding: 1.9rem;
+
+        img {
+          @include mixins.size(17.5rem);
+          // @media only screen and (width > 800px) {
+          //   @include mixins.size(32.428rem);
+          // }
+        }
+        div {
+          @include mixins.flex(column);
+          row-gap: 1rem;
+          align-items: flex-start;
+          .card_item_heading {
+            font-family: "Poppins 700";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12.7283px;
+            line-height: 17px;
+            /* or 130% */
+            text-align: left;
+            color: #0119c2;
+          }
+          .card_item_text {
+            font-family: "Poppins";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10.6069px;
+            line-height: 14px;
+            /* or 130% */
+            text-align: left;
+            color: rgba(0, 0, 0, 0.8);
+          }
+          button {
+            @include mixins.size(14.3rem, 3.8rem);
+            font-size: 1.2rem;
+            svg {
+              @include mixins.size(1.58rem);
+            }
+          }
+        }
+      }
+      /*********************************Swipe Card Item*********************************/
+      article.swipe_card_item {
+        // box-shadow: inset 0 -3em 3em rgba(#0119c2, 0.01), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+
+        img {
+          @media only screen and (width > 800px) {
+            @include mixins.size(32.428rem);
+          }
+        }
+        div {
+          @media only screen and (width > 800px) {
+            row-gap: 2rem;
+
+            .card_item_heading {
+              // font-family: 'Poppins';
+              font-style: normal;
+              font-weight: 700;
+              font-size: 23.5838px;
+              line-height: 31px;
+              /* or 130% */
+
+              color: #0119c2;
+            }
+            .card_item_text {
+              font-family: "Poppins";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 19.6532px;
+              line-height: 26px;
+            }
+            button {
+              gap: 2rem;
+              @include mixins.size(28.223rem, 7.1rem);
+              font-size: 2.1rem;
+              svg {
+                @include mixins.size(3.5rem);
+              }
+            }
+          }
+          @media only screen and (width > 1500px) {
+          }
+        }
+      }
+      /*********************************Card Item*********************************/
+      article.card_item {
+        display: flex;
+        height: inherit;
+        height: 21.28rem;
+        @media only screen and (width > 1500px) {
+          width: 367px;
+          width: auto;
+          // height: 21.28rem;
+        }
+      }
+    }
+    @media only screen and (width > 800px) {
+      row-gap: 1rem;
+    }
+    @media only screen and (width > 1500px) {
+      row-gap: 2rem;
+    }
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next {
+  transform: scale(0.35) translate(2rem, -50%);
+}
+.swiper-button-prev {
+  transform: scale(0.35) translate(-2rem, -50%);
+}
+
+@media only screen and (width > 800px) {
+  .swiper-button-next {
+    // top: 25%;
+    transform: scale(0.5) translate(1rem, -50%);
+  }
+  .swiper-button-prev {
+    // top: 25%;
+    transform: scale(0.5) translate(-1rem, -50%);
+  }
+}
+
+section.card_item_container {
+  // box-shadow: inset 0 -3em 3em rgba(#0119c2, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  // border: 1px solid red;
+  // transition: height 0.25s ease-in;
+}

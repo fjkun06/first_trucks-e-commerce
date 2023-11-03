@@ -1,0 +1,135 @@
+@use "../utils/mixins";
+nav {
+  filter: drop-shadow(0px 0px 25px rgba(0, 0, 0, 0.1));
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+  width: 100vw;
+  transition: height 0.25s ease-in-out;
+  @include mixins.flex(column);
+  justify-content: flex-start;
+  background-color: #fff;
+  @media only screen and (700px <width < 1200px) {
+    padding: 0 7.7rem;
+  }
+  @media only screen and (width > 1200px) {
+    @include mixins.flex;
+    padding: 0 7.7rem;
+    @include mixins.size(100vw, 8rem);
+  }
+
+  padding: 0 4.2rem;
+  z-index: 3;
+  position: relative;
+
+  div {
+    /*******logo and menu*************/
+    &#nav1 {
+      transition-timing-function: ease-in-out;
+      // border: 1px solid red;
+      @include mixins.grid;
+      min-height: 6.6rem;
+      max-height: 6.6rem;
+      grid-template-columns: repeat(2, 1fr);
+      span {
+        cursor: pointer;
+        @include mixins.flex {
+          justify-content: flex-end;
+        }
+        justify-self: flex-end;
+        @include mixins.size(4rem);
+
+        svg {
+          @include mixins.size(inherit);
+          path {
+            stroke: #1968b7;
+            stroke-width: 0.5px;
+          }
+        }
+        @media only screen and (width > 1200px) {
+          display: none;
+        }
+      }
+      img {
+        @include mixins.size(8rem, 3.9rem);
+      }
+    }
+    @include mixins.size(inherit);
+    padding: inherit;
+
+    /*******Text and button*************/
+    &#nav2 {
+      transition: transform 0.25s ease-in-out;
+      @include mixins.flex(column) {
+        align-items: flex-start;
+      }
+      gap: 1.5rem;
+      @media only screen and (width > 1200px) {
+        @include mixins.flex;
+        gap: 3rem;
+      }
+
+      span {
+        cursor: pointer;
+        font-family: "Poppins 700";
+        @include mixins.formatText(700, 1.4rem, 2.1rem);
+        text-transform: capitalize;
+        color: #145ba1;
+        @include mixins.flex;
+        text-align: center;
+        position: relative;
+        transition: all 0.25s ease-in-out;
+        @media only screen and (width > 1200px) {
+          &:hover {
+            &::after {
+              @include mixins.size(100%, 4px);
+            }
+          }
+          &::after {
+            position: absolute;
+            display: block;
+            content: "";
+            transition: width 0.25s ease-in-out;
+            top: 185%;
+            left: 0;
+            @include mixins.size(0%, 5px);
+            border-radius: 10px;
+            background-color: #1968b7;
+          }
+        }
+      }
+
+      .lang {
+        position: relative;
+        &:hover {
+          .tooltip {
+            opacity: 1;
+          }
+        }
+      }
+      .tooltip {
+        @include mixins.flex;
+        opacity: 0;
+        position: absolute;
+        content: "";
+        top: 0%;
+        left: 170%;
+        width: max-content;
+        border: 2px solid #1968b7;
+        padding-inline: 0.25rem;
+        transition: opacity 0.25s ease-in-out;
+        @media only screen and (width > 1200px) {
+          top: 120%;
+        }
+      }
+    }
+  }
+}
+
+#modal {
+  position: absolute;
+  transform: translate(0);
+  top: 0;
+  background-color: rgba(#145ba1, 0.25);
+  width: 100vw;
+  z-index: 1;
+  transition: height 0.35s ease-in-out;
+}

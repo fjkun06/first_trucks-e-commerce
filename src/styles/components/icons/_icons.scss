@@ -1,0 +1,21 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+
+.ensome__icon {
+  &_small {
+    @include mixins.generateSVGColorClasses(2rem);
+  }
+  &_medium {
+    @include mixins.generateSVGColorClasses(2.4rem);
+  }
+  &_large {
+    @include mixins.generateSVGColorClasses(2.8rem);
+  }
+  &_data {
+    @include mixins.generateSVGColorClasses(4.2rem);
+  }
+  //isometric dat icons
+  &_idata {
+    @include mixins.generateSVGColorClasses(5.7rem);
+  }
+}

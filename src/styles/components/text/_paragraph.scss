@@ -1,0 +1,38 @@
+@use "../../utils/mixins";
+.ensome__paragraph {
+  &__p1,
+  &__p2-b,
+  &__p2-r,
+  &__p3-b,
+  &__p3-r {
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: -0.015em;
+
+  }
+  //paragraph n
+  &__p1 {
+    @include mixins.formatText(400, 2rem, 3.3rem);
+  }
+
+  &__p2 {
+    //bold
+    &-b {
+      @include mixins.formatText(700, 1.6rem, 2.8rem);
+    }
+    //regular
+    &-r {
+      @include mixins.formatText(400, 1.6rem, 2.8rem);
+    }
+  }
+
+  &__p3 {
+    //bold
+    &-b {
+      @include mixins.formatText(600, 1.4rem, 2.4rem);
+    }
+    //regular
+    &-r {
+      @include mixins.formatText(400, 1.4rem, 2.4rem);
+    }
+  }
+}

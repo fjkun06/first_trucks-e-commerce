@@ -1,0 +1,68 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+.ensome__reviewcard {
+  &__variant1,
+  &__variant2 {
+    @include mixins.cardInit;
+    padding: 6.5rem 3.5rem 3.5rem;
+    row-gap: 3.5rem;
+    @include mixins.size(54rem, 30.9rem);
+    position: relative;
+    h6:last-child {
+      color: variables.$grey;
+    }
+    #rcard_image {
+      @include mixins.size(8rem);
+      border-radius: 100%;
+      position: absolute;
+      top: -12.5%;
+    }
+    @media only screen and (width <= 42rem) {
+      @include mixins.size(27.2rem, 35.7rem);
+      padding: 6rem 2.5rem 3rem;
+      row-gap: 2.5rem;
+      p {
+        @include mixins.formatText(400, 1.4rem, 2.4rem);
+        align-self: stretch;
+        // text-align: justify;
+      }
+    }
+    #rcard_image {
+      @include mixins.size(6rem);
+      top: -8.5%;
+    }
+  }
+
+  &__variant2 {
+    padding: 3.5rem;
+    row-gap: 2.5rem;
+    column-gap: 1.5rem;
+    @include mixins.size(54rem, 28.7rem);
+
+    @include mixins.customgrid(4, 4, 3rem, 11rem);
+    #rcard_image {
+      grid-row: 1/3;
+      grid-column: 1/2;
+      position: relative;
+    }
+
+    p {
+      grid-row: 3/5;
+      grid-column: 1/5;
+    }
+    div {
+      grid-row: 1/3;
+      grid-column: 2/5;
+      @include mixins.flex(column);
+      align-items: flex-start;
+      margin-left: -4rem;
+    }
+
+    @media only screen and (width <= 42rem) {
+    @include mixins.customgrid(4, 4, auto);
+
+      @include mixins.size(32.8rem, 31.3rem);
+     
+    }
+  }
+}

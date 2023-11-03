@@ -1,0 +1,57 @@
+@use "footer";
+@use "navbar";
+@use "scrollbar";
+@use "header";
+@use "products";
+@use "about";
+@use "comments";
+
+main {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  @media only screen and (width > 1500px) {
+    padding-bottom: 13rem;
+  }
+  #content {
+    row-gap: 4rem;
+    @media only screen and (width > 800px), (width > 1200px) {
+      row-gap: 8rem;
+    }
+    @media only screen and (1000px < width < 1200px), (width > 1500px) {
+      row-gap: 12rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+  }
+}
+
+section.toasty {
+  position: relative;
+  border: 3px solid red;
+  display: flex;
+  width: 100vw;
+  height: 500px;
+  place-items: center;
+  place-content: center;
+}
+
+.Toastify__toast-container{
+transform: translateY(20rem);
+width: max-content;
+}
+// .Toastify {
+//   // position: relative;
+// }
+// .Toastify {
+//   width: inherit;
+//   height: inherit;
+//   place-items: center;
+//   place-content: center;
+//   border: 3px solid red;
+//   position: relative;
+
+
+// }

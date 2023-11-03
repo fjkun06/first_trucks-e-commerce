@@ -1,0 +1,41 @@
+@use "./text/text";
+@use "./buttons/button";
+@use "./cards/desktop_card";
+@use "./cards/blog_card";
+@use "./cards/review_card";
+@use "./cards/solution_card";
+@use "./shadows/shadows";
+@use "./icons/icons";
+@use '../utils//mixins';
+  /*********************************Title*********************************/
+  span.title {
+    @include mixins.size(11.7rem, 2.7rem);
+    @include mixins.size(auto, 2.7rem);
+    align-self: flex-start;
+    font-family: "Poppins 700";
+    z-index: 3;
+        @include mixins.formatText(700, 1.8rem, 2.7rem);
+    color: #0119c2;
+    @include mixins.flex;
+    gap: 0.5rem;
+    svg {
+      @include mixins.size(1.1rem, 1.3rem);
+    }
+    @media only screen and (width > 800px) {
+      width: 68rem;
+      align-self: center;
+      justify-content: flex-start;
+      @include mixins.formatText(700, 3.06rem, 4.6rem);
+      svg {
+        transform: scale(1.65);
+      }
+    }
+    @media only screen and (width > 1200px) {
+      @include mixins.formatText(700, 3.5rem, 5.2rem);
+      @include mixins.size(60vw, 5.3rem);
+    }
+    @media only screen and (width > 1500px) {
+      @include mixins.formatText(700, 3.5rem, 5.2rem);
+      @include mixins.size(120rem, 5.3rem);
+    }
+  }

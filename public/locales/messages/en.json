@@ -1,0 +1,109 @@
+{
+  "default": {
+    "hell": "Hello World",
+    "test": "Test"
+  },
+  "header": {
+    "trust": "Trust",
+    "name": "First Trucks Sarl",
+    "end": "for automotive parts, engine lubricants, and quality fluids."
+  },
+  "products": {
+    "title": "Our Products",
+    "item1": {
+      "name": "Air filter",
+      "items": {
+        "one": { "title": "BMC FBSS70-70 “Direct Intake” Universal Conical Air Filter", "desc": "optimized for engines below 1600cc" },
+        "two": { "title": "BMC FBSS70-70 “Direct Intake” Universal Conical Air Filter", "desc": "optimized for engines below 1600cc" },
+        "three": { "title": "BMC FBSS70-70 “Direct Intake” Universal Conical Air Filter", "desc": "optimized for engines below 1600cc" }
+      }
+    },
+    "item2": {
+      "name": "BRAKE OIL",
+      "items": {
+        "one": { "title": "High Boiling Point Briton DOT 4", "desc": "Dubai Heavy Duty High Performance Hydraulic Brake Fluid" },
+        "two": { "title": "High Boiling Point Briton DOT 4", "desc": "Dubai Heavy Duty High Performance Hydraulic Brake Fluid" },
+        "three": { "title": "High Boiling Point Briton DOT 4", "desc": "Dubai Heavy Duty High Performance Hydraulic Brake Fluid" }
+      }
+    },
+    "item3": {
+      "name": "TRUCK ENGINE",
+      "items": {
+        "one": { "title": "D24 ENGINE 74 HP EPA T4 FOR LOADERS, 7387661", "desc": "Engine D24 74 HP EPA T4, 7387661 is the complete engine for compact loaders and track loaders." },
+        "two": { "title": "D24 ENGINE 74 HP EPA T4 FOR LOADERS, 7387661", "desc": "Engine D24 74 HP EPA T4, 7387661 is the complete engine for compact loaders and track loaders." },
+        "three": { "title": "D24 ENGINE 74 HP EPA T4 FOR LOADERS, 7387661", "desc": "Engine D24 74 HP EPA T4, 7387661 is the complete engine for compact loaders and track loaders." }
+      }
+    },
+    "item4": {
+      "name": "DISC BRAKES",
+      "items": {
+        "one": { "title": "EBC Performance Brake Rotors GD7542 ", "desc": "smooth and sure braking power in all driving conditions" },
+        "two": { "title": "EBC Performance Brake Rotors GD7542 ", "desc": "smooth and sure braking power in all driving conditions" },
+        "three": { "title": "EBC Performance Brake Rotors GD7542 ", "desc": "smooth and sure braking power in all driving conditions" }
+      }
+    },
+    "item5": {
+      "name": "ENGINE OIL",
+      "items": {
+        "one": { "title": "Kam b — synthetic for gasoline engine 5w30 SN", "desc": "combination, gloss oil for vehicles, automotive, super light, Excellent hold protection" },
+        "two": { "title": "Kam b — synthetic for gasoline engine 5w30 SN", "desc": "combination, gloss oil for vehicles, automotive, super light, Excellent hold protection" },
+        "three": { "title": "Kam b — synthetic for gasoline engine 5w30 SN", "desc": "combination, gloss oil for vehicles, automotive, super light, Excellent hold protection" }
+      }
+    },
+    "item6": {
+      "name": "ENGINE",
+      "items": {
+        "one": { "title": "2007 Toyota Camry Engine Assembly", "desc": "3.5L, (VIN K, 5th digit, 2GRFE engine, 6 cylinder)" },
+        "two": { "title": "2007 Toyota Camry Engine Assembly", "desc": "3.5L, (VIN K, 5th digit, 2GRFE engine, 6 cylinder)" },
+        "three": { "title": "2007 Toyota Camry Engine Assembly", "desc": "3.5L, (VIN K, 5th digit, 2GRFE engine, 6 cylinder)" }
+      }
+    },
+    "item7": {
+      "name": "CLUTCH KIT",
+      "items": {
+        "one": { "title": "Peugeot 404 504 Clutch Kit - Clutch Kit - 200190 Or 200489", "desc": "Product.Made in France. Reference: 30010Z Peugeot Citroën" },
+        "two": { "title": "Peugeot 404 504 Clutch Kit - Clutch Kit - 200190 Or 200489", "desc": "Product.Made in France. Reference: 30010Z Peugeot Citroën" },
+        "three": { "title": "Peugeot 404 504 Clutch Kit - Clutch Kit - 200190 Or 200489", "desc": "Product.Made in France. Reference: 30010Z Peugeot Citroën" }
+      }
+    },
+    "item8": {
+      "name": "OIL FILTER",
+      "items": {
+        "one": { "title": "BOSCH F 026 407 090 Oil filter", "desc": "Height [mm]: 82. Inner diameter 2 [mm]: 29. Filter type: Filter cartridge. Diameter [mm]: 70." },
+        "two": { "title": "BOSCH F 026 407 090 Oil filter", "desc": "Height [mm]: 82. Inner diameter 2 [mm]: 29. Filter type: Filter cartridge. Diameter [mm]: 70." },
+        "three": { "title": "BOSCH F 026 407 090 Oil filter", "desc": "Height [mm]: 82. Inner diameter 2 [mm]: 29. Filter type: Filter cartridge. Diameter [mm]: 70." }
+      }
+    }
+  },
+  "contact": {
+    "text": "Contact Us"
+  },
+  "about": {
+    "title": "About Us",
+    "p1": {
+      "start": "At ",
+      "middle": "First Trucks Sarl",
+      "end": ", we are passionate about helping our customers keep their vehicles and equipment running smoothly and efficiently. With over five years of industry experience, we have built a reputation for excellence and are proud to be a trusted supplier of engine oils, truck engines, motors, oil filters, air filters and more."
+    },
+    "p2": "We believe in providing exceptional products and services, and our team of experts is dedicated to helping you find the right solutions for your needs. From selecting the right oil to improving equipment performance, we're here to help you achieve your goals."
+  },
+  "comments": {
+    "title": "Comments",
+    "c0": {
+      "user": "Mr. NJOLEU Charles",
+      "text": "I have used Future Trucks engine oils and filters for years and have never been disappointed. Their products have helped keep my vehicle running smoothly and efficiently, and their prices are very affordable."
+    },
+    "c1": {
+      "user": "Mr. Karl ZOGO",
+      "text": "Future Trucks is my go-to for all my engine and equipment needs. Their products are top quality and their staff is always knowledgeable and helpful. I appreciate their attention to detail and their personalized approach."
+    },
+    "c2": {
+      "user": "Mrs. Beatrice LIKOME",
+      "text": "I recently had a problem with my vehicle, and the team at Futur Trucks Sarl were able to diagnose the problem and provide a quick and efficient solution. I was impressed by their expertise and professionalism."
+    },
+    "c3": {
+      "user": "Mrs. Beatrice LIKOME",
+      "text": "I appreciate the quality and reliability of Future Trucks' products, but what really sets them apart is their exceptional customer service. Their staff is friendly, responsive and always willing to go above and beyond to help me find the right solutions for my needs."
+    }
+  }
+}

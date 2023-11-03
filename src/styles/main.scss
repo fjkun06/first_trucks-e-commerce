@@ -1,0 +1,43 @@
+@use "components/components";
+@use "layout/layout";
+@use "fonts/fonts";
+button {
+  font-family: "Nunito 200", sans-serif;
+}
+
+//styling links
+a {
+  // font-family: "Inter", sans-serif;
+  transition: all ease 0.15s;
+  text-decoration: none;
+  // color: var(--navbar-link);
+  // &:visited {
+  //    color: var(--navbar-link);
+  // }
+}
+
+//all components
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//Configuring html
+html {
+  // font-size: 0.82vw;
+  font-size: 62.5%;
+  // font-size: calc(15px + 0.390625vw);
+  // font-size: calc(12px + 1vw);
+
+  overflow-x: hidden;
+  -webkit-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+
+  // min-width: 320px;
+}
+
+body {
+  font-size: 1.6em;
+  min-width: 32rem;
+}

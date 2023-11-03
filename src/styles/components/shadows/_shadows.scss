@@ -1,0 +1,25 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+
+.shadow {
+  &__container {
+    @include mixins.size(24.8rem, 14.4rem);
+    background-color: variables.$white;
+    border-radius: 0.6rem;
+  }
+  &__button {
+    box-shadow: variables.$shadowButton;
+  }
+  &__card1 {
+    box-shadow: variables.$shadowCard1;
+  }
+  &__card2 {
+    box-shadow: variables.$shadowCard2;
+  }
+  &__card3 {
+    box-shadow: variables.$shadowCard3;
+  }
+  &__dropdown {
+    box-shadow: variables.$shadowDropdown;
+  }
+}
