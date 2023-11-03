@@ -27,3 +27,31 @@ main {
     place-content: center;
   }
 }
+
+section.toasty {
+  position: relative;
+  border: 3px solid red;
+  display: flex;
+  width: 100vw;
+  height: 500px;
+  place-items: center;
+  place-content: center;
+}
+
+.Toastify__toast-container{
+transform: translateY(20rem);
+width: max-content;
+}
+// .Toastify {
+//   // position: relative;
+// }
+// .Toastify {
+//   width: inherit;
+//   height: inherit;
+//   place-items: center;
+//   place-content: center;
+//   border: 3px solid red;
+//   position: relative;
+
+
+// }

@@ -1,3 +1,4 @@
+import "react-toastify/dist/ReactToastify.css";
 import "@/styles/main.scss";
 import type { AppProps } from "next/app";
 
