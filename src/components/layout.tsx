@@ -2,6 +2,8 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import Footer from "@/stories/Footer";
 import Navbar from "@/stories/Navbar";
 import React from "react";
+import Head from "next/head";
+
 export interface LayoutProps {
   children: React.ReactNode;
 }
@@ -32,6 +34,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   });
   return (
     <main lang="en-US">
+        <Head>
+        <title>First Trucks Sarl</title>
+      </Head>
       <Navbar isOpen={isOpen} handleClick={handleClick} set={setIsOpen} />
       <section id="content" onClick={() => setIsOpen(false)}>{children}</section>
       <Footer />
