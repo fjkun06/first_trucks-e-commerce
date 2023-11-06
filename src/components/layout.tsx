@@ -3,6 +3,7 @@ import Footer from "@/stories/Footer";
 import Navbar from "@/stories/Navbar";
 import Head from "next/head";
 import React from "react";
+
 export interface LayoutProps {
   children: React.ReactNode;
 }
